@@ -1,5 +1,8 @@
 package wolf_addons.common;
 
+import wolf_addons.common.block.WolfBlockList;
+import wolf_addons.common.item.WolfItemList;
+import wolf_addons.common.recipe.WolfRecipe;
 import wolf_addons.proxy.WolfCommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -21,7 +24,8 @@ public class Wolf_Addons
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		
+		WolfBlockList.loadBlock();
+		WolfItemList.loadItem();
 	}
 	
 	@EventHandler
@@ -33,6 +37,7 @@ public class Wolf_Addons
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		
+		WolfRecipe.loadRecipe();
+		WolfRecipe.loadSmelting();
 	}
 }
