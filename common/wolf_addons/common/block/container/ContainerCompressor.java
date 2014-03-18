@@ -29,15 +29,15 @@ public class ContainerCompressor extends Container
 		this.addSlotToContainer(new SlotCompressor(inventory.player, this.craftMatrix, this.craftResult, 0, 124, 35));
 		int l, i;
 		
-		for(l = 0; l < 3; ++l)
-		{
-			for(i = 0; i < 3; ++i)
-			{
-				this.addSlotToContainer(new Slot(this.craftMatrix, i + l * 3, 30 + i * 18, 17 + i * 18));
-			}
-		}
-		
 		for (l = 0; l < 3; ++l)
+        {
+            for (i = 0; i < 3; ++i)
+            {
+                this.addSlotToContainer(new Slot(this.craftMatrix, i + l * 3, 30 + i * 18, 17 + l * 18));
+            }
+        }
+
+        for (l = 0; l < 3; ++l)
         {
             for (i = 0; i < 9; ++i)
             {
@@ -49,6 +49,7 @@ public class ContainerCompressor extends Container
         {
             this.addSlotToContainer(new Slot(inventory, l, 8 + l * 18, 142));
         }
+
         this.onCraftMatrixChanged(this.craftMatrix);
 	}
 
@@ -77,7 +78,7 @@ public class ContainerCompressor extends Container
 
             if (slotContainer == 0)
             {
-                if (!this.mergeItemStack(itemstack1, 10, 36, true))
+                if (!this.mergeItemStack(itemstack1, 10, 46, true))
                 {
                     return null;
                 }
@@ -93,7 +94,7 @@ public class ContainerCompressor extends Container
             }
             else if (slotContainer >= 37 && slotContainer < 46)
             {
-                if (!this.mergeItemStack(itemstack1, 10, 36, false))
+                if (!this.mergeItemStack(itemstack1, 10, 37, false))
                 {
                     return null;
                 }

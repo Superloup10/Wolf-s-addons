@@ -18,13 +18,13 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 
-@Mod(modid="Wolf_Addons", name="Wolf's Addons", version="%version%")
+@Mod(modid="Wolf_Addons", name="Wolf's Addons", version="@version@")
 public class Wolf_Addons
 {
 	@SidedProxy(clientSide = "wolf_addons.proxy.WolfClientProxy", serverSide = "wolf_addons.proxy.WolfCommonProxy")
 	public static WolfCommonProxy proxy;
 	
-	@Instance("Wolf's Addons")
+	@Instance("Wolf_Addons")
 	public static Wolf_Addons instance;
 	public static GuiHandler guiHandler = new GuiHandler();
 	
@@ -43,7 +43,7 @@ public class Wolf_Addons
 		MinecraftForge.EVENT_BUS.register(new LivingEvent());
 		
 		WolfTE.loadTileEntity();
-		NetworkRegistry.INSTANCE.registerGuiHandler(instance, guiHandler);
+		NetworkRegistry.INSTANCE.registerGuiHandler(this.instance, new GuiHandler());
 	}
 	
 	@EventHandler
