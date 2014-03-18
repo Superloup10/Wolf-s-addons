@@ -18,12 +18,12 @@ public class WolfItemList
 	public static Item lapisSword, lapisPickaxe, lapisAxe, lapisShovel, lapisHoe;
 	public static Item emeraldSword, emeraldPickaxe, emeraldAxe, emeraldShovel, emeraldHoe;
 	
-	public static ArmorMaterial redstoneArmor = EnumHelper.addArmorMaterial("RedstoneArmor", 33, new int[]{3, 8, 6, 3}, 25);//TODO Add RedstoneArmor
-	public static ArmorMaterial lapisArmor = EnumHelper.addArmorMaterial("LapisArmor", 20, new int[]{2, 5, 3, 1}, 10);//TODO Add LapisArmor
-	public static ArmorMaterial emeraldArmor = EnumHelper.addArmorMaterial("EmeraldArmor", 40, new int[]{4, 9, 7, 4}, 5);//TODO Add EmeraldArmor
-	public static ToolMaterial redstoneTools = EnumHelper.addToolMaterial("RedstoneTools", 3, 1600, 8.0F, 3.0F, 22);//TODO Add RedstoneTools
-	public static ToolMaterial lapisTools = EnumHelper.addToolMaterial("LapisTools", 2, 300, 12.0F, 0.0F, 10);//TODO Add LapisTools
-	public static ToolMaterial emeraldTools = EnumHelper.addToolMaterial("EmeraldTools", 4, 2000, 16.0F, 6.0F, 5);//TODO Add EmeraldTools
+	public static ArmorMaterial redstoneArmor = EnumHelper.addArmorMaterial("RedstoneArmor", 33, new int[]{3, 8, 6, 3}, 25);
+	public static ArmorMaterial lapisArmor = EnumHelper.addArmorMaterial("LapisArmor", 20, new int[]{2, 5, 3, 1}, 10);
+	public static ArmorMaterial emeraldArmor = EnumHelper.addArmorMaterial("EmeraldArmor", 40, new int[]{4, 9, 7, 4}, 5);
+	public static ToolMaterial redstoneTools = EnumHelper.addToolMaterial("RedstoneTools", 3, 1600, 8.0F, 3.0F, 22);
+	public static ToolMaterial lapisTools = EnumHelper.addToolMaterial("LapisTools", 2, 300, 12.0F, 0.0F, 10);
+	public static ToolMaterial emeraldTools = EnumHelper.addToolMaterial("EmeraldTools", 4, 2000, 16.0F, 6.0F, 5);
 	
 	public static void loadItem()
 	{
