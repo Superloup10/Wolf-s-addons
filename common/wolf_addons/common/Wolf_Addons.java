@@ -1,6 +1,9 @@
 package wolf_addons.common;
 
+import net.minecraftforge.common.MinecraftForge;
 import wolf_addons.common.block.WolfBlockList;
+import wolf_addons.common.creativestabs.WolfCT;
+import wolf_addons.common.event.LivingEvent;
 import wolf_addons.common.item.WolfItemList;
 import wolf_addons.common.recipe.WolfRecipe;
 import wolf_addons.proxy.WolfCommonProxy;
@@ -12,7 +15,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid="Wolf's Addons", name="Wolf's Addons", version="%version%")
+@Mod(modid="Wolf_Addons", name="Wolf's Addons", version="%version%")
 public class Wolf_Addons
 {
 	@SidedProxy(clientSide = "wolf_addons.proxy.WolfClientProxy", serverSide = "wolf_addons.proxy.WolfCommonProxy")
@@ -24,6 +27,7 @@ public class Wolf_Addons
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		WolfCT.loadCreativeTabs();
 		WolfBlockList.loadBlock();
 		WolfItemList.loadItem();
 	}
@@ -32,6 +36,7 @@ public class Wolf_Addons
 	public void init(FMLInitializationEvent event)
 	{
 		proxy.registerRender();
+		MinecraftForge.EVENT_BUS.register(new LivingEvent());
 	}
 	
 	@EventHandler

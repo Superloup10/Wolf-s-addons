@@ -1,0 +1,33 @@
+#CreativeTabs
+itemGroup.Armor=WolfArmor
+#Items
+item.redstoneIngot.name=L'ingot de Redstone
+item.lapisIngot.name=L'ingot de Lapis
+item.emeraldIngot.name=L'ingot d'Emeraude
+item.redstoneHelmet.name=Casque en Redstone
+item.redstoneChestplate.name=Plastron en Redstone
+item.redstoneLeggings.name=Pantalon en Redstone
+item.redstoneBoots.name=Bottes en Redstone
+item.lapisHelmet.name=Casque en Lapis
+item.lapisChestplate.name=Plastron en Lapis
+item.lapisLeggings.name=Pantalon en Lapis
+item.lapisBoots.name=Bottes en Lapis
+item.emeraldHelmet.name=Casque en Emeraude
+item.emeraldChestplate.name=Plastron en Emeraude
+item.emeraldLeggings.name=Pantalon en Emeraude
+item.emeraldBoots.name=Bottes en Emeraude
+item.redstoneSword.name=Epée en Redstone
+item.redstonePickaxe.name=Pioche en Redstone
+item.redstoneAxe.name=Hache en Redstone
+item.redstoneShovel.name=Pelle en Redstone
+item.redstoneHoe.name=Houe en Redstone
+item.lapisSword.name=Epée en Lapis
+item.lapisPickaxe.name=Pioche en Lapis
+item.lapisAxe.name=Hache en Lapis
+item.lapisShovel.name=Pelle en Lapis
+item.lapisHoe.name=Houe en Lapis
+item.emeraldSword.name=Epée en Emeraude
+item.emeraldPickaxe.name=Pioche en Emeraude
+item.emeraldAxe.name=Hache en Emeraude
+item.emeraldShovel.name=Pelle en Emeraude
+item.emeraldHoe.name=Houe en Emeraude
