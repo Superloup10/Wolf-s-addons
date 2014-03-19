@@ -85,6 +85,11 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 		
 		NBTTagList nbtTag = nbtTagCompound.getTagList("Inventory", 10);
 		
+		if(nbtTagCompound.hasKey("CustomName"))
+		{
+			this.customName = nbtTagCompound.getString("CustomName");
+		}
+		
 		for(int i = 0; i < nbtTag.tagCount(); i++)
 		{
 			NBTTagCompound tagCompound = nbtTag.getCompoundTagAt(i);
@@ -104,7 +109,7 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 		
 		NBTTagList nbtTag = new NBTTagList();
 		
-		for(int j = 0; j <= compressorInventory.length; j++)
+		for(int j = 0; j < compressorInventory.length; j++)
 		{
 			ItemStack itemStack = compressorInventory[j];
 			
@@ -117,6 +122,11 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 			}
 		}
 		nbtTagCompound.setTag("Inventory", nbtTag);
+		
+		if(this.hasCustomInventoryName())
+		{
+			nbtTagCompound.setString("CustomName", this.customName);
+		}
 	}
 
 	@Override
