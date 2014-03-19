@@ -1,6 +1,7 @@
 package wolf_addons.common.recipe;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -29,9 +30,10 @@ public class RecipesCompressor
 	private RecipesCompressor()
 	{
 		this.addRecipe(new ItemStack(WolfItemList.redstoneIngot, 1), new Object[]{"XXX", 'X', Items.redstone});
+		Collections.sort(this.recipes, new RecipesSorterCompressor(this));
 	}
 	
-	public ShapedRecipes addRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
+	void addRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
     {
         String s = "";
         int i = 0;
@@ -98,12 +100,10 @@ public class RecipesCompressor
                 aitemstack[i1] = null;
             }
         }
-        ShapedRecipes shapedrecipes = new ShapedRecipes(j, k, aitemstack, par1ItemStack);
-        this.recipes.add(shapedrecipes);
-        return shapedrecipes;
+        this.recipes.add(new ShapedRecipesCompressor(j, k, aitemstack, par1ItemStack));
     }
 
-    public void addShapelessRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
+    void addShapelessRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
     {
         ArrayList arraylist = new ArrayList();
         Object[] aobject = par2ArrayOfObj;

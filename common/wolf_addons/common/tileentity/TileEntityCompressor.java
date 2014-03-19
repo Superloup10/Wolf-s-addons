@@ -84,6 +84,7 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 		super.readFromNBT(nbtTagCompound);
 		
 		NBTTagList nbtTag = nbtTagCompound.getTagList("Inventory", 10);
+		this.compressorInventory = new ItemStack[this.getSizeInventory()];
 		
 		if(nbtTagCompound.hasKey("CustomName"))
 		{

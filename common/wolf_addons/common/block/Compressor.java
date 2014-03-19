@@ -52,7 +52,7 @@ public class Compressor extends BlockContainer
 		{
 			TileEntityCompressor compressor = (TileEntityCompressor) world.getTileEntity(x, y, z);
 			
-			if(compressor != null)
+			if(compressor != null || !player.isSneaking())
 			{
 				player.openGui(Wolf_Addons.instance, 0, world, x, y, z);
 			}
