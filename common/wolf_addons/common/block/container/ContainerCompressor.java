@@ -8,9 +8,9 @@ import net.minecraft.inventory.InventoryCraftResult;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.World;
 import wolf_addons.common.block.container.slot.SlotCompressor;
+import wolf_addons.common.recipe.RecipesCompressor;
 import wolf_addons.common.tileentity.TileEntityCompressor;
 
 public class ContainerCompressor extends Container
@@ -62,7 +62,7 @@ public class ContainerCompressor extends Container
 	@Override
 	public void onCraftMatrixChanged(IInventory par1IInventory)
     {
-    	this.craftResult.setInventorySlotContents(0, CraftingManager.getInstance().findMatchingRecipe(this.craftMatrix, this.worldObj));
+    	this.craftResult.setInventorySlotContents(0, RecipesCompressor.getInstance().findMatchingRecipe(this.craftMatrix, this.worldObj));
     }
 	
 	@Override
