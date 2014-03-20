@@ -5,6 +5,9 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityCompressor extends TileEntity implements ISidedInventory
@@ -83,7 +86,7 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 	{
 		super.readFromNBT(nbtTagCompound);
 		
-		NBTTagList nbtTag = nbtTagCompound.getTagList("Inventory", 10);
+		NBTTagList nbtTag = nbtTagCompound.getTagList("Items", 10);
 		this.compressorInventory = new ItemStack[this.getSizeInventory()];
 		
 		if(nbtTagCompound.hasKey("CustomName"))
@@ -122,12 +125,24 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 				nbtTag.appendTag(tagCompound);
 			}
 		}
-		nbtTagCompound.setTag("Inventory", nbtTag);
+		nbtTagCompound.setTag("Items", nbtTag);
 		
 		if(this.hasCustomInventoryName())
 		{
 			nbtTagCompound.setString("CustomName", this.customName);
 		}
+	}
+	
+	public Packet getDescriptionPacket()
+	{
+		NBTTagCompound nbttagcompound = new NBTTagCompound();
+		this.writeToNBT(nbttagcompound);
+		return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 3, nbttagcompound);
+	}
+
+	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity updateTileEntity)
+	{
+		this.readFromNBT(updateTileEntity.func_148857_g());
 	}
 
 	@Override
@@ -175,12 +190,12 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 	@Override
 	public boolean canInsertItem(int slot, ItemStack item, int side)
 	{
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean canExtractItem(int slot, ItemStack item, int side)
 	{
-		return false;
+		return true;
 	}
 }
