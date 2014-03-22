@@ -1,6 +1,7 @@
 package wolf_addons.common.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -9,10 +10,11 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.common.util.Constants;
 
-public class TileEntityCompressor extends TileEntity implements ISidedInventory
+public class TileEntityCompressor extends TileEntity implements IInventory, ISidedInventory
 {
-	private ItemStack[] compressorInventory = new ItemStack[10];
+	private ItemStack[] compressorInventory = new ItemStack[9];
 	private String customName;
 	
 	@Override
@@ -37,6 +39,7 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 			{
 				itemStack = this.compressorInventory[slot];
 				this.compressorInventory[slot] = null;
+				this.markDirty();
 				return itemStack;
 			}
 			else
@@ -46,6 +49,7 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 				{
 					this.compressorInventory[slot] = null;
 				}
+				this.markDirty();
 				return itemStack;
 			}
 		}
@@ -79,6 +83,8 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 		{
 			itemStack.stackSize = this.getInventoryStackLimit();
 		}
+		
+		this.markDirty();
 	}
 	
 	@Override
@@ -86,7 +92,7 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 	{
 		super.readFromNBT(nbtTagCompound);
 		
-		NBTTagList nbtTag = nbtTagCompound.getTagList("Items", 10);
+		NBTTagList nbtTag = nbtTagCompound.getTagList("Items", Constants.NBT.TAG_COMPOUND);
 		this.compressorInventory = new ItemStack[this.getSizeInventory()];
 		
 		if(nbtTagCompound.hasKey("CustomName"))
@@ -97,11 +103,11 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 		for(int i = 0; i < nbtTag.tagCount(); i++)
 		{
 			NBTTagCompound tagCompound = nbtTag.getCompoundTagAt(i);
-			byte slot = tagCompound.getByte("Slot");
+			int slot = tagCompound.getByte("Slot") & 255;
 			
-			if(slot >= 0 && slot < compressorInventory.length)
+			if(slot >= 0 && slot < this.compressorInventory.length)
 			{
-				compressorInventory[slot] = ItemStack.loadItemStackFromNBT(tagCompound);
+				this.compressorInventory[slot] = ItemStack.loadItemStackFromNBT(tagCompound);
 			}
 		}
 	}
@@ -113,15 +119,16 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory
 		
 		NBTTagList nbtTag = new NBTTagList();
 		
-		for(int j = 0; j < compressorInventory.length; j++)
+		for(int j = 0; j < this.compressorInventory.length; j++)
 		{
-			ItemStack itemStack = compressorInventory[j];
-			
-			if(itemStack != null)
+			//ItemStack itemStack = this.compressorInventory[j];
+			System.out.println("Taille de l'inventaire : " + Boolean.valueOf(compressorInventory[j] == null));
+			//TODO Cette condition est toujours null
+			if(this.compressorInventory[j] != null)
 			{
 				NBTTagCompound tagCompound = new NBTTagCompound();
 				tagCompound.setByte("Slot", (byte)j);
-				itemStack.writeToNBT(tagCompound);
+				this.compressorInventory[j].writeToNBT(tagCompound);
 				nbtTag.appendTag(tagCompound);
 			}
 		}

@@ -4,33 +4,46 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
+import wolf_addons.common.creativestabs.WolfCT;
 import cpw.mods.fml.common.registry.GameRegistry;
+//import fr.minecraftforgefrance.ffmtlibs.FFMTRegistry;
 
 public class WolfItemList
 {
-	public static Item redstoneIngot, lapisIngot, emeraldIngot;
+	public static Item silverDust;
+	public static Item redstoneIngot, lapisIngot, emeraldIngot, silverIngot;
 	
+	public static Item silverHelmet, silverChestplate, silverLeggings, silverBoots;
 	public static Item redstoneHelmet, redstoneChestplate, redstoneLeggings, redstoneBoots;
 	public static Item lapisHelmet, lapisChestplate, lapisLeggings, lapisBoots;
 	public static Item emeraldHelmet, emeraldChestplate, emeraldLeggings, emeraldBoots;
 	
+	public static Item silverSword, silverPickaxe, silverAxe, silverShovel, silverHoe;
 	public static Item redstoneSword, redstonePickaxe, redstoneAxe, redstoneShovel, redstoneHoe;
 	public static Item lapisSword, lapisPickaxe, lapisAxe, lapisShovel, lapisHoe;
 	public static Item emeraldSword, emeraldPickaxe, emeraldAxe, emeraldShovel, emeraldHoe;
 	
+	public static ArmorMaterial silverArmor = EnumHelper.addArmorMaterial("SilverArmor", 35, new int[]{4, 9, 7, 4}, 15);
 	public static ArmorMaterial redstoneArmor = EnumHelper.addArmorMaterial("RedstoneArmor", 33, new int[]{3, 8, 6, 3}, 25);
 	public static ArmorMaterial lapisArmor = EnumHelper.addArmorMaterial("LapisArmor", 20, new int[]{2, 5, 3, 1}, 10);
 	public static ArmorMaterial emeraldArmor = EnumHelper.addArmorMaterial("EmeraldArmor", 40, new int[]{4, 9, 7, 4}, 5);
+	
+	public static ToolMaterial silverTools = EnumHelper.addToolMaterial("SilverTools", 2, 1800, 16.0F, 6.0F, 15);
 	public static ToolMaterial redstoneTools = EnumHelper.addToolMaterial("RedstoneTools", 3, 1600, 8.0F, 3.0F, 22);
 	public static ToolMaterial lapisTools = EnumHelper.addToolMaterial("LapisTools", 2, 300, 12.0F, 0.0F, 10);
 	public static ToolMaterial emeraldTools = EnumHelper.addToolMaterial("EmeraldTools", 4, 2000, 16.0F, 6.0F, 5);
 	
 	public static void loadItem()
 	{
-		redstoneIngot = new RedstoneIngot().setTextureName("wolf_addons:redstone_ingot").setUnlocalizedName("redstoneIngot");
-		lapisIngot = new LapisIngot().setTextureName("wolf_addons:lapis_ingot").setUnlocalizedName("lapisIngot");
-		emeraldIngot = new EmeraldIngot().setTextureName("wolf_addons:emerald_ingot").setUnlocalizedName("emeraldIngot");
+		silverDust = new SilverDust().setTextureName("wolf_addons:silver_dust").setUnlocalizedName("silverDust").setCreativeTab(WolfCT.creativeTabsItems);
+		
+		silverIngot = new SilverIngot().setTextureName("wolf_addons:silver_ingot").setUnlocalizedName("silverIngot").setCreativeTab(WolfCT.creativeTabsItems);
+		redstoneIngot = new RedstoneIngot().setTextureName("wolf_addons:redstone_ingot").setUnlocalizedName("redstoneIngot").setCreativeTab(WolfCT.creativeTabsItems);
+		lapisIngot = new LapisIngot().setTextureName("wolf_addons:lapis_ingot").setUnlocalizedName("lapisIngot").setCreativeTab(WolfCT.creativeTabsItems);
+		emeraldIngot = new EmeraldIngot().setTextureName("wolf_addons:emerald_ingot").setUnlocalizedName("emeraldIngot").setCreativeTab(WolfCT.creativeTabsItems);
 
+//		FFMTRegistry.registerAllArmors(silverArmor, "silver", "wolf_addons", silverHelmet, silverChestplate, silverLeggings, silverBoots, WolfCT.creativeTabsArmors);
+		
 		redstoneHelmet = new RedstoneArmor(redstoneArmor, 0).setTextureName("wolf_addons:redstone_helmet").setUnlocalizedName("redstoneHelmet");
 		redstoneChestplate = new RedstoneArmor(redstoneArmor, 1).setTextureName("wolf_addons:redstone_chestplate").setUnlocalizedName("redstoneChestplate");
 		redstoneLeggings = new RedstoneArmor(redstoneArmor, 2).setTextureName("wolf_addons:redstone_leggings").setUnlocalizedName("redstoneLeggings");
@@ -46,24 +59,27 @@ public class WolfItemList
 		emeraldLeggings = new EmeraldArmor(emeraldArmor, 2).setTextureName("wolf_addons:emerald_leggings").setUnlocalizedName("emeraldLeggings");
 		emeraldBoots = new EmeraldArmor(emeraldArmor, 3).setTextureName("wolf_addons:emerald_boots").setUnlocalizedName("emeraldBoots");
 		
-		redstoneSword = new RedstoneSword(redstoneTools).setTextureName("wolf_addons:redstone_sword").setUnlocalizedName("redstoneSword");
-		redstonePickaxe = new RedstonePickaxe(redstoneTools).setTextureName("wolf_addons:redstone_pickaxe").setUnlocalizedName("redstonePickaxe");
-		redstoneAxe = new RedstoneAxe(redstoneTools).setTextureName("wolf_addons:redstone_axe").setUnlocalizedName("redstoneAxe");
-		redstoneShovel = new RedstoneShovel(redstoneTools).setTextureName("wolf_addons:redstone_shovel").setUnlocalizedName("redstoneShovel");
-		redstoneHoe = new RedstoneHoe(redstoneTools).setTextureName("wolf_addons:redstone_hoe").setUnlocalizedName("redstoneHoe");
+		redstoneSword = new RedstoneSword(redstoneTools).setTextureName("wolf_addons:redstone_sword").setUnlocalizedName("redstoneSword").setCreativeTab(WolfCT.creativeTabsTools);
+		redstonePickaxe = new RedstonePickaxe(redstoneTools).setTextureName("wolf_addons:redstone_pickaxe").setUnlocalizedName("redstonePickaxe").setCreativeTab(WolfCT.creativeTabsTools);
+		redstoneAxe = new RedstoneAxe(redstoneTools).setTextureName("wolf_addons:redstone_axe").setUnlocalizedName("redstoneAxe").setCreativeTab(WolfCT.creativeTabsTools);
+		redstoneShovel = new RedstoneShovel(redstoneTools).setTextureName("wolf_addons:redstone_shovel").setUnlocalizedName("redstoneShovel").setCreativeTab(WolfCT.creativeTabsTools);
+		redstoneHoe = new RedstoneHoe(redstoneTools).setTextureName("wolf_addons:redstone_hoe").setUnlocalizedName("redstoneHoe").setCreativeTab(WolfCT.creativeTabsTools);
 		
-		lapisSword = new LapisSword(lapisTools).setTextureName("wolf_addons:lapis_sword").setUnlocalizedName("lapisSword");
-		lapisPickaxe = new LapisPickaxe(lapisTools).setTextureName("wolf_addons:lapis_pickaxe").setUnlocalizedName("lapisPickaxe");
-		lapisAxe = new LapisAxe(lapisTools).setTextureName("wolf_addons:lapis_axe").setUnlocalizedName("lapisAxe");
-		lapisShovel = new LapisShovel(lapisTools).setTextureName("wolf_addons:lapis_shovel").setUnlocalizedName("lapisShovel");
-		lapisHoe = new LapisHoe(lapisTools).setTextureName("wolf_addons:lapis_hoe").setUnlocalizedName("lapisHoe");
+		lapisSword = new LapisSword(lapisTools).setTextureName("wolf_addons:lapis_sword").setUnlocalizedName("lapisSword").setCreativeTab(WolfCT.creativeTabsTools);
+		lapisPickaxe = new LapisPickaxe(lapisTools).setTextureName("wolf_addons:lapis_pickaxe").setUnlocalizedName("lapisPickaxe").setCreativeTab(WolfCT.creativeTabsTools);
+		lapisAxe = new LapisAxe(lapisTools).setTextureName("wolf_addons:lapis_axe").setUnlocalizedName("lapisAxe").setCreativeTab(WolfCT.creativeTabsTools);
+		lapisShovel = new LapisShovel(lapisTools).setTextureName("wolf_addons:lapis_shovel").setUnlocalizedName("lapisShovel").setCreativeTab(WolfCT.creativeTabsTools);
+		lapisHoe = new LapisHoe(lapisTools).setTextureName("wolf_addons:lapis_hoe").setUnlocalizedName("lapisHoe").setCreativeTab(WolfCT.creativeTabsTools);
 		
-		emeraldSword = new EmeraldSword(emeraldTools).setTextureName("wolf_addons:emerald_sword").setUnlocalizedName("emeraldSword");
-		emeraldPickaxe = new EmeraldPickaxe(emeraldTools).setTextureName("wolf_addons:emerald_pickaxe").setUnlocalizedName("emeraldPickaxe");
-		emeraldAxe = new EmeraldAxe(emeraldTools).setTextureName("wolf_addons:emerald_axe").setUnlocalizedName("emeraldAxe");
-		emeraldShovel = new EmeraldShovel(emeraldTools).setTextureName("wolf_addons:emerald_shovel").setUnlocalizedName("emeraldShovel");
-		emeraldHoe = new EmeraldHoe(emeraldTools).setTextureName("wolf_addons:emerald_hoe").setUnlocalizedName("emeraldHoe");
+		emeraldSword = new EmeraldSword(emeraldTools).setTextureName("wolf_addons:emerald_sword").setUnlocalizedName("emeraldSword").setCreativeTab(WolfCT.creativeTabsTools);
+		emeraldPickaxe = new EmeraldPickaxe(emeraldTools).setTextureName("wolf_addons:emerald_pickaxe").setUnlocalizedName("emeraldPickaxe").setCreativeTab(WolfCT.creativeTabsTools);
+		emeraldAxe = new EmeraldAxe(emeraldTools).setTextureName("wolf_addons:emerald_axe").setUnlocalizedName("emeraldAxe").setCreativeTab(WolfCT.creativeTabsTools);
+		emeraldShovel = new EmeraldShovel(emeraldTools).setTextureName("wolf_addons:emerald_shovel").setUnlocalizedName("emeraldShovel").setCreativeTab(WolfCT.creativeTabsTools);
+		emeraldHoe = new EmeraldHoe(emeraldTools).setTextureName("wolf_addons:emerald_hoe").setUnlocalizedName("emeraldHoe").setCreativeTab(WolfCT.creativeTabsTools);
 		
+		GameRegistry.registerItem(silverDust, "silverDust");
+		
+		GameRegistry.registerItem(silverIngot, "silverIngot");
 		GameRegistry.registerItem(redstoneIngot, "redstoneIngot");
 		GameRegistry.registerItem(lapisIngot, "lapisIngot");
 		GameRegistry.registerItem(emeraldIngot, "emeraldIngot");
@@ -72,10 +88,12 @@ public class WolfItemList
 		GameRegistry.registerItem(redstoneChestplate, "redstoneChestplate");
 		GameRegistry.registerItem(redstoneLeggings, "redstoneLeggings");
 		GameRegistry.registerItem(redstoneBoots, "redstoneBoots");
+		
 		GameRegistry.registerItem(lapisHelmet, "lapisHelmet");
 		GameRegistry.registerItem(lapisChestplate, "lapisChestplate");
 		GameRegistry.registerItem(lapisLeggings, "lapisLeggings");
 		GameRegistry.registerItem(lapisBoots, "lapisBoots");
+		
 		GameRegistry.registerItem(emeraldHelmet, "emeraldHelmet");
 		GameRegistry.registerItem(emeraldChestplate, "emeraldChestplate");
 		GameRegistry.registerItem(emeraldLeggings, "emeraldLeggings");
@@ -86,11 +104,13 @@ public class WolfItemList
 		GameRegistry.registerItem(redstoneAxe, "redstoneAxe");
 		GameRegistry.registerItem(redstoneShovel, "redstoneShovel");
 		GameRegistry.registerItem(redstoneHoe, "redstoneHoe");
+		
 		GameRegistry.registerItem(lapisSword, "lapisSword");
 		GameRegistry.registerItem(lapisPickaxe, "lapisPickaxe");
 		GameRegistry.registerItem(lapisAxe, "lapisAxe");
 		GameRegistry.registerItem(lapisShovel, "lapisShovel");
 		GameRegistry.registerItem(lapisHoe, "lapisHoe");
+		
 		GameRegistry.registerItem(emeraldSword, "emeraldSword");
 		GameRegistry.registerItem(emeraldPickaxe, "emeraldPickaxe");
 		GameRegistry.registerItem(emeraldAxe, "emeraldAxe");

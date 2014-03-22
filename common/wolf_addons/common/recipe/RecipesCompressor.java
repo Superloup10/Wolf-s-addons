@@ -30,6 +30,9 @@ public class RecipesCompressor
 	private RecipesCompressor()
 	{
 		this.addRecipe(new ItemStack(WolfItemList.redstoneIngot, 1), new Object[]{"XXX", 'X', Items.redstone});
+		this.addRecipe(new ItemStack(WolfItemList.lapisIngot, 1), new Object[]{"XXX", 'X', new ItemStack(Items.dye, 1, 4)});
+		this.addRecipe(new ItemStack(WolfItemList.emeraldIngot, 1), new Object[]{"XXX", 'X', Items.emerald});
+		this.addRecipe(new ItemStack(WolfItemList.silverIngot, 1), new Object[]{"XXX", 'X', WolfItemList.silverDust});
 		Collections.sort(this.recipes, new RecipesSorterCompressor(this));
 	}
 	

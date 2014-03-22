@@ -14,6 +14,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import wolf_addons.common.Wolf_Addons;
+import wolf_addons.common.creativestabs.WolfCT;
 import wolf_addons.common.tileentity.TileEntityCompressor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -26,6 +27,7 @@ public class Compressor extends BlockContainer
 	protected Compressor()
 	{
 		super(Material.iron);
+		this.setCreativeTab(WolfCT.creativeTabsBlocks);
 	}
 	
 	@Override
