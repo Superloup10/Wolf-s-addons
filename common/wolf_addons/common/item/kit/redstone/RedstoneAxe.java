@@ -1,10 +1,10 @@
-package wolf_addons.common.item;
+package wolf_addons.common.item.kit.redstone;
 
 import net.minecraft.item.ItemAxe;
 
 public class RedstoneAxe extends ItemAxe
 {
-	protected RedstoneAxe(ToolMaterial material)
+	public RedstoneAxe(ToolMaterial material)
 	{
 		super(material);
 	}

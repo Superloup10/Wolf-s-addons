@@ -1,4 +1,4 @@
-package wolf_addons.common.item;
+package wolf_addons.common.item.kit.lapis;
 
 import net.minecraft.item.ItemAxe;
 

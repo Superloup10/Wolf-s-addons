@@ -1,13 +1,14 @@
-package wolf_addons.common.item;
+package wolf_addons.common.item.kit.emerald;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import wolf_addons.common.creativestabs.WolfCT;
+import wolf_addons.common.item.WolfItemList;
 
-public class RedstoneArmor extends ItemArmor
+public class EmeraldArmor extends ItemArmor
 {
-	public RedstoneArmor(ArmorMaterial material, int type)
+	public EmeraldArmor(ArmorMaterial material, int type)
 	{
 		super(material, 0, type);
 		this.setCreativeTab(WolfCT.creativeTabsArmors);
@@ -17,18 +18,18 @@ public class RedstoneArmor extends ItemArmor
 	{
 		if(slot == 2)
 		{
-			return "wolf_addons:textures/armor/redstone_layer_2.png";
+			return "wolf_addons:textures/armor/emerald_layer_2.png";
 		}
-		return "wolf_addons:textures/armor/redstone_layer_1.png";
+		return "wolf_addons:textures/armor/emerald_layer_1.png";
 	}
 	
 	@Override
 	public boolean getIsRepairable(ItemStack input, ItemStack repair)
 	{
-		if(repair.getItem().equals(WolfItemList.redstoneIngot))
+		if(repair.getItem().equals(WolfItemList.emeraldIngot))
 		{
 			return true;
 		}
 		return false;
-	}	
+	}
 }

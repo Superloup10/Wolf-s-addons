@@ -5,8 +5,31 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import wolf_addons.common.creativestabs.WolfCT;
+import wolf_addons.common.item.kit.emerald.EmeraldArmor;
+import wolf_addons.common.item.kit.emerald.EmeraldAxe;
+import wolf_addons.common.item.kit.emerald.EmeraldHoe;
+import wolf_addons.common.item.kit.emerald.EmeraldPickaxe;
+import wolf_addons.common.item.kit.emerald.EmeraldShovel;
+import wolf_addons.common.item.kit.emerald.EmeraldSword;
+import wolf_addons.common.item.kit.lapis.LapisArmor;
+import wolf_addons.common.item.kit.lapis.LapisAxe;
+import wolf_addons.common.item.kit.lapis.LapisHoe;
+import wolf_addons.common.item.kit.lapis.LapisPickaxe;
+import wolf_addons.common.item.kit.lapis.LapisShovel;
+import wolf_addons.common.item.kit.lapis.LapisSword;
+import wolf_addons.common.item.kit.redstone.RedstoneArmor;
+import wolf_addons.common.item.kit.redstone.RedstoneAxe;
+import wolf_addons.common.item.kit.redstone.RedstoneHoe;
+import wolf_addons.common.item.kit.redstone.RedstonePickaxe;
+import wolf_addons.common.item.kit.redstone.RedstoneShovel;
+import wolf_addons.common.item.kit.redstone.RedstoneSword;
+import wolf_addons.common.item.kit.silver.SilverArmor;
+import wolf_addons.common.item.kit.silver.SilverAxe;
+import wolf_addons.common.item.kit.silver.SilverHoe;
+import wolf_addons.common.item.kit.silver.SilverPickaxe;
+import wolf_addons.common.item.kit.silver.SilverShovel;
+import wolf_addons.common.item.kit.silver.SilverSword;
 import cpw.mods.fml.common.registry.GameRegistry;
-//import fr.minecraftforgefrance.ffmtlibs.FFMTRegistry;
 
 public class WolfItemList
 {
@@ -41,8 +64,11 @@ public class WolfItemList
 		redstoneIngot = new RedstoneIngot().setTextureName("wolf_addons:redstone_ingot").setUnlocalizedName("redstoneIngot").setCreativeTab(WolfCT.creativeTabsItems);
 		lapisIngot = new LapisIngot().setTextureName("wolf_addons:lapis_ingot").setUnlocalizedName("lapisIngot").setCreativeTab(WolfCT.creativeTabsItems);
 		emeraldIngot = new EmeraldIngot().setTextureName("wolf_addons:emerald_ingot").setUnlocalizedName("emeraldIngot").setCreativeTab(WolfCT.creativeTabsItems);
-
-//		FFMTRegistry.registerAllArmors(silverArmor, "silver", "wolf_addons", silverHelmet, silverChestplate, silverLeggings, silverBoots, WolfCT.creativeTabsArmors);
+		
+		silverHelmet = new SilverArmor(silverArmor, 0).setTextureName("wolf_addons:silver_helmet").setUnlocalizedName("silverHelmet");
+		silverChestplate = new SilverArmor(silverArmor, 1).setTextureName("wolf_addons:silver_chestplate").setUnlocalizedName("silverChestplate");
+		silverLeggings = new SilverArmor(silverArmor, 2).setTextureName("wolf_addons:silver_leggings").setUnlocalizedName("silverLeggings");
+		silverBoots = new SilverArmor(silverArmor, 3).setTextureName("wolf_addons:silver_boots").setUnlocalizedName("silverBoots");
 		
 		redstoneHelmet = new RedstoneArmor(redstoneArmor, 0).setTextureName("wolf_addons:redstone_helmet").setUnlocalizedName("redstoneHelmet");
 		redstoneChestplate = new RedstoneArmor(redstoneArmor, 1).setTextureName("wolf_addons:redstone_chestplate").setUnlocalizedName("redstoneChestplate");
@@ -58,6 +84,12 @@ public class WolfItemList
 		emeraldChestplate = new EmeraldArmor(emeraldArmor, 1).setTextureName("wolf_addons:emerald_chestplate").setUnlocalizedName("emeraldChestplate");
 		emeraldLeggings = new EmeraldArmor(emeraldArmor, 2).setTextureName("wolf_addons:emerald_leggings").setUnlocalizedName("emeraldLeggings");
 		emeraldBoots = new EmeraldArmor(emeraldArmor, 3).setTextureName("wolf_addons:emerald_boots").setUnlocalizedName("emeraldBoots");
+		
+		silverSword = new SilverSword(silverTools).setTextureName("wolf_addons:silver_sword").setUnlocalizedName("silverSword").setCreativeTab(WolfCT.creativeTabsTools);
+		silverPickaxe = new SilverPickaxe(silverTools).setTextureName("wolf_addons:silver_pickaxe").setUnlocalizedName("silverPickaxe").setCreativeTab(WolfCT.creativeTabsTools);
+		silverAxe = new SilverAxe(silverTools).setTextureName("wolf_addons:silver_axe").setUnlocalizedName("silverAxe").setCreativeTab(WolfCT.creativeTabsTools);
+		silverShovel = new SilverShovel(silverTools).setTextureName("wolf_addons:silver_shovel").setUnlocalizedName("silverShovel").setCreativeTab(WolfCT.creativeTabsTools);
+		silverHoe = new SilverHoe(silverTools).setTextureName("wolf_addons:silver_hoe").setUnlocalizedName("silverHoe").setCreativeTab(WolfCT.creativeTabsTools);
 		
 		redstoneSword = new RedstoneSword(redstoneTools).setTextureName("wolf_addons:redstone_sword").setUnlocalizedName("redstoneSword").setCreativeTab(WolfCT.creativeTabsTools);
 		redstonePickaxe = new RedstonePickaxe(redstoneTools).setTextureName("wolf_addons:redstone_pickaxe").setUnlocalizedName("redstonePickaxe").setCreativeTab(WolfCT.creativeTabsTools);
@@ -84,6 +116,11 @@ public class WolfItemList
 		GameRegistry.registerItem(lapisIngot, "lapisIngot");
 		GameRegistry.registerItem(emeraldIngot, "emeraldIngot");
 		
+		GameRegistry.registerItem(silverHelmet, "silverHelmet");
+		GameRegistry.registerItem(silverChestplate, "silverChestplate");
+		GameRegistry.registerItem(silverLeggings, "silverLeggings");
+		GameRegistry.registerItem(silverBoots, "silverBoots");
+		
 		GameRegistry.registerItem(redstoneHelmet, "redstoneHelmet");
 		GameRegistry.registerItem(redstoneChestplate, "redstoneChestplate");
 		GameRegistry.registerItem(redstoneLeggings, "redstoneLeggings");
@@ -98,6 +135,12 @@ public class WolfItemList
 		GameRegistry.registerItem(emeraldChestplate, "emeraldChestplate");
 		GameRegistry.registerItem(emeraldLeggings, "emeraldLeggings");
 		GameRegistry.registerItem(emeraldBoots, "emeraldBoots");
+		
+		GameRegistry.registerItem(silverSword, "silverSword");
+		GameRegistry.registerItem(silverPickaxe, "silverPickaxe");
+		GameRegistry.registerItem(silverAxe, "silverAxe");
+		GameRegistry.registerItem(silverShovel, "silverShovel");
+		GameRegistry.registerItem(silverHoe, "silverHoe");
 		
 		GameRegistry.registerItem(redstoneSword, "redstoneSword");
 		GameRegistry.registerItem(redstonePickaxe, "redstonePickaxe");

@@ -1,13 +1,14 @@
-package wolf_addons.common.item;
+package wolf_addons.common.item.kit.redstone;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import wolf_addons.common.creativestabs.WolfCT;
+import wolf_addons.common.item.WolfItemList;
 
-public class LapisArmor extends ItemArmor
+public class RedstoneArmor extends ItemArmor
 {
-	public LapisArmor(ArmorMaterial material, int type)
+	public RedstoneArmor(ArmorMaterial material, int type)
 	{
 		super(material, 0, type);
 		this.setCreativeTab(WolfCT.creativeTabsArmors);
@@ -17,18 +18,18 @@ public class LapisArmor extends ItemArmor
 	{
 		if(slot == 2)
 		{
-			return "wolf_addons:textures/armor/lapis_layer_2.png";
+			return "wolf_addons:textures/armor/redstone_layer_2.png";
 		}
-		return "wolf_addons:textures/armor/lapis_layer_1.png";
+		return "wolf_addons:textures/armor/redstone_layer_1.png";
 	}
 	
 	@Override
 	public boolean getIsRepairable(ItemStack input, ItemStack repair)
 	{
-		if(repair.getItem().equals(WolfItemList.lapisIngot))
+		if(repair.getItem().equals(WolfItemList.redstoneIngot))
 		{
 			return true;
 		}
 		return false;
-	}
+	}	
 }
