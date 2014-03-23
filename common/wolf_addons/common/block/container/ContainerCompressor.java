@@ -5,7 +5,6 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryCraftResult;
-import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -14,26 +13,22 @@ import wolf_addons.common.recipe.RecipesCompressor;
 import wolf_addons.common.tileentity.TileEntityCompressor;
 
 public class ContainerCompressor extends Container
-{
-	private InventoryCrafting craftMatrix = new InventoryCrafting(this, 3, 3);
-	
-	private InventoryCraftResult craftResult = new InventoryCraftResult();
-	
+{		
 	private TileEntityCompressor compressor;
-
+	public IInventory craftResult = new InventoryCraftResult();
 	private World worldObj;
 	
 	public ContainerCompressor(InventoryPlayer inventory, TileEntityCompressor te)
 	{
-		compressor = te;
-		this.addSlotToContainer(new SlotCompressor(inventory.player, this.craftMatrix, this.craftResult, 0, 124, 35));
+		compressor = te;		
+		this.addSlotToContainer(new SlotCompressor(inventory.player, compressor.craftMatrix, compressor.SLOT_RESULT, 124, 35));
 		int l, i;
 		
 		for (l = 0; l < 3; ++l)
         {
             for (i = 0; i < 3; ++i)
             {
-                this.addSlotToContainer(new Slot(this.craftMatrix, i + l * 3, 30 + i * 18, 17 + l * 18));
+                this.addSlotToContainer(new Slot(compressor.craftMatrix, i + l * 3, 30 + i * 18, 17 + l * 18));
             }
         }
 
@@ -50,7 +45,7 @@ public class ContainerCompressor extends Container
             this.addSlotToContainer(new Slot(inventory, l, 8 + l * 18, 142));
         }
 
-        this.onCraftMatrixChanged(this.craftMatrix);
+        this.onCraftMatrixChanged(compressor.craftMatrix);
 	}
 
 	@Override
@@ -62,7 +57,7 @@ public class ContainerCompressor extends Container
 	@Override
 	public void onCraftMatrixChanged(IInventory par1IInventory)
     {
-    	this.craftResult.setInventorySlotContents(0, RecipesCompressor.getInstance().findMatchingRecipe(this.craftMatrix, this.worldObj));
+    	this.craftResult.setInventorySlotContents(0, RecipesCompressor.getInstance().findMatchingRecipe(compressor.craftMatrix, this.worldObj));
     }
 	
 	@Override

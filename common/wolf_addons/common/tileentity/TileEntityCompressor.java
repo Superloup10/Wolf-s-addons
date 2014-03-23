@@ -1,8 +1,11 @@
 package wolf_addons.common.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.inventory.InventoryCraftResult;
+import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -14,7 +17,26 @@ import net.minecraftforge.common.util.Constants;
 
 public class TileEntityCompressor extends TileEntity implements IInventory, ISidedInventory
 {
+	public static final int SLOT_RESULT = 0;
 	private ItemStack[] compressorInventory = new ItemStack[9];
+	public InventoryCrafting craftMatrix = new LocalInventoryCrafting();
+	private InventoryCraftResult craftResult = new InventoryCraftResult();
+	
+	public class LocalInventoryCrafting extends InventoryCrafting
+	{
+		public LocalInventoryCrafting()
+		{
+			super(new Container()
+			{
+				@Override
+				public boolean canInteractWith(EntityPlayer var1)
+				{
+					return false;
+				}
+			}, 3, 3);
+		}
+	}
+	
 	private String customName;
 	
 	@Override
