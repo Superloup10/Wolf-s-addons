@@ -42,12 +42,17 @@ public class LivingEvent
 		
 		if(helmet != null && helmet.getItem() == WolfItemList.emeraldHelmet && chestplate != null &&  chestplate.getItem() == WolfItemList.emeraldChestplate && leggings != null && leggings.getItem() == WolfItemList.emeraldLeggings && boots != null && boots.getItem() == WolfItemList.emeraldBoots)
 		{
-			if(event.source.getDamageType().equals("cactus") || event.source.getDamageType().equals("fall") || event.source.getDamageType().equals("wither") || event.source.getDamageType().equals("inWall"))
+			if(event.source.getDamageType().equals("cactus") || event.source.getDamageType().equals("wither") || event.source.getDamageType().equals("inWall"))
 			{
 				boots.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				leggings.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				chestplate.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				helmet.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
+				event.ammount = 0;
+			}
+			else if(event.source.getDamageType().equals("fall"))
+			{
+				boots.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				event.ammount = 0;
 			}
 		}
