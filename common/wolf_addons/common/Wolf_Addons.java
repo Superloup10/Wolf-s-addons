@@ -8,6 +8,7 @@ import wolf_addons.common.gui.GuiHandler;
 import wolf_addons.common.item.WolfItemList;
 import wolf_addons.common.recipe.WolfRecipe;
 import wolf_addons.common.tileentity.WolfTE;
+import wolf_addons.common.worldgenerator.OreGenerator;
 import wolf_addons.proxy.WolfCommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -17,6 +18,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid="Wolf_Addons", name="Wolf's Addons", version="@version@")
 public class Wolf_Addons
@@ -44,6 +46,8 @@ public class Wolf_Addons
 		
 		WolfTE.loadTileEntity();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this.instance, new GuiHandler());
+		
+		GameRegistry.registerWorldGenerator(new OreGenerator(), 0);
 	}
 	
 	@EventHandler

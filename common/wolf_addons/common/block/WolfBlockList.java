@@ -11,9 +11,9 @@ public class WolfBlockList
 	
 	public static void loadBlock()
 	{
-		silverOre = new SilverOre().setBlockTextureName("").setBlockName("silverOre");
+		silverOre = new SilverOre().setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundTypeStone).setBlockTextureName("").setBlockName("silverOre");
 		
-		compressor = new Compressor().setBlockTextureName("").setBlockName("compressor");
+		compressor = new Compressor().setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundTypeStone).setBlockTextureName("").setBlockName("compressor");
 		
 		GameRegistry.registerBlock(silverOre, "silverOre");
 		
