@@ -31,5 +31,5 @@ public class RedstoneArmor extends ItemArmor
 			return true;
 		}
 		return false;
-	}	
+	}
 }
