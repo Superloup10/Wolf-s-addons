@@ -1,9 +1,22 @@
+#Blocks
+tile.compressor.name=Compresseur
+#Container
+container.compressor=Compresseur
 #CreativeTabs
-itemGroup.Armor=WolfArmor
+itemGroup.Armors=WolfArmors
+itemGroup.Blocks=WolfBlocks
+itemGroup.Tools=WolfTools
+itemGroup.Items=WolfItems
 #Items
+item.silverDust.name=Poussière d'Argent
+item.silverIngot.name=L'ingot d'Argent
 item.redstoneIngot.name=L'ingot de Redstone
 item.lapisIngot.name=L'ingot de Lapis
 item.emeraldIngot.name=L'ingot d'Emeraude
+item.silverHelmet.name=Casque en Argent
+item.silverChestplate.name=Plastron en Argent
+item.silverLeggings.name=Pantalon en Argent
+item.silverBoots.name=Botte en Argent
 item.redstoneHelmet.name=Casque en Redstone
 item.redstoneChestplate.name=Plastron en Redstone
 item.redstoneLeggings.name=Pantalon en Redstone
@@ -16,6 +29,11 @@ item.emeraldHelmet.name=Casque en Emeraude
 item.emeraldChestplate.name=Plastron en Emeraude
 item.emeraldLeggings.name=Pantalon en Emeraude
 item.emeraldBoots.name=Bottes en Emeraude
+item.silverSword.name=Epée en Argent
+item.silverPickaxe.name=Pioche en Argent
+item.silverAxe.name=Hache en Argent
+item.silverShovel.name=Pelle en Argent
+item.silverHoe.name=Houe en Argent
 item.redstoneSword.name=Epée en Redstone
 item.redstonePickaxe.name=Pioche en Redstone
 item.redstoneAxe.name=Hache en Redstone
