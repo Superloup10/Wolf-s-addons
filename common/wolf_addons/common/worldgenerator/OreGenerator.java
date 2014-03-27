@@ -29,7 +29,7 @@ public class OreGenerator implements IWorldGenerator
 
 	private void generateSurface(World world, Random random, int x, int z)
 	{
-		this.addOreSpawn(WolfBlockList.silverOre, world, random, x, z, 16, 16, 0 + random.nextInt(2), 15, 1, 62);
+		this.addOreSpawn(WolfBlockList.silverOre, world, random, x, z, 16, 16, 1 + random.nextInt(3), 15, 1, 62);
 	}
 
 	private void addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
