@@ -1,9 +1,5 @@
 package wolf_addons.common.item.kit.redstone;
 
-import java.util.List;
-
-import net.minecraft.command.IEntitySelector;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
