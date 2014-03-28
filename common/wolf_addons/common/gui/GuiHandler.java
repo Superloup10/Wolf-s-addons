@@ -16,6 +16,7 @@ public class GuiHandler implements IGuiHandler
 		switch(ID)
 		{
 			case 0: return new ContainerCompressor(player.inventory, (TileEntityCompressor)te);
+//			case 1: return new ContainerForge();
 		}	
 		return null;
 	}
@@ -27,6 +28,7 @@ public class GuiHandler implements IGuiHandler
 		switch(ID)
 		{
 			case 0: return new GuiCompressor(player.inventory, (TileEntityCompressor)te);
+//			case 1: return new GuiForge();
 		}	
 		return null;
 	}
