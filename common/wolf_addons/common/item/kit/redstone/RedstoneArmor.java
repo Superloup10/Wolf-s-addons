@@ -3,6 +3,7 @@ package wolf_addons.common.item.kit.redstone;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import wolf_addons.common.creativestabs.WolfCT;
 import wolf_addons.common.item.WolfItemList;
 
@@ -16,11 +17,27 @@ public class RedstoneArmor extends ItemArmor
 	
 	public String getArmorTextures(ItemStack itemStack, Entity entity, int slot, String layer)
 	{
-		if(slot == 2)
+		if(!itemStack.hasTagCompound())
 		{
-			return "wolf_addons:textures/armor/redstone_layer_2.png";
+			itemStack.setTagCompound(new NBTTagCompound());
 		}
-		return "wolf_addons:textures/armor/redstone_layer_1.png";
+		
+		if(itemStack.getTagCompound().getByte("Mode") == 0)
+		{
+			if(slot == 2)
+			{
+				return "wolf_addons:textures/armor/redstone_layer_off_2.png";
+			}
+			return "wolf_addons:textures/armor/redstone_layer_off_1.png";
+		}
+		else
+		{
+			if(slot == 2)
+			{
+				return "wolf_addons:textures/armor/redstone_layer_on_2.png";
+			}
+			return "wolf_addons:textures/armor/redstone_layer_on_1.png";
+		}
 	}
 	
 	@Override

@@ -91,7 +91,7 @@ public class WolfItemList
 		silverShovel = new SilverShovel(silverTools).setTextureName("wolf_addons:silver_shovel").setUnlocalizedName("silverShovel").setCreativeTab(WolfCT.creativeTabsTools);
 		silverHoe = new SilverHoe(silverTools).setTextureName("wolf_addons:silver_hoe").setUnlocalizedName("silverHoe").setCreativeTab(WolfCT.creativeTabsTools);
 		
-		redstoneSword = new RedstoneSword(redstoneTools).setTextureName("wolf_addons:redstone_sword").setUnlocalizedName("redstoneSword").setCreativeTab(WolfCT.creativeTabsTools);
+		redstoneSword = new RedstoneSword(redstoneTools).setUnlocalizedName("redstoneSword").setCreativeTab(WolfCT.creativeTabsTools);
 		redstonePickaxe = new RedstonePickaxe(redstoneTools).setTextureName("wolf_addons:redstone_pickaxe").setUnlocalizedName("redstonePickaxe").setCreativeTab(WolfCT.creativeTabsTools);
 		redstoneAxe = new RedstoneAxe(redstoneTools).setTextureName("wolf_addons:redstone_axe").setUnlocalizedName("redstoneAxe").setCreativeTab(WolfCT.creativeTabsTools);
 		redstoneShovel = new RedstoneShovel(redstoneTools).setTextureName("wolf_addons:redstone_shovel").setUnlocalizedName("redstoneShovel").setCreativeTab(WolfCT.creativeTabsTools);

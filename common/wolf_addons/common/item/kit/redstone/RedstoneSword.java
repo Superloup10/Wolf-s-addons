@@ -1,5 +1,6 @@
 package wolf_addons.common.item.kit.redstone;
 
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -11,9 +12,12 @@ import wolf_addons.common.item.WolfItemList;
 
 public class RedstoneSword extends ItemSword
 {
+	private static ItemStack itemStack;
+	
 	public RedstoneSword(ToolMaterial material)
 	{
 		super(material);
+		this.setTextureName("wolf_addons:redstone_sword");
 	}
 	
 	@Override
@@ -79,5 +83,23 @@ public class RedstoneSword extends ItemSword
 			attackedLiving.setFire(4);
 		}
 		return super.hitEntity(stack, attackedLiving, attackerLiving);
+	}
+	
+	@Override
+	public void registerIcons(IIconRegister register)
+	{
+		if(!itemStack.hasTagCompound())
+		{
+			itemStack.setTagCompound(new NBTTagCompound());
+		}
+		
+		if(itemStack.getTagCompound().getByte("Mode") == 0)
+		{
+			itemIcon = register.registerIcon("wolf_addons:redstone_sword_off");
+		}
+		else
+		{
+			itemIcon = register.registerIcon("wolf_addons:redstone_sword_on");
+		}
 	}
 }
