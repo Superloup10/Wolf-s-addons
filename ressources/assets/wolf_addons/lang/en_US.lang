@@ -1,7 +1,10 @@
 #Blocks
+tile.silverOre=silverOre
 tile.compressor.name=Compressor
+tile.forge.name=Forge
 #Container
 container.compressor=Compressor
+container.forge=Forge
 #CreativeTabs
 itemGroup.Armors=WolfArmors
 itemGroup.Blocks=WolfBlocks
@@ -49,3 +52,6 @@ item.emeraldPickaxe.name=emeraldPickaxe
 item.emeraldAxe.name=emeraldAxe
 item.emeraldShovel.name=emeraldShovel
 item.emeraldHoe.name=emeraldHoe
+#Mode
+sword.mode.message.0=Normal
+sword.mode.message.1=Mob in Fire

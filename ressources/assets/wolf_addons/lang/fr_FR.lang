@@ -1,7 +1,10 @@
 #Blocks
+tile.silverOre.name=Minerais d'Argent
 tile.compressor.name=Compresseur
+tile.forge.name=Forge
 #Container
 container.compressor=Compresseur
+container.forge=Forge
 #CreativeTabs
 itemGroup.Armors=WolfArmors
 itemGroup.Blocks=WolfBlocks
@@ -49,3 +52,6 @@ item.emeraldPickaxe.name=Pioche en Emeraude
 item.emeraldAxe.name=Hache en Emeraude
 item.emeraldShovel.name=Pelle en Emeraude
 item.emeraldHoe.name=Houe en Emeraude
+#Mode
+sword.mode.message.0=Normal
+sword.mode.message.1=Mob en feu
