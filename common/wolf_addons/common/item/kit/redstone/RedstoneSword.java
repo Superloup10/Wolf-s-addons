@@ -11,9 +11,7 @@ import net.minecraft.world.World;
 import wolf_addons.common.item.WolfItemList;
 
 public class RedstoneSword extends ItemSword
-{
-	private static ItemStack itemStack;
-	
+{	
 	public RedstoneSword(ToolMaterial material)
 	{
 		super(material);
@@ -88,6 +86,8 @@ public class RedstoneSword extends ItemSword
 	@Override
 	public void registerIcons(IIconRegister register)
 	{
+		ItemStack itemStack = new ItemStack(this);
+		
 		if(!itemStack.hasTagCompound())
 		{
 			itemStack.setTagCompound(new NBTTagCompound());
