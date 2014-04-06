@@ -87,6 +87,10 @@ public class RedstoneSword extends ItemSword
 	public void registerIcons(IIconRegister register)
 	{
 		ItemStack itemStack = new ItemStack(this);
+<<<<<<< HEAD
+=======
+		
+>>>>>>> f06aa3ca807aebb61dcf25c6c6146d68dba016e9
 		if(!itemStack.hasTagCompound())
 		{
 			itemStack.setTagCompound(new NBTTagCompound());
