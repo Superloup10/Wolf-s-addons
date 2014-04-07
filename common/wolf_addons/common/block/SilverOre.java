@@ -37,11 +37,11 @@ public class SilverOre extends Block
 	@Override
 	public void registerBlockIcons(IIconRegister register)
 	{
-		switch(world.provider.dimensionId)
-		{
-		case -1:blockIcon = register.registerIcon("wolf_addons:silver_ore_nether");
-		case 0:blockIcon = register.registerIcon("wolf_addons:silver_ore_overworld");
-		case 1:blockIcon = register.registerIcon("wolf_addons:silver_ore_end");
-		}
+		//switch(world.provider.dimensionId)
+		//{
+		//case -1:blockIcon = register.registerIcon("wolf_addons:silver_ore_nether");
+		/*case 0:*/blockIcon = register.registerIcon("wolf_addons:silver_ore_overworld");
+		//case 1:blockIcon = register.registerIcon("wolf_addons:silver_ore_end");
+		//}
 	}
 }

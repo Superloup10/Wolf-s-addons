@@ -18,9 +18,9 @@ public class SilverArmor extends ItemArmor
 	{
 		if(slot == 2)
 		{
-			return "wolf_addons:textures/armor/silver_layer_2.png";
+			return "wolf_addons:textures/models/armor/silver_layer_2.png";
 		}
-		return "wolf_addons:textures/armor/silver_layer_1.png";
+		return "wolf_addons:textures/models/armor/silver_layer_1.png";
 	}
 	
 	@Override
