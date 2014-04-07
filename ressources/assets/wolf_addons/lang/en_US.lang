@@ -1,5 +1,5 @@
 #Blocks
-tile.silverOre=silverOre
+tile.silverOre.name=silverOre
 tile.compressor.name=Compressor
 tile.forge.name=Forge
 #Container
