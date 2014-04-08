@@ -1,9 +1,12 @@
 package wolf_addons.common;
 
 import net.minecraftforge.common.MinecraftForge;
+import wolf_addons.common.achievements.WolfAchievements;
 import wolf_addons.common.block.WolfBlockList;
 import wolf_addons.common.creativestabs.WolfCT;
+import wolf_addons.common.event.CraftingHandler;
 import wolf_addons.common.event.LivingEvent;
+import wolf_addons.common.event.PickupHandler;
 import wolf_addons.common.gui.GuiHandler;
 import wolf_addons.common.item.WolfItemList;
 import wolf_addons.common.recipe.WolfRecipe;
@@ -36,6 +39,7 @@ public class Wolf_Addons
 		WolfCT.loadCreativeTabs();
 		WolfBlockList.loadBlock();
 		WolfItemList.loadItem();
+		WolfAchievements.loadAchievements();
 	}
 	
 	@EventHandler
@@ -43,6 +47,8 @@ public class Wolf_Addons
 	{
 		proxy.registerRender();
 		MinecraftForge.EVENT_BUS.register(new LivingEvent());
+		MinecraftForge.EVENT_BUS.register(new CraftingHandler());
+		MinecraftForge.EVENT_BUS.register(new PickupHandler());
 		
 		WolfTE.loadTileEntity();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this.instance, new GuiHandler());
