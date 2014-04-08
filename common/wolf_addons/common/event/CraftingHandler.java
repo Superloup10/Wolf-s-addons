@@ -14,27 +14,27 @@ public class CraftingHandler
 	{
 		if(event.crafting.getItem().equals(WolfBlockList.compressor))
 		{
-			event.player.addStat(WolfAchievements.craftCompressor, 1);
+			event.player.triggerAchievement(WolfAchievements.craftCompressor);
 		}
 		
 		if(event.crafting.getItem().equals(WolfItemList.silverIngot))
 		{
-			event.player.addStat(WolfAchievements.silverIngot, 1);
+			event.player.triggerAchievement(WolfAchievements.silverIngot);
 		}
 		
 		if(event.crafting.getItem().equals(WolfItemList.redstoneIngot))
 		{
-			event.player.addStat(WolfAchievements.redstoneIngot, 1);
+			event.player.triggerAchievement(WolfAchievements.redstoneIngot);
 		}
 		
 		if(event.crafting.getItem().equals(WolfItemList.lapisIngot))
 		{
-			event.player.addStat(WolfAchievements.lapisIngot, 1);
+			event.player.triggerAchievement(WolfAchievements.lapisIngot);
 		}
 		
 		if(event.crafting.getItem().equals(WolfItemList.emeraldIngot))
 		{
-			event.player.addStat(WolfAchievements.emeraldIngot, 1);
+			event.player.triggerAchievement(WolfAchievements.emeraldIngot);
 		}
 	}
 	

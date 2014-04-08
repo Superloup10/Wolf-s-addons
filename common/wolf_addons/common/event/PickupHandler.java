@@ -14,22 +14,22 @@ public class PickupHandler
 	{
 		if(event.pickedUp.getEntityItem().getItem().equals(WolfItemList.silverDust))
 		{
-			event.player.addStat(WolfAchievements.silverDust, 1);
+			event.player.triggerAchievement(WolfAchievements.silverDust);
 		}
 		
 		if(event.pickedUp.getEntityItem().getItem().equals(Items.redstone))
 		{
-			event.player.addStat(WolfAchievements.redstoneDust, 1);
+			event.player.triggerAchievement(WolfAchievements.redstoneDust);
 		}
 		
 		if(event.pickedUp.getEntityItem().getItem().equals(new ItemStack(Items.dye, 1, 4)))
 		{
-			event.player.addStat(WolfAchievements.lapisDust, 1);
+			event.player.triggerAchievement(WolfAchievements.lapisDust);
 		}
 		
 		if(event.pickedUp.getEntityItem().getItem().equals(Items.emerald))
 		{
-			event.player.addStat(WolfAchievements.emeraldDust, 1);
+			event.player.triggerAchievement(WolfAchievements.emeraldDust);
 		}
 	}
 }

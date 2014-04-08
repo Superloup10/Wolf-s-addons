@@ -3,6 +3,7 @@ package wolf_addons.common.achievements;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
+import net.minecraft.stats.AchievementList;
 import net.minecraftforge.common.AchievementPage;
 import wolf_addons.common.block.WolfBlockList;
 import wolf_addons.common.item.WolfItemList;
@@ -23,17 +24,17 @@ public class WolfAchievements
 	
 	public static void loadAchievements()
 	{
-		silverDust = new Achievement("achievement.silverDust", "silverDust", 3, -3, WolfItemList.silverDust, (Achievement)null).registerStat();
-		redstoneDust = new Achievement("achievement.redstoneDust", "redstoneDust", 6, -3, Items.redstone, (Achievement)null).registerStat();
-		lapisDust = new Achievement("achievement.lapisDust", "lapisDust", 10, -3, new ItemStack(Items.dye, 1, 4), (Achievement)null).registerStat();
-		emeraldDust = new Achievement("achievement.emeraldDust", "emeraldDust", 13, -3, Items.emerald, (Achievement)null).registerStat();
+		silverDust = new Achievement("achievement.silverDust", "silverDust", -5, 3, WolfItemList.silverDust, AchievementList.acquireIron).registerStat();
+		redstoneDust = new Achievement("achievement.redstoneDust", "redstoneDust", -2, 3, Items.redstone, AchievementList.acquireIron).registerStat();
+		lapisDust = new Achievement("achievement.lapisDust", "lapisDust", 2, 3, new ItemStack(Items.dye, 1, 4), AchievementList.acquireIron).registerStat();
+		emeraldDust = new Achievement("achievement.emeraldDust", "emeraldDust", 5, 3, Items.emerald, AchievementList.acquireIron).registerStat();
 
-		craftCompressor = new Achievement("achievement.craftCompressor", "craftCompressor", 8, 0, WolfBlockList.compressor, (Achievement)null).initIndependentStat().setSpecial().registerStat();
+		craftCompressor = new Achievement("achievement.craftCompressor", "craftCompressor", 0, 0, WolfBlockList.compressor, redstoneDust).setSpecial().registerStat();
 		
-		silverIngot = new Achievement("achievement.silverIngot", "silverIngot", 3, 3, WolfItemList.silverIngot, craftCompressor).registerStat();
-		redstoneIngot = new Achievement("achievement.redstoneIngot", "redstoneIngot", 6, 3, WolfItemList.redstoneIngot, craftCompressor).registerStat();
-		lapisIngot = new Achievement("achievement.lapisIngot", "lapisIngot", 10, 3, WolfItemList.lapisIngot, craftCompressor).registerStat();
-		emeraldIngot = new Achievement("achievement.emeraldIngot", "emeraldIngot", 13, 3, WolfItemList.emeraldIngot, craftCompressor).registerStat();
+		silverIngot = new Achievement("achievement.silverIngot", "silverIngot", -5, 6, WolfItemList.silverIngot, silverDust).registerStat();
+		redstoneIngot = new Achievement("achievement.redstoneIngot", "redstoneIngot", -2, 6, WolfItemList.redstoneIngot, redstoneDust).registerStat();
+		lapisIngot = new Achievement("achievement.lapisIngot", "lapisIngot", 2, 6, WolfItemList.lapisIngot, lapisDust).registerStat();
+		emeraldIngot = new Achievement("achievement.emeraldIngot", "emeraldIngot", 5, 6, WolfItemList.emeraldIngot, emeraldDust).registerStat();
 		wolfPage = new AchievementPage("Wolf's Addons", craftCompressor, silverDust, redstoneDust, lapisDust, emeraldDust, silverIngot, redstoneIngot, lapisIngot, emeraldIngot);
 		AchievementPage.registerAchievementPage(wolfPage);
 	}

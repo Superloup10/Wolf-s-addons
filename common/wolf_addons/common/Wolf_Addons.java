@@ -13,6 +13,7 @@ import wolf_addons.common.recipe.WolfRecipe;
 import wolf_addons.common.tileentity.WolfTE;
 import wolf_addons.common.worldgenerator.OreGenerator;
 import wolf_addons.proxy.WolfCommonProxy;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -47,8 +48,8 @@ public class Wolf_Addons
 	{
 		proxy.registerRender();
 		MinecraftForge.EVENT_BUS.register(new LivingEvent());
-		MinecraftForge.EVENT_BUS.register(new CraftingHandler());
-		MinecraftForge.EVENT_BUS.register(new PickupHandler());
+		FMLCommonHandler.instance().bus().register(new CraftingHandler());
+		FMLCommonHandler.instance().bus().register(new PickupHandler());
 		
 		WolfTE.loadTileEntity();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this.instance, new GuiHandler());
