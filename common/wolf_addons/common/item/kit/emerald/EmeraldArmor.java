@@ -13,20 +13,20 @@ public class EmeraldArmor extends ItemArmor
 		super(material, 0, type);
 		this.setCreativeTab(WolfCT.creativeTabsArmors);
 	}
-	
+
 	public String getArmorTextures(ItemStack itemStack, Entity entity, int slot, String layer)
 	{
-		if(slot == 2)
+		if (slot == 2)
 		{
-			return "wolf_addons:textures/armor/emerald_layer_2.png";
+			return "wolf_addons:textures/models/armor/emerald_layer_2.png";
 		}
-		return "wolf_addons:textures/armor/emerald_layer_1.png";
+		return "wolf_addons:textures/models/armor/emerald_layer_1.png";
 	}
-	
+
 	@Override
 	public boolean getIsRepairable(ItemStack input, ItemStack repair)
 	{
-		if(repair.getItem().equals(WolfItemList.emeraldIngot))
+		if (repair.getItem().equals(WolfItemList.emeraldIngot))
 		{
 			return true;
 		}
