@@ -1,5 +1,6 @@
 package wolf_addons.common.event;
 
+import net.minecraft.item.Item;
 import wolf_addons.common.achievements.WolfAchievements;
 import wolf_addons.common.block.WolfBlockList;
 import wolf_addons.common.item.WolfItemList;
@@ -12,29 +13,29 @@ public class CraftingHandler
 	@SubscribeEvent
 	public void onCrafting(ItemCraftedEvent event)
 	{
-		if(event.crafting.getItem().equals(WolfBlockList.compressor))
+		if(event.crafting.getItem().equals(Item.getItemFromBlock(WolfBlockList.compressor)))
 		{
-			event.player.triggerAchievement(WolfAchievements.craftCompressor);
+			event.player.addStat(WolfAchievements.craftCompressor, 1);
 		}
 		
 		if(event.crafting.getItem().equals(WolfItemList.silverIngot))
 		{
-			event.player.triggerAchievement(WolfAchievements.silverIngot);
+			event.player.addStat(WolfAchievements.silverIngot, 1);
 		}
 		
 		if(event.crafting.getItem().equals(WolfItemList.redstoneIngot))
 		{
-			event.player.triggerAchievement(WolfAchievements.redstoneIngot);
+			event.player.addStat(WolfAchievements.redstoneIngot, 1);
 		}
 		
 		if(event.crafting.getItem().equals(WolfItemList.lapisIngot))
 		{
-			event.player.triggerAchievement(WolfAchievements.lapisIngot);
+			event.player.addStat(WolfAchievements.lapisIngot, 1);
 		}
 		
 		if(event.crafting.getItem().equals(WolfItemList.emeraldIngot))
 		{
-			event.player.triggerAchievement(WolfAchievements.emeraldIngot);
+			event.player.addStat(WolfAchievements.emeraldIngot, 1);
 		}
 	}
 	
