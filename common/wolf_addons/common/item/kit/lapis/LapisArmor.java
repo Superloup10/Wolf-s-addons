@@ -14,13 +14,14 @@ public class LapisArmor extends ItemArmor
 		this.setCreativeTab(WolfCT.creativeTabsArmors);
 	}
 	
-	public String getArmorTextures(ItemStack itemStack, Entity entity, int slot, String layer)
+	@Override
+	public String getArmorTexture(ItemStack itemStack, Entity entity, int slot, String type)
 	{
 		if(slot == 2)
 		{
-			return "wolf_addons:textures/armor/lapis_layer_2.png";
+			return "wolf_addons:textures/models/armor/lapis_layer_2.png";
 		}
-		return "wolf_addons:textures/armor/lapis_layer_1.png";
+		return "wolf_addons:textures/models/armor/lapis_layer_1.png";
 	}
 	
 	@Override

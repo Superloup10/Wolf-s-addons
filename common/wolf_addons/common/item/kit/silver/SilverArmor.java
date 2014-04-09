@@ -14,7 +14,8 @@ public class SilverArmor extends ItemArmor
 		this.setCreativeTab(WolfCT.creativeTabsArmors);
 	}
 	
-	public String getArmorTextures(ItemStack itemStack, Entity entity, int slot, String layer)
+	@Override
+	public String getArmorTexture(ItemStack itemStack, Entity entity, int slot, String type)
 	{
 		if(slot == 2)
 		{

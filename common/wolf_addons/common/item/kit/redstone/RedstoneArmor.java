@@ -15,7 +15,8 @@ public class RedstoneArmor extends ItemArmor
 		this.setCreativeTab(WolfCT.creativeTabsArmors);
 	}
 	
-	public String getArmorTextures(ItemStack itemStack, Entity entity, int slot, String layer)
+	@Override
+	public String getArmorTexture(ItemStack itemStack, Entity entity, int slot, String type)
 	{
 		if(!itemStack.hasTagCompound())
 		{
@@ -26,17 +27,17 @@ public class RedstoneArmor extends ItemArmor
 		{
 			if(slot == 2)
 			{
-				return "wolf_addons:textures/armor/redstone_layer_off_2.png";
+				return "wolf_addons:textures/models/armor/redstone_layer_off_2.png";
 			}
-			return "wolf_addons:textures/armor/redstone_layer_off_1.png";
+			return "wolf_addons:textures/models/armor/redstone_layer_off_1.png";
 		}
 		else
 		{
 			if(slot == 2)
 			{
-				return "wolf_addons:textures/armor/redstone_layer_on_2.png";
+				return "wolf_addons:textures/models/armor/redstone_layer_on_2.png";
 			}
-			return "wolf_addons:textures/armor/redstone_layer_on_1.png";
+			return "wolf_addons:textures/models/armor/redstone_layer_on_1.png";
 		}
 	}
 	
