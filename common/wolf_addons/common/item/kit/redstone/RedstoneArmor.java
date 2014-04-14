@@ -50,4 +50,23 @@ public class RedstoneArmor extends ItemArmor
 		}
 		return false;
 	}
+	
+	/*@Override
+	public void registerIcons(IIconRegister register)
+	{
+		ItemStack itemStack = new ItemStack(this);
+		if(!itemStack.hasTagCompound())
+		{
+			itemStack.setTagCompound(new NBTTagCompound());
+		}
+		
+		if(itemStack.getTagCompound().getByte("Mode") == 0)
+		{
+			itemIcon = register.registerIcon("wolf_addons:redstone_" + armorType + "_off");
+		}
+		else
+		{
+			itemIcon = register.registerIcon("wolf_addons:redstone_" + armorType + "_on");
+		}
+	}*/
 }

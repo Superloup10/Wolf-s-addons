@@ -15,7 +15,7 @@ public class RedstoneSword extends ItemSword
 	public RedstoneSword(ToolMaterial material)
 	{
 		super(material);
-		this.setTextureName("wolf_addons:redstone_sword");
+		//this.setTextureName("wolf_addons:redstone_sword");
 	}
 	
 	@Override

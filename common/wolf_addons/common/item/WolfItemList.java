@@ -70,10 +70,10 @@ public class WolfItemList
 		silverLeggings = new SilverArmor(silverArmor, 2).setTextureName("wolf_addons:silver_leggings").setUnlocalizedName("silverLeggings");
 		silverBoots = new SilverArmor(silverArmor, 3).setTextureName("wolf_addons:silver_boots").setUnlocalizedName("silverBoots");
 		
-		redstoneHelmet = new RedstoneArmor(redstoneArmor, 0).setTextureName("wolf_addons:redstone_helmet").setUnlocalizedName("redstoneHelmet");
-		redstoneChestplate = new RedstoneArmor(redstoneArmor, 1).setTextureName("wolf_addons:redstone_chestplate").setUnlocalizedName("redstoneChestplate");
-		redstoneLeggings = new RedstoneArmor(redstoneArmor, 2).setTextureName("wolf_addons:redstone_leggings").setUnlocalizedName("redstoneLeggings");
-		redstoneBoots = new RedstoneArmor(redstoneArmor, 3).setTextureName("wolf_addons:redstone_boots").setUnlocalizedName("redstoneBoots");
+		redstoneHelmet = new RedstoneArmor(redstoneArmor, 0).setTextureName("wolf_addons:redstone_helmet_off").setUnlocalizedName("redstoneHelmet");
+		redstoneChestplate = new RedstoneArmor(redstoneArmor, 1).setTextureName("wolf_addons:redstone_chestplate_off").setUnlocalizedName("redstoneChestplate");
+		redstoneLeggings = new RedstoneArmor(redstoneArmor, 2).setTextureName("wolf_addons:redstone_leggings_off").setUnlocalizedName("redstoneLeggings");
+		redstoneBoots = new RedstoneArmor(redstoneArmor, 3).setTextureName("wolf_addons:redstone_boots_off").setUnlocalizedName("redstoneBoots");
 		
 		lapisHelmet = new LapisArmor(lapisArmor, 0).setTextureName("wolf_addons:lapis_helmet").setUnlocalizedName("lapisHelmet");
 		lapisChestplate = new LapisArmor(lapisArmor, 1).setTextureName("wolf_addons:lapis_chestplate").setUnlocalizedName("lapisChestplate");
