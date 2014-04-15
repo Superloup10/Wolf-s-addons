@@ -1,21 +1,25 @@
 package wolf_addons.common.item.kit.redstone;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import wolf_addons.common.item.WolfItemList;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class RedstoneSword extends ItemSword
-{	
+{
+	@SideOnly(Side.CLIENT)
+	private IIcon[] textures = new IIcon[2];
+	
 	public RedstoneSword(ToolMaterial material)
 	{
 		super(material);
-		//this.setTextureName("wolf_addons:redstone_sword");
 	}
 	
 	@Override
@@ -44,6 +48,10 @@ public class RedstoneSword extends ItemSword
 				{
 					itemStack.setTagCompound(new NBTTagCompound());
 				}
+				if(!helmet.hasTagCompound())
+				{
+					helmet.setTagCompound(new NBTTagCompound());
+				}
 				byte mode = itemStack.getTagCompound().getByte("Mode");
 				mode++;
 				if(mode == 2)
@@ -51,10 +59,19 @@ public class RedstoneSword extends ItemSword
 					mode = 0;
 				}
 				itemStack.getTagCompound().setByte("Mode", mode);
+				helmet.getTagCompound().setByte("Mode", mode);
+				chestplate.getTagCompound().setByte("Mode", mode);
+				leggings.getTagCompound().setByte("Mode", mode);
+				boots.getTagCompound().setByte("Mode", mode);
+
 				if(world.isRemote)
 				{
 					player.addChatMessage(new ChatComponentTranslation("sword.mode.message." + mode));
 				}
+			}
+			else
+			{
+				super.onItemRightClick(itemStack, world, player);
 			}
 		}
 		else
@@ -83,11 +100,15 @@ public class RedstoneSword extends ItemSword
 		return super.hitEntity(stack, attackedLiving, attackerLiving);
 	}
 	
+	/*@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int side, int metadata)
+	{
+		
+	}
+	
 	@Override
 	public void registerIcons(IIconRegister register)
 	{
-		ItemStack itemStack = new ItemStack(this);
-
 		if(!itemStack.hasTagCompound())
 		{
 			itemStack.setTagCompound(new NBTTagCompound());
@@ -95,11 +116,11 @@ public class RedstoneSword extends ItemSword
 		
 		if(itemStack.getTagCompound().getByte("Mode") == 0)
 		{
-			itemIcon = register.registerIcon("wolf_addons:redstone_sword_off");
+			textures[0] = register.registerIcon("wolf_addons:redstone_sword_off");
 		}
 		else
 		{
-			itemIcon = register.registerIcon("wolf_addons:redstone_sword_on");
+			textures[1] = register.registerIcon("wolf_addons:redstone_sword_on");
 		}
-	}
+	}*/
 }
