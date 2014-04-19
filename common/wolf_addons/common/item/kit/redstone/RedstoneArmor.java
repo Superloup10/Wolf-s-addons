@@ -1,14 +1,20 @@
 package wolf_addons.common.item.kit.redstone;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.IIcon;
 import wolf_addons.common.creativestabs.WolfCT;
 import wolf_addons.common.item.WolfItemList;
 
 public class RedstoneArmor extends ItemArmor
 {
+	private IIcon[] textures = new IIcon[2];
+	
 	public RedstoneArmor(ArmorMaterial material, int type)
 	{
 		super(material, 0, type);
@@ -51,10 +57,9 @@ public class RedstoneArmor extends ItemArmor
 		return false;
 	}
 	
-	/*@Override
-	public void registerIcons(IIconRegister register)
+	@SideOnly(Side.CLIENT)
+	public IIcon getIconIndex(ItemStack itemStack)
 	{
-		ItemStack itemStack = new ItemStack(this);
 		if(!itemStack.hasTagCompound())
 		{
 			itemStack.setTagCompound(new NBTTagCompound());
@@ -62,11 +67,18 @@ public class RedstoneArmor extends ItemArmor
 		
 		if(itemStack.getTagCompound().getByte("Mode") == 0)
 		{
-			itemIcon = register.registerIcon("wolf_addons:redstone_" + armorType + "_off");
+			return textures[0];
 		}
 		else
 		{
-			itemIcon = register.registerIcon("wolf_addons:redstone_" + armorType + "_on");
+			return textures[1];
 		}
-	}*/
+	}
+	
+	@Override
+	public void registerIcons(IIconRegister register)
+	{
+		textures[0] = register.registerIcon("wolf_addons:redstone_" + armorType + "_off");
+		textures[1] = register.registerIcon("wolf_addons:redstone_" + armorType + "_on");
+	}
 }

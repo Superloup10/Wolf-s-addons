@@ -1,5 +1,6 @@
 package wolf_addons.common.item.kit.redstone;
 
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -20,6 +21,7 @@ public class RedstoneSword extends ItemSword
 	public RedstoneSword(ToolMaterial material)
 	{
 		super(material);
+		this.setFull3D();
 	}
 	
 	@Override
@@ -101,13 +103,14 @@ public class RedstoneSword extends ItemSword
 	}
 	
 	/*@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int metadata)
-	{
-		
-	}
+    public IIcon getIconFromDamage(int par1)
+    {
+        return this.itemIcon;
+    }*/
 	
+	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IIconRegister register)
+	public IIcon getIconIndex(ItemStack itemStack)
 	{
 		if(!itemStack.hasTagCompound())
 		{
@@ -116,11 +119,18 @@ public class RedstoneSword extends ItemSword
 		
 		if(itemStack.getTagCompound().getByte("Mode") == 0)
 		{
-			textures[0] = register.registerIcon("wolf_addons:redstone_sword_off");
+			return textures[0];
 		}
 		else
 		{
-			textures[1] = register.registerIcon("wolf_addons:redstone_sword_on");
+			return textures[1];
 		}
-	}*/
+	}
+	
+	@Override
+	public void registerIcons(IIconRegister register)
+	{
+		textures[0] = register.registerIcon("wolf_addons:redstone_sword_off");
+		textures[1] = register.registerIcon("wolf_addons:redstone_sword_on");
+	}
 }
