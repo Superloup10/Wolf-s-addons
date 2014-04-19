@@ -21,7 +21,6 @@ public class RedstoneSword extends ItemSword
 	public RedstoneSword(ToolMaterial material)
 	{
 		super(material);
-		this.setFull3D();
 	}
 	
 	@Override
@@ -102,13 +101,24 @@ public class RedstoneSword extends ItemSword
 		return super.hitEntity(stack, attackedLiving, attackerLiving);
 	}
 	
-	/*@SideOnly(Side.CLIENT)
-    public IIcon getIconFromDamage(int par1)
-    {
-        return this.itemIcon;
-    }*/
+	@Override
+	public IIcon getIcon(ItemStack stack, int pass)
+	{
+		if(!stack.hasTagCompound())
+		{
+			stack.setTagCompound(new NBTTagCompound());
+		}
+		
+		if(stack.getTagCompound().getByte("Mode") == 0)
+		{
+			return textures[0];
+		}
+		else
+		{
+			return textures[1];
+		}
+	}
 	
-	@SideOnly(Side.CLIENT)
 	@Override
 	public IIcon getIconIndex(ItemStack itemStack)
 	{
