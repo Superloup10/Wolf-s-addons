@@ -1,7 +1,5 @@
 package wolf_addons.common.item.kit.redstone;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
@@ -10,6 +8,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.IIcon;
 import wolf_addons.common.creativestabs.WolfCT;
 import wolf_addons.common.item.WolfItemList;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class RedstoneArmor extends ItemArmor
 {
@@ -57,6 +57,8 @@ public class RedstoneArmor extends ItemArmor
 		return false;
 	}
 	
+	
+	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIconIndex(ItemStack itemStack)
 	{
@@ -78,7 +80,25 @@ public class RedstoneArmor extends ItemArmor
 	@Override
 	public void registerIcons(IIconRegister register)
 	{
-		textures[0] = register.registerIcon("wolf_addons:redstone_" + armorType + "_off");
-		textures[1] = register.registerIcon("wolf_addons:redstone_" + armorType + "_on");
+		if(armorType == 0)
+		{
+			textures[0] = register.registerIcon("wolf_addons:redstone_helmet_off");
+			textures[1] = register.registerIcon("wolf_addons:redstone_helmet_on");
+		}
+		else if(armorType == 1)
+		{
+			textures[0] = register.registerIcon("wolf_addons:redstone_chestplate_off");
+			textures[1] = register.registerIcon("wolf_addons:redstone_chestplate_on");
+		}
+		else if(armorType == 2)
+		{
+			textures[0] = register.registerIcon("wolf_addons:redstone_leggings_off");
+			textures[1] = register.registerIcon("wolf_addons:redstone_leggings_on");
+		}
+		else
+		{
+			textures[0] = register.registerIcon("wolf_addons:redstone_boots_off");
+			textures[1] = register.registerIcon("wolf_addons:redstone_boots_on");
+		}
 	}
 }
