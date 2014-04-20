@@ -52,6 +52,9 @@ item.emeraldPickaxe.name=Pioche en Emeraude
 item.emeraldAxe.name=Hache en Emeraude
 item.emeraldShovel.name=Pelle en Emeraude
 item.emeraldHoe.name=Houe en Emeraude
-#Mode
+#Sword
 sword.mode.message.0=Normal
 sword.mode.message.1=Mob en feu
+sword.info.not_secret.0=Épée normal
+sword.info.not_secret.1=Épée de feu
+sword.info.secret=Maintenir shift gauche pour plus d'information

@@ -52,6 +52,9 @@ item.emeraldPickaxe.name=emeraldPickaxe
 item.emeraldAxe.name=emeraldAxe
 item.emeraldShovel.name=emeraldShovel
 item.emeraldHoe.name=emeraldHoe
-#Mode
+#Sword
 sword.mode.message.0=Normal
 sword.mode.message.1=Mob in Fire
+sword.info.not_secret.0=Sword normal
+sword.info.not_secret.1=Sword of fire
+sword.info.secret=Hold shift left for more information

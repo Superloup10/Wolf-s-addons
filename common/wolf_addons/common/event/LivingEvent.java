@@ -1,10 +1,17 @@
 package wolf_addons.common.event;
 
+import org.lwjgl.input.Keyboard;
+
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import wolf_addons.common.item.WolfItemList;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class LivingEvent
 {
@@ -54,6 +61,42 @@ public class LivingEvent
 			{
 				boots.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				event.ammount = 0;
+			}
+		}
+	}
+	
+	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
+	public void onTooltip(ItemTooltipEvent event)
+	{
+		if(event.itemStack.getItem() == WolfItemList.redstoneSword)
+		{
+			if(!event.itemStack.hasTagCompound())
+			{
+				event.itemStack.setTagCompound(new NBTTagCompound());
+			}
+				
+			if(event.itemStack.getTagCompound().getByte("Mode") == 0)
+			{
+				if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
+				{
+					event.toolTip.add(new StatCollector().translateToLocal("sword.info.not_secret.0"));
+				}
+				else
+				{
+					event.toolTip.add(new StatCollector().translateToLocal("sword.info.secret"));
+				}
+			}
+			else
+			{
+				if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
+				{
+					event.toolTip.add(new StatCollector().translateToLocal("sword.info.not_secret.1"));
+				}
+				else
+				{
+					event.toolTip.add(new StatCollector().translateToLocal("sword.info.secret"));
+				}
 			}
 		}
 	}

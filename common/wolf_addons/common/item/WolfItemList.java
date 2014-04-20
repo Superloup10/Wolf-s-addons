@@ -36,6 +36,8 @@ public class WolfItemList
 	public static Item silverDust;
 	public static Item redstoneIngot, lapisIngot, emeraldIngot, silverIngot;
 	
+	public static Item woodHammer, stoneHammer, ironHammer, goldHammer, diamondHammer, silverHammer, redstoneHammer, lapisHammer, emeraldHammer;
+	
 	public static Item silverHelmet, silverChestplate, silverLeggings, silverBoots;
 	public static Item redstoneHelmet, redstoneChestplate, redstoneLeggings, redstoneBoots;
 	public static Item lapisHelmet, lapisChestplate, lapisLeggings, lapisBoots;

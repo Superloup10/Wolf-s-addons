@@ -57,8 +57,6 @@ public class RedstoneArmor extends ItemArmor
 		return false;
 	}
 	
-	
-	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIconIndex(ItemStack itemStack)
 	{
