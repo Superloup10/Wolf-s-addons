@@ -39,7 +39,9 @@ public class Wolf_Addons
 	{
 		WolfCT.loadCreativeTabs();
 		WolfBlockList.loadBlock();
+		WolfBlockList.loadIntegration();
 		WolfItemList.loadItem();
+		WolfItemList.loadIntegration();
 		WolfAchievements.loadAchievements();
 	}
 	

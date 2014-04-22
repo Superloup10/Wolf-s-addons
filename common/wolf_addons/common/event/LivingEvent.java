@@ -1,13 +1,14 @@
 package wolf_addons.common.event;
 
-import org.lwjgl.input.Keyboard;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+
+import org.lwjgl.input.Keyboard;
+
 import wolf_addons.common.item.WolfItemList;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
@@ -22,16 +23,25 @@ public class LivingEvent
 		ItemStack chestplate = event.entityLiving.getEquipmentInSlot(3);
 		ItemStack leggings = event.entityLiving.getEquipmentInSlot(2);
 		ItemStack boots = event.entityLiving.getEquipmentInSlot(1);
+		ItemStack sword = event.entityLiving.getEquipmentInSlot(0);
 		
-		if(helmet != null && helmet.getItem() == WolfItemList.redstoneHelmet && chestplate != null &&  chestplate.getItem() == WolfItemList.redstoneChestplate && leggings != null && leggings.getItem() == WolfItemList.redstoneLeggings && boots != null && boots.getItem() == WolfItemList.redstoneBoots)
+		if(helmet != null && helmet.getItem() == WolfItemList.redstoneHelmet && chestplate != null &&  chestplate.getItem() == WolfItemList.redstoneChestplate && leggings != null && leggings.getItem() == WolfItemList.redstoneLeggings && boots != null && boots.getItem() == WolfItemList.redstoneBoots && sword != null && sword.getItem() == WolfItemList.redstoneSword)
 		{
-			if(event.source.getDamageType().equals("inFire") || event.source.getDamageType().equals("onFire") || event.source.getDamageType().equals("lava"))
+			if(!sword.hasTagCompound())
 			{
-				boots.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
-				leggings.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
-				chestplate.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
-				helmet.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
-				event.ammount = 0;
+				sword.setTagCompound(new NBTTagCompound());
+			}
+			
+			if(sword.getTagCompound().getByte("Mode") == 1)
+			{
+				if(event.source.getDamageType().equals("inFire") || event.source.getDamageType().equals("onFire") || event.source.getDamageType().equals("lava"))
+				{
+					boots.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
+					leggings.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
+					chestplate.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
+					helmet.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
+					event.ammount = 0;
+				}
 			}
 		}
 		

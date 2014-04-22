@@ -4,6 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
+import wolf_addons.common.block.WolfBlockList;
 import wolf_addons.common.creativestabs.WolfCT;
 import wolf_addons.common.item.kit.emerald.EmeraldArmor;
 import wolf_addons.common.item.kit.emerald.EmeraldAxe;
@@ -29,10 +30,14 @@ import wolf_addons.common.item.kit.silver.SilverHoe;
 import wolf_addons.common.item.kit.silver.SilverPickaxe;
 import wolf_addons.common.item.kit.silver.SilverShovel;
 import wolf_addons.common.item.kit.silver.SilverSword;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class WolfItemList
 {
+	//Intégration avec S.A.
+	public static Item silverReed;
+	
 	public static Item silverDust;
 	public static Item redstoneIngot, lapisIngot, emeraldIngot, silverIngot;
 	
@@ -181,5 +186,14 @@ public class WolfItemList
 		GameRegistry.registerItem(emeraldAxe, "emeraldAxe");
 		GameRegistry.registerItem(emeraldShovel, "emeraldShovel");
 		GameRegistry.registerItem(emeraldHoe, "emeraldHoe");
+	}
+	
+	public static void loadIntegration()
+	{
+		if(Loader.isModLoaded("sevenno_addons"))
+		{
+			silverReed = new SilverReed(WolfBlockList.silverReedBlock).setUnlocalizedName("silverReed").setTextureName("wolf_addons:silver_reed");
+			GameRegistry.registerItem(silverReed, "silverReed");
+		}
 	}
 }
