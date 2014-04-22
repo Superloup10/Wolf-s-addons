@@ -23,16 +23,15 @@ public class LivingEvent
 		ItemStack chestplate = event.entityLiving.getEquipmentInSlot(3);
 		ItemStack leggings = event.entityLiving.getEquipmentInSlot(2);
 		ItemStack boots = event.entityLiving.getEquipmentInSlot(1);
-		ItemStack sword = event.entityLiving.getEquipmentInSlot(0);
 		
-		if(helmet != null && helmet.getItem() == WolfItemList.redstoneHelmet && chestplate != null &&  chestplate.getItem() == WolfItemList.redstoneChestplate && leggings != null && leggings.getItem() == WolfItemList.redstoneLeggings && boots != null && boots.getItem() == WolfItemList.redstoneBoots && sword != null && sword.getItem() == WolfItemList.redstoneSword)
+		if(helmet != null && helmet.getItem() == WolfItemList.redstoneHelmet && chestplate != null &&  chestplate.getItem() == WolfItemList.redstoneChestplate && leggings != null && leggings.getItem() == WolfItemList.redstoneLeggings && boots != null && boots.getItem() == WolfItemList.redstoneBoots)
 		{
-			if(!sword.hasTagCompound())
+			if(!helmet.hasTagCompound())
 			{
-				sword.setTagCompound(new NBTTagCompound());
+				helmet.setTagCompound(new NBTTagCompound());
 			}
 			
-			if(sword.getTagCompound().getByte("Mode") == 1)
+			if(helmet.getTagCompound().getByte("Mode") == 1)
 			{
 				if(event.source.getDamageType().equals("inFire") || event.source.getDamageType().equals("onFire") || event.source.getDamageType().equals("lava"))
 				{
