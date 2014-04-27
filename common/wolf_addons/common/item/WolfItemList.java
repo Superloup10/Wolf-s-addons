@@ -43,6 +43,8 @@ public class WolfItemList
 	
 	public static Item woodHammer, stoneHammer, ironHammer, goldHammer, diamondHammer, silverHammer, redstoneHammer, lapisHammer, emeraldHammer;
 	
+	public static Item stoneBow, ironBow, goldBow, diamondBow, silverBow, redstoneBow, lapisBow, emeraldBow;
+	
 	public static Item silverHelmet, silverChestplate, silverLeggings, silverBoots;
 	public static Item redstoneHelmet, redstoneChestplate, redstoneLeggings, redstoneBoots;
 	public static Item lapisHelmet, lapisChestplate, lapisLeggings, lapisBoots;
@@ -67,16 +69,25 @@ public class WolfItemList
 	{
 		silverDust = new SilverDust().setTextureName("wolf_addons:silver_dust").setUnlocalizedName("silverDust").setCreativeTab(WolfCT.creativeTabsItems);
 		
-		woodHammer = new Hammer(59, "wood_hammer").setUnlocalizedName("woodHammer").setCreativeTab(WolfCT.creativeTabsTools);
-		stoneHammer = new Hammer(131, "stone_hammer").setUnlocalizedName("stoneHammer").setCreativeTab(WolfCT.creativeTabsTools);
-		ironHammer = new Hammer(250, "iron_hammer").setUnlocalizedName("ironHammer").setCreativeTab(WolfCT.creativeTabsTools);
-		goldHammer = new Hammer(32, "gold_hammer").setUnlocalizedName("goldHammer").setCreativeTab(WolfCT.creativeTabsTools);
-		diamondHammer = new Hammer(1561, "diamond_hammer").setUnlocalizedName("diamondHammer").setCreativeTab(WolfCT.creativeTabsTools);
-		silverHammer = new Hammer(1800, "silver_hammer").setUnlocalizedName("silverHammer").setCreativeTab(WolfCT.creativeTabsTools);
-		redstoneHammer = new Hammer(1600, "redstone_hammer").setUnlocalizedName("redstoneHammer").setCreativeTab(WolfCT.creativeTabsTools);
-		lapisHammer = new Hammer(300, "lapis_hammer").setUnlocalizedName("lapisHammer").setCreativeTab(WolfCT.creativeTabsTools);
-		emeraldHammer = new Hammer(2000, "emerald_hammer").setUnlocalizedName("emeraldHammer").setCreativeTab(WolfCT.creativeTabsTools);
+		woodHammer = new Hammer(59, "wood_hammer").setUnlocalizedName("woodHammer");
+		stoneHammer = new Hammer(131, "stone_hammer").setUnlocalizedName("stoneHammer");
+		ironHammer = new Hammer(250, "iron_hammer").setUnlocalizedName("ironHammer");
+		goldHammer = new Hammer(32, "gold_hammer").setUnlocalizedName("goldHammer");
+		diamondHammer = new Hammer(1561, "diamond_hammer").setUnlocalizedName("diamondHammer");
+		silverHammer = new Hammer(1800, "silver_hammer").setUnlocalizedName("silverHammer");
+		redstoneHammer = new Hammer(1600, "redstone_hammer").setUnlocalizedName("redstoneHammer");
+		lapisHammer = new Hammer(300, "lapis_hammer").setUnlocalizedName("lapisHammer");
+		emeraldHammer = new Hammer(2000, "emerald_hammer").setUnlocalizedName("emeraldHammer");
 
+		stoneBow = new Bow(484).setUnlocalizedName("stoneBow").setTextureName("wolf_addons:stone_bow");
+		ironBow = new Bow(584).setUnlocalizedName("ironBow").setTextureName("wolf_addons:iron_bow");
+		goldBow = new Bow(684).setUnlocalizedName("goldBow").setTextureName("wolf_addons:gold_bow");
+		diamondBow = new Bow(784).setUnlocalizedName("diamondBow").setTextureName("wolf_addons:diamond_bow");
+		silverBow = new Bow(884).setUnlocalizedName("silverBow").setTextureName("wolf_addons:silver_bow");
+		redstoneBow = new Bow(984).setUnlocalizedName("redstoneBow").setTextureName("wolf_addons:redstone_bow");
+		lapisBow = new Bow(1084).setUnlocalizedName("lapisBow").setTextureName("wolf_addons:lapis_bow");
+		emeraldBow = new Bow(1184).setUnlocalizedName("emeraldBow").setTextureName("wolf_addons:emerald_bow");
+		
 		silverIngot = new SilverIngot().setTextureName("wolf_addons:silver_ingot").setUnlocalizedName("silverIngot").setCreativeTab(WolfCT.creativeTabsItems);
 		redstoneIngot = new RedstoneIngot().setTextureName("wolf_addons:redstone_ingot").setUnlocalizedName("redstoneIngot").setCreativeTab(WolfCT.creativeTabsItems);
 		lapisIngot = new LapisIngot().setTextureName("wolf_addons:lapis_ingot").setUnlocalizedName("lapisIngot").setCreativeTab(WolfCT.creativeTabsItems);
@@ -137,6 +148,15 @@ public class WolfItemList
 		GameRegistry.registerItem(redstoneHammer, "redstoneHammer");
 		GameRegistry.registerItem(lapisHammer, "lapisHammer");
 		GameRegistry.registerItem(emeraldHammer, "emeraldHammer");
+		
+		GameRegistry.registerItem(stoneBow, "stoneBow");
+		GameRegistry.registerItem(ironBow, "ironBow");
+		GameRegistry.registerItem(goldBow, "goldBow");
+		GameRegistry.registerItem(diamondBow, "diamondBow");
+		GameRegistry.registerItem(silverBow, "silverBow");
+		GameRegistry.registerItem(redstoneBow, "redstoneBow");
+		GameRegistry.registerItem(lapisBow, "lapisBow");
+		GameRegistry.registerItem(emeraldBow, "emeraldBow");
 
 		GameRegistry.registerItem(silverIngot, "silverIngot");
 		GameRegistry.registerItem(redstoneIngot, "redstoneIngot");

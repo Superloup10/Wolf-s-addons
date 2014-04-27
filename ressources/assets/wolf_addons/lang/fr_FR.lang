@@ -2,6 +2,7 @@
 tile.silverOre.name=Minerais d'Argent
 tile.compressor.name=Compresseur
 tile.forge.name=Forge
+tile.silverBlock.name=Bloc d'Argent
 #Container
 container.compressor=Compresseur
 container.forge=Forge
@@ -52,6 +53,24 @@ item.emeraldPickaxe.name=Pioche en Emeraude
 item.emeraldAxe.name=Hache en Emeraude
 item.emeraldShovel.name=Pelle en Emeraude
 item.emeraldHoe.name=Houe en Emeraude
+item.woodHammer.name=Marteau en Bois
+item.stoneHammer.name=Marteau en Pierre
+item.ironHammer.name=Marteau en Fer
+item.goldHammer.name=Marteau en Or
+item.diamondHammer.name=Marteau en Diamant
+item.silverHammer.name=Marteau en Argent
+item.redstoneHammer.name=Marteau en Redstone
+item.lapisHammer.name=Marteau en Lapis
+item.emeraldHammer.name=Marteau en Emeraude
+item.stoneBow.name=Arc en Pierre
+item.ironBow.name=Arc en Fer
+item.goldBow.name=Arc en Or
+item.diamondBow.name=Arc en Diamant
+item.silverBow.name=Arc en Argent
+item.redstoneBow.name=Arc en Redstone
+item.lapisBow.name=Arc en Lapis
+item.emeraldBow.name=Arc en Emeraude
+item.silverReed.name=Pousse d'Argent
 #Sword
 sword.mode.message.0=Normal
 sword.mode.message.1=Mob en feu

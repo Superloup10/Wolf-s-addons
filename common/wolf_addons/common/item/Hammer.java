@@ -1,5 +1,6 @@
 package wolf_addons.common.item;
 
+import wolf_addons.common.creativestabs.WolfCT;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
@@ -18,6 +19,7 @@ public class Hammer extends Item
 		this.maxStackSize = 1;
 		this.texture = textureName;
 		this.setMaxDamage(damage);
+		this.setCreativeTab(WolfCT.creativeTabsTools);
 	}
 	
 	@SideOnly(Side.CLIENT)

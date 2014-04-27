@@ -2,6 +2,7 @@
 tile.silverOre.name=silverOre
 tile.compressor.name=Compressor
 tile.forge.name=Forge
+tile.silverBlock.name=silverBlock
 #Container
 container.compressor=Compressor
 container.forge=Forge
@@ -52,6 +53,24 @@ item.emeraldPickaxe.name=emeraldPickaxe
 item.emeraldAxe.name=emeraldAxe
 item.emeraldShovel.name=emeraldShovel
 item.emeraldHoe.name=emeraldHoe
+item.woodHammer.name=woodHammer
+item.stoneHammer.name=stoneHammer
+item.ironHammer.name=ironHammer
+item.goldHammer.name=goldHammer
+item.diamondHammer.name=diamondHammer
+item.silverHammer.name=silverHammer
+item.redstoneHammer.name=redstoneHammer
+item.lapisHammer.name=lapisHammer
+item.emeraldHammer.name=emeraldHammer
+item.stoneBow.name=stoneBow
+item.ironBow.name=ironBow
+item.goldBow.name=goldBow
+item.diamondBow.namediamondBow
+item.silverBow.name=silverBow
+item.redstoneBow.name=redstoneBow
+item.lapisBow.namelapisBow
+item.emeraldBow.name=emeraldBow
+item.silverReed.name=silverReed
 #Sword
 sword.mode.message.0=Normal
 sword.mode.message.1=Mob in Fire

@@ -5,6 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import wolf_addons.common.block.WolfBlockList;
 import wolf_addons.common.item.WolfItemList;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class WolfRecipe
@@ -13,7 +14,30 @@ public class WolfRecipe
 	{
 		//TODO Possible changements
 		GameRegistry.addRecipe(new ItemStack(WolfBlockList.compressor), new Object[]{"XXX", "YYY", "XZX", 'X', Blocks.stone, 'Y', Blocks.iron_block, 'Z', Blocks.redstone_block});
+		
+		//Blocks
+		GameRegistry.addRecipe(new ItemStack(WolfBlockList.silverBlock), new Object[]{"XXX", "XXX", "XXX", 'X', WolfItemList.silverIngot});
 		//TODO RECIPES TEMP
+		//Items
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.stoneBow, 1), new Object[]{" XY", "X Y", " XY", 'X', Blocks.cobblestone, 'Y', Items.string});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.ironBow, 1), new Object[]{" XY", "X Y", " XY", 'X', Items.iron_ingot, 'Y', Items.string});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.goldBow, 1), new Object[]{" XY", "X Y", " XY", 'X', Items.gold_ingot, 'Y', Items.string});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.diamondBow, 1), new Object[]{" XY", "X Y", " XY", 'X', Items.diamond, 'Y', Items.string});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.silverBow, 1), new Object[]{" XY", "X Y", " XY", 'X', WolfItemList.silverIngot, 'Y', Items.string});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.redstoneBow, 1), new Object[]{" XY", "X Y", " XY", 'X', WolfItemList.redstoneIngot, 'Y', Items.string});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.lapisBow, 1), new Object[]{" XY", "X Y", " XY", 'X', WolfItemList.lapisIngot, 'Y', Items.string});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.emeraldBow, 1), new Object[]{" XY", "X Y", " XY", 'X', WolfItemList.emeraldIngot, 'Y', Items.string});
+
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.woodHammer, 1), new Object[]{"XXX", "XYX", " Y ", 'X', Blocks.planks, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.stoneHammer, 1), new Object[]{"XXX", "XYX", " Y ", 'X', Blocks.cobblestone, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.ironHammer, 1), new Object[]{"XXX", "XYX", " Y ", 'X', Items.iron_ingot, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.goldHammer, 1), new Object[]{"XXX", "XYX", " Y ", 'X', Items.gold_ingot, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.diamondHammer, 1), new Object[]{"XXX", "XYX", " Y ", 'X', Items.diamond, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.silverHammer, 1), new Object[]{"XXX", "XYX", " Y ", 'X', WolfItemList.silverIngot, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.redstoneHammer, 1), new Object[]{"XXX", "XYX", " Y ", 'X', WolfItemList.redstoneIngot, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.lapisHammer, 1), new Object[]{"XXX", "XYX", " Y ", 'X', WolfItemList.lapisIngot, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(WolfItemList.emeraldHammer, 1), new Object[]{"XXX", "XYX", " Y ", 'X', WolfItemList.emeraldIngot, 'Y', Items.stick});
+		
 		GameRegistry.addRecipe(new ItemStack(WolfItemList.redstoneHelmet, 1), new Object[]{"XXX", "X X", 'X', WolfItemList.redstoneIngot});
 		GameRegistry.addRecipe(new ItemStack(WolfItemList.redstoneChestplate, 1), new Object[]{"X X", "XXX", "XXX", 'X', WolfItemList.redstoneIngot});
 		GameRegistry.addRecipe(new ItemStack(WolfItemList.redstoneLeggings, 1), new Object[]{"XXX", "X X", "X X", 'X', WolfItemList.redstoneIngot});
@@ -57,10 +81,15 @@ public class WolfRecipe
 		GameRegistry.addRecipe(new ItemStack(WolfItemList.emeraldAxe, 1), new Object[]{"XX ", "XY ", " Y ", 'X', WolfItemList.emeraldIngot, 'Y', Items.stick});
 		GameRegistry.addRecipe(new ItemStack(WolfItemList.emeraldShovel, 1), new Object[]{"X", "Y", "Y", 'X', WolfItemList.emeraldIngot, 'Y', Items.stick});
 		GameRegistry.addRecipe(new ItemStack(WolfItemList.emeraldHoe, 1), new Object[]{"XX", "Y", "Y", 'X', WolfItemList.emeraldIngot, 'Y', Items.stick});
+		
+		if(Loader.isModLoaded("sevenno_addons"))
+		{
+			GameRegistry.addShapelessRecipe(new ItemStack(WolfItemList.silverDust, 1), new ItemStack(WolfItemList.silverReed));
+		}
 	}
 	
 	public static void loadSmelting()
 	{
-		
+		GameRegistry.addSmelting(WolfBlockList.silverOre, new ItemStack(WolfItemList.silverDust, 1), 1.0F);
 	}
 }
