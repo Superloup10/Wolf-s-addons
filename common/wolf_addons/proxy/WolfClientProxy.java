@@ -1,8 +1,16 @@
+/*******************************************************************************
+ * Copyright (c) 2014, Superloup10
+ * 
+ * Wolf's Addons is distributed under the terms of the Minecraft Mod Public
+ * License 1.0, or MMPL. Please check the contents of the license located in
+ * https://www.dropbox.com/s/6l16rc7b1aks211/MMPL-1.0.txt
+ ******************************************************************************/
 package wolf_addons.proxy;
+
+import net.minecraftforge.client.MinecraftForgeClient;
 
 import wolf_addons.client.render.RenderHammer;
 import wolf_addons.common.item.WolfItemList;
-import net.minecraftforge.client.MinecraftForgeClient;
 
 public class WolfClientProxy extends WolfCommonProxy
 {

@@ -1,18 +1,27 @@
+/*******************************************************************************
+ * Copyright (c) 2014, Superloup10
+ * 
+ * Wolf's Addons is distributed under the terms of the Minecraft Mod Public
+ * License 1.0, or MMPL. Please check the contents of the license located in
+ * https://www.dropbox.com/s/6l16rc7b1aks211/MMPL-1.0.txt
+ ******************************************************************************/
 package wolf_addons.common.event;
+
+import org.lwjgl.input.Keyboard;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.StatCollector;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
-import org.lwjgl.input.Keyboard;
-
-import wolf_addons.common.item.WolfItemList;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+
+import wolf_addons.common.item.WolfItemList;
 
 public class LivingEvent
 {
@@ -23,17 +32,17 @@ public class LivingEvent
 		ItemStack chestplate = event.entityLiving.getEquipmentInSlot(3);
 		ItemStack leggings = event.entityLiving.getEquipmentInSlot(2);
 		ItemStack boots = event.entityLiving.getEquipmentInSlot(1);
-		
-		if(helmet != null && helmet.getItem() == WolfItemList.redstoneHelmet && chestplate != null &&  chestplate.getItem() == WolfItemList.redstoneChestplate && leggings != null && leggings.getItem() == WolfItemList.redstoneLeggings && boots != null && boots.getItem() == WolfItemList.redstoneBoots)
+
+		if (helmet != null && helmet.getItem() == WolfItemList.redstoneHelmet && chestplate != null && chestplate.getItem() == WolfItemList.redstoneChestplate && leggings != null && leggings.getItem() == WolfItemList.redstoneLeggings && boots != null && boots.getItem() == WolfItemList.redstoneBoots)
 		{
-			if(!helmet.hasTagCompound())
+			if (!helmet.hasTagCompound())
 			{
 				helmet.setTagCompound(new NBTTagCompound());
 			}
-			
-			if(helmet.getTagCompound().getByte("Mode") == 1)
+
+			if (helmet.getTagCompound().getByte("Mode") == 1)
 			{
-				if(event.source.getDamageType().equals("inFire") || event.source.getDamageType().equals("onFire") || event.source.getDamageType().equals("lava"))
+				if ("inFire".equals(event.source.getDamageType())/*.equals("inFire")*/ || "onFire".equals(event.source.getDamageType())/*.equals("onFire")*/ || "lava".equals(event.source.getDamageType())/*.equals("lava")*/)
 				{
 					boots.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 					leggings.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
@@ -43,10 +52,10 @@ public class LivingEvent
 				}
 			}
 		}
-		
-		if(helmet != null && helmet.getItem() == WolfItemList.lapisHelmet && chestplate != null &&  chestplate.getItem() == WolfItemList.lapisChestplate && leggings != null && leggings.getItem() == WolfItemList.lapisLeggings && boots != null && boots.getItem() == WolfItemList.lapisBoots)
+
+		if (helmet != null && helmet.getItem() == WolfItemList.lapisHelmet && chestplate != null && chestplate.getItem() == WolfItemList.lapisChestplate && leggings != null && leggings.getItem() == WolfItemList.lapisLeggings && boots != null && boots.getItem() == WolfItemList.lapisBoots)
 		{
-			if(event.source.getDamageType().equals("drown"))
+			if ("drown".equals(event.source.getDamageType())/*.equals("drown")*/)
 			{
 				boots.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				leggings.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
@@ -55,10 +64,10 @@ public class LivingEvent
 				event.ammount = 0;
 			}
 		}
-		
-		if(helmet != null && helmet.getItem() == WolfItemList.emeraldHelmet && chestplate != null &&  chestplate.getItem() == WolfItemList.emeraldChestplate && leggings != null && leggings.getItem() == WolfItemList.emeraldLeggings && boots != null && boots.getItem() == WolfItemList.emeraldBoots)
+
+		if (helmet != null && helmet.getItem() == WolfItemList.emeraldHelmet && chestplate != null && chestplate.getItem() == WolfItemList.emeraldChestplate && leggings != null && leggings.getItem() == WolfItemList.emeraldLeggings && boots != null && boots.getItem() == WolfItemList.emeraldBoots)
 		{
-			if(event.source.getDamageType().equals("cactus") || event.source.getDamageType().equals("wither") || event.source.getDamageType().equals("inWall"))
+			if ("cactus".equals(event.source.getDamageType())/*.equals("cactus")*/ || "wither".equals(event.source.getDamageType())/*.equals("wither")*/ || "inWall".equals(event.source.getDamageType())/*.equals("inWall")*/)
 			{
 				boots.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				leggings.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
@@ -66,28 +75,28 @@ public class LivingEvent
 				helmet.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				event.ammount = 0;
 			}
-			else if(event.source.getDamageType().equals("fall"))
+			else if ("fall".equals(event.source.getDamageType())/*.equals("fall")*/)
 			{
 				boots.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				event.ammount = 0;
 			}
 		}
 	}
-	
+
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public void onTooltip(ItemTooltipEvent event)
 	{
-		if(event.itemStack.getItem() == WolfItemList.redstoneSword)
+		if (event.itemStack.getItem() == WolfItemList.redstoneSword)
 		{
-			if(!event.itemStack.hasTagCompound())
+			if (!event.itemStack.hasTagCompound())
 			{
 				event.itemStack.setTagCompound(new NBTTagCompound());
 			}
-				
-			if(event.itemStack.getTagCompound().getByte("Mode") == 0)
+
+			if (event.itemStack.getTagCompound().getByte("Mode") == 0)
 			{
-				if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
+				if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
 				{
 					event.toolTip.add(new StatCollector().translateToLocal("sword.info.not_secret.0"));
 				}
@@ -98,7 +107,7 @@ public class LivingEvent
 			}
 			else
 			{
-				if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
+				if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
 				{
 					event.toolTip.add(new StatCollector().translateToLocal("sword.info.not_secret.1"));
 				}

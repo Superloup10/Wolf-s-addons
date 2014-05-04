@@ -1,27 +1,36 @@
+/*******************************************************************************
+ * Copyright (c) 2014, Superloup10
+ * 
+ * Wolf's Addons is distributed under the terms of the Minecraft Mod Public
+ * License 1.0, or MMPL. Please check the contents of the license located in
+ * https://www.dropbox.com/s/6l16rc7b1aks211/MMPL-1.0.txt
+ ******************************************************************************/
 package wolf_addons.common.achievements;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
+
 import net.minecraftforge.common.AchievementPage;
+
 import wolf_addons.common.block.WolfBlockList;
 import wolf_addons.common.item.WolfItemList;
 
 public class WolfAchievements
 {
-	//Ore Dropped
+	// Ore Dropped
 	public static Achievement silverDust, redstoneDust, lapisDust, emeraldDust;
-	
-	//Blocks Crafted
+
+	// Blocks Crafted
 	public static Achievement craftCompressor;
-	
-	//Ore Crafted
+
+	// Ore Crafted
 	public static Achievement silverIngot, redstoneIngot, lapisIngot, emeraldIngot;
-	
-	//Page
+
+	// Page
 	public static AchievementPage wolfPage;
-	
+
 	public static void loadAchievements()
 	{
 		silverDust = new Achievement("achievement.silverDust", "silverDust", -5, 3, WolfItemList.silverDust, AchievementList.acquireIron).registerStat();
@@ -30,7 +39,7 @@ public class WolfAchievements
 		emeraldDust = new Achievement("achievement.emeraldDust", "emeraldDust", 5, 3, Items.emerald, AchievementList.acquireIron).registerStat();
 
 		craftCompressor = new Achievement("achievement.craftCompressor", "craftCompressor", 0, 0, WolfBlockList.compressor, redstoneDust).setSpecial().registerStat();
-		
+
 		silverIngot = new Achievement("achievement.silverIngot", "silverIngot", -5, 6, WolfItemList.silverIngot, silverDust).registerStat();
 		redstoneIngot = new Achievement("achievement.redstoneIngot", "redstoneIngot", -2, 6, WolfItemList.redstoneIngot, redstoneDust).registerStat();
 		lapisIngot = new Achievement("achievement.lapisIngot", "lapisIngot", 2, 6, WolfItemList.lapisIngot, lapisDust).registerStat();

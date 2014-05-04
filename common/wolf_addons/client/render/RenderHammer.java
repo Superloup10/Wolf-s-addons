@@ -1,19 +1,26 @@
+/*******************************************************************************
+ * Copyright (c) 2014, Superloup10
+ * 
+ * Wolf's Addons is distributed under the terms of the Minecraft Mod Public
+ * License 1.0, or MMPL. Please check the contents of the license located in
+ * https://www.dropbox.com/s/6l16rc7b1aks211/MMPL-1.0.txt
+ ******************************************************************************/
 package wolf_addons.client.render;
+
+import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.IItemRenderer;
 
-import org.lwjgl.opengl.GL11;
+import net.minecraftforge.client.IItemRenderer;
 
 import wolf_addons.client.model.ModelHammer;
 import wolf_addons.common.item.WolfItemList;
 
 public class RenderHammer implements IItemRenderer
 {
-	protected ModelHammer model;
 	protected static final ResourceLocation texture0 = new ResourceLocation("wolf_addons:textures/items/render/wood_hammer.png");
 	protected static final ResourceLocation texture1 = new ResourceLocation("wolf_addons:textures/items/render/stone_hammer.png");
 	protected static final ResourceLocation texture2 = new ResourceLocation("wolf_addons:textures/items/render/iron_hammer.png");
@@ -23,6 +30,7 @@ public class RenderHammer implements IItemRenderer
 	protected static final ResourceLocation texture6 = new ResourceLocation("wolf_addons:textures/items/render/redstone_hammer.png");
 	protected static final ResourceLocation texture7 = new ResourceLocation("wolf_addons:textures/items/render/lapis_hammer.png");
 	protected static final ResourceLocation texture8 = new ResourceLocation("wolf_addons:textures/items/render/emerald_hammer.png");
+	protected ModelHammer model;
 
 	public RenderHammer()
 	{
@@ -50,11 +58,11 @@ public class RenderHammer implements IItemRenderer
 	@Override
 	public void renderItem(ItemRenderType type, ItemStack item, Object... data)
 	{
-		switch(type)
+		switch (type)
 		{
 		case EQUIPPED:
 		{
-			if(item.getItem().equals(WolfItemList.woodHammer))
+			if (item.getItem().equals(WolfItemList.woodHammer))
 			{
 				GL11.glPushMatrix();
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture0);
@@ -63,7 +71,7 @@ public class RenderHammer implements IItemRenderer
 				model.render((Entity)data[1], 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
 				GL11.glPopMatrix();
 			}
-			else if(item.getItem().equals(WolfItemList.stoneHammer))
+			else if (item.getItem().equals(WolfItemList.stoneHammer))
 			{
 				GL11.glPushMatrix();
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture1);
@@ -72,7 +80,7 @@ public class RenderHammer implements IItemRenderer
 				model.render((Entity)data[1], 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
 				GL11.glPopMatrix();
 			}
-			else if(item.getItem().equals(WolfItemList.ironHammer))
+			else if (item.getItem().equals(WolfItemList.ironHammer))
 			{
 				GL11.glPushMatrix();
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture2);
@@ -81,7 +89,7 @@ public class RenderHammer implements IItemRenderer
 				model.render((Entity)data[1], 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
 				GL11.glPopMatrix();
 			}
-			else if(item.getItem().equals(WolfItemList.goldHammer))
+			else if (item.getItem().equals(WolfItemList.goldHammer))
 			{
 				GL11.glPushMatrix();
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture3);
@@ -90,7 +98,7 @@ public class RenderHammer implements IItemRenderer
 				model.render((Entity)data[1], 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
 				GL11.glPopMatrix();
 			}
-			else if(item.getItem().equals(WolfItemList.diamondHammer))
+			else if (item.getItem().equals(WolfItemList.diamondHammer))
 			{
 				GL11.glPushMatrix();
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture4);
@@ -99,7 +107,7 @@ public class RenderHammer implements IItemRenderer
 				model.render((Entity)data[1], 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
 				GL11.glPopMatrix();
 			}
-			else if(item.getItem().equals(WolfItemList.silverHammer))
+			else if (item.getItem().equals(WolfItemList.silverHammer))
 			{
 				GL11.glPushMatrix();
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture5);
@@ -108,7 +116,7 @@ public class RenderHammer implements IItemRenderer
 				model.render((Entity)data[1], 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
 				GL11.glPopMatrix();
 			}
-			else if(item.getItem().equals(WolfItemList.redstoneHammer))
+			else if (item.getItem().equals(WolfItemList.redstoneHammer))
 			{
 				GL11.glPushMatrix();
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture6);
@@ -117,7 +125,7 @@ public class RenderHammer implements IItemRenderer
 				model.render((Entity)data[1], 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
 				GL11.glPopMatrix();
 			}
-			else if(item.getItem().equals(WolfItemList.lapisHammer))
+			else if (item.getItem().equals(WolfItemList.lapisHammer))
 			{
 				GL11.glPushMatrix();
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture7);
