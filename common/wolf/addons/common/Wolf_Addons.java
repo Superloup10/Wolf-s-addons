@@ -36,7 +36,7 @@ import wolf.addons.proxy.WolfCommonProxy;
 @Mod(modid = "Wolf_Addons", name = "Wolf's Addons", version = "@version@")
 public class Wolf_Addons
 {
-	@SidedProxy(clientSide = "wolf_addons.proxy.WolfClientProxy", serverSide = "wolf_addons.proxy.WolfCommonProxy")
+	@SidedProxy(clientSide = "wolf.addons.proxy.WolfClientProxy", serverSide = "wolf.addons.proxy.WolfCommonProxy")
 	public static WolfCommonProxy proxy;
 
 	@Instance("Wolf_Addons")

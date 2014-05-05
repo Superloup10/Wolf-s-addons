@@ -75,10 +75,7 @@ public class LivingEvent
 				helmet.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				event.ammount = 0;
 			}
-			else if ("fall".equals(event.source.getDamageType())/*
-																 * .equals("fall"
-																 * )
-																 */)
+			else if ("fall".equals(event.source.getDamageType()))
 			{
 				boots.damageItem(MathHelper.floor_float(event.ammount / 4), event.entityLiving);
 				event.ammount = 0;
