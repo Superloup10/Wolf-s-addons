@@ -98,22 +98,22 @@ public class LivingEvent
 			{
 				if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
 				{
-					event.toolTip.add(new StatCollector().translateToLocal("sword.info.not_secret.0"));
+					event.toolTip.add(StatCollector.translateToLocal("sword.info.not_secret.0"));
 				}
 				else
 				{
-					event.toolTip.add(new StatCollector().translateToLocal("sword.info.secret"));
+					event.toolTip.add(StatCollector.translateToLocal("sword.info.secret"));
 				}
 			}
 			else
 			{
 				if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
 				{
-					event.toolTip.add(new StatCollector().translateToLocal("sword.info.not_secret.1"));
+					event.toolTip.add(StatCollector.translateToLocal("sword.info.not_secret.1"));
 				}
 				else
 				{
-					event.toolTip.add(new StatCollector().translateToLocal("sword.info.secret"));
+					event.toolTip.add(StatCollector.translateToLocal("sword.info.secret"));
 				}
 			}
 		}
