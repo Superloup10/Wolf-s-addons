@@ -42,6 +42,32 @@ public class Bow extends Item
 	}
 
 	@Override
+	public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining)
+	{
+		if(usingItem != null && usingItem.getItem() == this)
+		{
+			int k = usingItem.getMaxItemUseDuration() - useRemaining;
+			
+			if(k >= 18)
+			{
+				return iconArray[2];
+			}
+			
+			if(k > 13)
+			{
+				return iconArray[1];
+			}
+			
+			if(k > 0)
+			{
+				return iconArray[0];
+			}
+		}
+		
+		return getIconIndex(stack);
+	}
+
+	@Override
 	public void onPlayerStoppedUsing(ItemStack itemStack, World world, EntityPlayer player, int itemUseCount)
 	{
 		int j = this.getMaxItemUseDuration(itemStack) - itemUseCount;
