@@ -1,0 +1,17 @@
+[
+{
+  "modid": "Wolf_Addons",
+  "name": "Wolf's Addons",
+  "description": "Ce mod regroupe tous les ajouts que je voudrais faire dans Minecraft",
+  "version": "@VERSION@",
+  "credits": "",
+  "logoFile": "",
+  "mcversion": "@MC_VERSION@",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Superloup10"],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": []
+}
+]

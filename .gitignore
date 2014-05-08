@@ -4,3 +4,9 @@
 *.jar
 *.war
 *.ear
+
+/.gradle/
+/build/
+/eclipse/
+Thumbs.db
+*.DS_Store
