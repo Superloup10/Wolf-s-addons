@@ -149,15 +149,17 @@ public class WolfItemList
 
 		GameRegistry.registerItem(silverDust, "silverDust");
 
-		GameRegistry.registerItem(woodHammer, "woodHammer");
-		GameRegistry.registerItem(stoneHammer, "stoneHammer");
-		GameRegistry.registerItem(ironHammer, "ironHammer");
-		GameRegistry.registerItem(goldHammer, "goldHammer");
-		GameRegistry.registerItem(diamondHammer, "diamondHammer");
-		GameRegistry.registerItem(silverHammer, "silverHammer");
-		GameRegistry.registerItem(redstoneHammer, "redstoneHammer");
-		GameRegistry.registerItem(lapisHammer, "lapisHammer");
-		GameRegistry.registerItem(emeraldHammer, "emeraldHammer");
+		/*
+		 * GameRegistry.registerItem(woodHammer, "woodHammer");
+		 * GameRegistry.registerItem(stoneHammer, "stoneHammer");
+		 * GameRegistry.registerItem(ironHammer, "ironHammer");
+		 * GameRegistry.registerItem(goldHammer, "goldHammer");
+		 * GameRegistry.registerItem(diamondHammer, "diamondHammer");
+		 * GameRegistry.registerItem(silverHammer, "silverHammer");
+		 * GameRegistry.registerItem(redstoneHammer, "redstoneHammer");
+		 * GameRegistry.registerItem(lapisHammer, "lapisHammer");
+		 * GameRegistry.registerItem(emeraldHammer, "emeraldHammer");
+		 */
 
 		GameRegistry.registerItem(stoneBow, "stoneBow");
 		GameRegistry.registerItem(ironBow, "ironBow");
