@@ -5,7 +5,7 @@
   "description": "Ce mod regroupe tous les ajouts que je voudrais faire dans Minecraft",
   "version": "${version}",
   "credits": "",
-  "logoFile": "",
+  "logoFile": "assets/wolf_addons/logo.png",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
