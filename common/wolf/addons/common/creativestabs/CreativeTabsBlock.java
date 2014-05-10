@@ -22,6 +22,6 @@ public class CreativeTabsBlock extends CreativeTabs
 	@Override
 	public Item getTabIconItem()
 	{
-		return Item.getItemFromBlock(WolfBlockList.compressor);
+		return Item.getItemFromBlock(WolfBlockList.silverOre);
 	}
 }

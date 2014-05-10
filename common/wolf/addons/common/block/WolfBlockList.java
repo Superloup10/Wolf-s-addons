@@ -36,8 +36,8 @@ public class WolfBlockList
 		GameRegistry.registerBlock(silverOre, "silverOre");
 		GameRegistry.registerBlock(silverBlock, "silverBlock");
 
-		GameRegistry.registerBlock(compressor, "compressor");
-		GameRegistry.registerBlock(forge, "forge");
+		// GameRegistry.registerBlock(compressor, "compressor");
+		// GameRegistry.registerBlock(forge, "forge");
 	}
 
 	public static void loadIntegration()
