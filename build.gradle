@@ -22,7 +22,7 @@ version = "1.0"
 group= "wolf_addons" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Wolf's_Addons"
 
-if (System.getenv().BUILD_NUMBERT) {
+if (System.getenv().BUILD_NUMBER) {
 	project.buildnumber = System.getenv().BUILD_NUMBER
 	  version += "." + System.getenv().BUILD_NUMBER
 }
