@@ -9,7 +9,7 @@ package wolf.addons.common.worldgenerator;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -36,34 +36,25 @@ public class OreGenerator implements IWorldGenerator
 
 	private void generateEnd(World world, Random random, int x, int z)
 	{
-
+		for (int i = 0; i < 15; i++)
+		{
+			(new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
+		}
 	}
 
 	private void generateSurface(World world, Random random, int x, int z)
 	{
-		this.addOreSpawn(WolfBlockList.silverOre, world, random, x, z, 16, 16, 1 + random.nextInt(3), 15, 1, 62);
-	}
-
-	private void addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
-	{
-		assert maxY > minY : "La position Y maximum doit être supérieure à la position Y minimum.";
-		assert maxX > 0 && maxX <= 16 : "X doit se trouver entre 0 et 16.";
-		assert minY > 0 : "La position Y minimum doit être supérieure à 0.";
-		assert maxY < 256 && maxY > 0 : "La position Y maximum doit se trouver entre 0 et 256.";
-		assert maxZ > 0 && maxZ <= 16 : "Z doit se trouver entre 0 et 16.";
-
-		int diffBtwnMinMaxY = maxY - minY;
-		for (int x = 0; x < chancesToSpawn; x++)
+		for (int i = 0; i < 15; i++)
 		{
-			int posX = blockXPos + random.nextInt(maxX);
-			int posY = minY + random.nextInt(diffBtwnMinMaxY);
-			int posZ = blockZPos + random.nextInt(maxZ);
-			(new WorldGenMinable(block, maxVeinSize)).generate(world, random, posX, posY, posZ);
+			(new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
 		}
 	}
 
 	private void generateNether(World world, Random random, int x, int z)
 	{
-
+		for (int i = 0; i < 15; i++)
+		{
+			(new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
+		}
 	}
 }
