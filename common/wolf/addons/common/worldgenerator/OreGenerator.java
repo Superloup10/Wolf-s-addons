@@ -38,7 +38,7 @@ public class OreGenerator implements IWorldGenerator
 	{
 		for (int i = 0; i < 15; i++)
 		{
-			(new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
+			(new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.end_stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
 		}
 	}
 
@@ -54,7 +54,7 @@ public class OreGenerator implements IWorldGenerator
 	{
 		for (int i = 0; i < 15; i++)
 		{
-			(new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
+			(new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.netherrack)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
 		}
 	}
 }
