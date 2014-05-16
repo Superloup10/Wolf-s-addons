@@ -15,6 +15,7 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
 
 import wolf.addons.common.block.WolfBlockList;
 import wolf.addons.common.creativestabs.WolfCT;
@@ -148,7 +149,7 @@ public class WolfItemList
 		emeraldHoe = new EmeraldHoe(emeraldTools).setTextureName("wolf_addons:emerald_hoe").setUnlocalizedName("emeraldHoe").setCreativeTab(WolfCT.creativeTabsTools);
 
 		GameRegistry.registerItem(silverDust, "silverDust");
-
+		OreDictionary.registerOre("silverDust", silverDust);
 		/*
 		 * GameRegistry.registerItem(woodHammer, "woodHammer");
 		 * GameRegistry.registerItem(stoneHammer, "stoneHammer");

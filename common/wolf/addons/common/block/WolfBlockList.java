@@ -12,6 +12,8 @@ import net.minecraft.block.Block;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+import net.minecraftforge.oredict.OreDictionary;
+
 public class WolfBlockList
 {
 	public static Block SPReedBooster;
@@ -35,7 +37,8 @@ public class WolfBlockList
 
 		GameRegistry.registerBlock(silverOre, "silverOre");
 		GameRegistry.registerBlock(silverBlock, "silverBlock");
-
+		OreDictionary.registerOre("silverOre", silverOre);
+		
 		// GameRegistry.registerBlock(compressor, "compressor");
 		// GameRegistry.registerBlock(forge, "forge");
 	}
