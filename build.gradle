@@ -31,18 +31,18 @@ else {
 }
 
 minecraft {
-    version = "1.7.2-10.12.1.1075"
-    assetDir = "eclipse/assets"
+    version = "1.7.2-10.12.2.1147"
+    runDir = "build/assets"
 }
 
 sourceSets {
 		main {
-				java {
-						srcDirs 'common'
-				}
-				resources {
-						srcDirs 'ressources'
-				}
+			java {
+					srcDirs 'common'
+			}
+			resources {
+					srcDirs 'ressources'
+			}
 		}
 }
 
