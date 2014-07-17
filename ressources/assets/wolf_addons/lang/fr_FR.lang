@@ -13,10 +13,10 @@ itemGroup.Tools=WolfTools
 itemGroup.Items=WolfItems
 #Items
 item.silverDust.name=Poussière d'Argent
-item.silverIngot.name=L'ingot d'Argent
-item.redstoneIngot.name=L'ingot de Redstone
-item.lapisIngot.name=L'ingot de Lapis
-item.emeraldIngot.name=L'ingot d'Emeraude
+item.silverIngot.name=Lingot d'Argent
+item.redstoneIngot.name=Lingot de Redstone
+item.lapisIngot.name=Lingot de Lapis
+item.emeraldIngot.name=Lingot d'Emeraude
 item.silverHelmet.name=Casque en Argent
 item.silverChestplate.name=Plastron en Argent
 item.silverLeggings.name=Pantalon en Argent
