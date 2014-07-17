@@ -33,17 +33,19 @@ else {
 minecraft {
     version = "1.7.2-10.12.2.1147"
     runDir = "build/assets"
+	
+	replace '@version@', project.version
 }
 
 sourceSets {
-		main {
-			java {
-					srcDirs 'common'
-			}
-			resources {
-					srcDirs 'ressources'
-			}
+	main {
+		java {
+				srcDirs 'common'
 		}
+		resources {
+				srcDirs 'ressources'
+		}
+	}
 }
 
 processResources
