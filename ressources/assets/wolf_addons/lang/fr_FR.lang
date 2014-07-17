@@ -7,10 +7,10 @@ tile.silverBlock.name=Bloc d'Argent
 container.compressor=Compresseur
 container.forge=Forge
 #CreativeTabs
-itemGroup.Armors=WolfArmors
-itemGroup.Blocks=WolfBlocks
-itemGroup.Tools=WolfTools
-itemGroup.Items=WolfItems
+itemGroup.Armors=Wolf Armors
+itemGroup.Blocks=Wolf Blocks
+itemGroup.Tools=Wolf Tools
+itemGroup.Items=Wolf Items
 #Items
 item.silverDust.name=Poussière d'Argent
 item.silverIngot.name=Lingot d'Argent

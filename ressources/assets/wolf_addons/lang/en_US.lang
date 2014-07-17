@@ -1,16 +1,16 @@
 #Blocks
-tile.silverOre.name=silver Ore
+tile.silverOre.name=Silver Ore
 tile.compressor.name=Compressor
 tile.forge.name=Forge
-tile.silverBlock.name=silver Block
+tile.silverBlock.name=Silver Block
 #Container
 container.compressor=Compressor
 container.forge=Forge
 #CreativeTabs
-itemGroup.Armors=WolfArmors
-itemGroup.Blocks=WolfBlocks
-itemGroup.Tools=WolfTools
-itemGroup.Items=WolfItems
+itemGroup.Armors=Wolf Armors
+itemGroup.Blocks=Wolf Blocks
+itemGroup.Tools=Wolf Tools
+itemGroup.Items=Wolf Items
 #Items
 item.silverDust.name=Silver Dust
 item.silverIngot.name=Silver Ingot
