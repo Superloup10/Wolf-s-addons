@@ -16,6 +16,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
 
 import wolf.addons.common.block.WolfBlockList;
 import wolf.addons.common.creativestabs.WolfCT;
@@ -219,6 +220,12 @@ public class WolfItemList
 		GameRegistry.registerItem(emeraldAxe, "emeraldAxe");
 		GameRegistry.registerItem(emeraldShovel, "emeraldShovel");
 		GameRegistry.registerItem(emeraldHoe, "emeraldHoe");
+		
+		OreDictionary.registerOre("silverDust", silverDust);
+		OreDictionary.registerOre("silverIngot", silverIngot);
+		OreDictionary.registerOre("redstoneIngot", redstoneIngot);
+		OreDictionary.registerOre("lapisIngot", lapisIngot);
+		OreDictionary.registerOre("emeraldIngot", emeraldIngot);
 	}
 
 	public static void loadIntegration()

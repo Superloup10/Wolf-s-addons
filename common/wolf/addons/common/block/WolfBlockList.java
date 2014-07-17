@@ -38,6 +38,7 @@ public class WolfBlockList
 		GameRegistry.registerBlock(silverOre, "silverOre");
 		GameRegistry.registerBlock(silverBlock, "silverBlock");
 		OreDictionary.registerOre("silverOre", silverOre);
+		OreDictionary.registerOre("silverBlock", silverBlock);
 		
 		// GameRegistry.registerBlock(compressor, "compressor");
 		// GameRegistry.registerBlock(forge, "forge");
