@@ -7,9 +7,10 @@
  ******************************************************************************/
 package wolf.addons.common.item;
 
-import net.minecraft.item.Item;
-
-public class LapisIngot extends Item
+public class LapisIngot extends WolfItem
 {
-
+    public LapisIngot()
+    {
+        super("lapis_ingot");
+    }
 }

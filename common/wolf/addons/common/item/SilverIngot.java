@@ -7,9 +7,10 @@
  ******************************************************************************/
 package wolf.addons.common.item;
 
-import net.minecraft.item.Item;
-
-public class SilverIngot extends Item
+public class SilverIngot extends WolfItem
 {
-
+    public SilverIngot()
+    {
+        super("silver_ingot");
+    }
 }

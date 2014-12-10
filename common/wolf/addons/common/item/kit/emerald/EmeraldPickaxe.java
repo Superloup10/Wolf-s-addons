@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.emerald;
 
-import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.WolfPickaxe;
 
-public class EmeraldPickaxe extends ItemPickaxe
+public class EmeraldPickaxe extends WolfPickaxe
 {
-	public EmeraldPickaxe(ToolMaterial material)
-	{
-		super(material);
-	}
+    public EmeraldPickaxe()
+    {
+        super("emerald_pickaxe", WolfItemList.emeraldTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.emeraldIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.emeraldIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

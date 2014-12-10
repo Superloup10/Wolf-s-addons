@@ -8,24 +8,24 @@
 package wolf.addons.common.item.kit.lapis;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
 
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.WolfSword;
 
-public class LapisSword extends ItemSword
+public class LapisSword extends WolfSword
 {
-	public LapisSword(ToolMaterial material)
-	{
-		super(material);
-	}
+    public LapisSword()
+    {
+        super("lapis_sword", WolfItemList.lapisTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.lapisIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.lapisIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

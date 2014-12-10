@@ -7,9 +7,10 @@
  ******************************************************************************/
 package wolf.addons.common.item;
 
-import net.minecraft.item.Item;
-
-public class EmeraldIngot extends Item
+public class EmeraldIngot extends WolfItem
 {
-
+    public EmeraldIngot()
+    {
+        super("emerald_ingot");
+    }
 }

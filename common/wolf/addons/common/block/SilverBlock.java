@@ -7,16 +7,12 @@
  ******************************************************************************/
 package wolf.addons.common.block;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-import wolf.addons.common.creativestabs.WolfCT;
-
-public class SilverBlock extends Block
+public class SilverBlock extends WolfBlock
 {
-	protected SilverBlock()
-	{
-		super(Material.iron);
-		this.setCreativeTab(WolfCT.creativeTabsBlocks);
-	}
+    public SilverBlock()
+    {
+        super(Material.iron, "silver_block", 3.0F, 5.0F, soundTypeMetal);
+    }
 }

@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.silver;
 
-import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.WolfShovel;
 
-public class SilverShovel extends ItemSpade
+public class SilverShovel extends WolfShovel
 {
-	public SilverShovel(ToolMaterial material)
-	{
-		super(material);
-	}
+    public SilverShovel()
+    {
+        super("silver_shovel", WolfItemList.silverTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.silverIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.silverIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

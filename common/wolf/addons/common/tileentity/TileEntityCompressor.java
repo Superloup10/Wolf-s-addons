@@ -16,225 +16,244 @@ import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.Packet;
-import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
-
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.IChatComponent;
 import net.minecraftforge.common.util.Constants;
 
 public class TileEntityCompressor extends TileEntity implements IInventory, ISidedInventory
 {
-	public InventoryCrafting craftMatrix = new LocalInventoryCrafting();
-	public static final int SLOT_RESULT = 0;
-	private ItemStack[] compressorInventory = new ItemStack[9];
-	private InventoryCraftResult craftResult = new InventoryCraftResult();
+    public InventoryCrafting craftMatrix = new LocalInventoryCrafting();
+    public static final int SLOT_RESULT = 0;
+    private ItemStack[] compressorInventory = new ItemStack[9];
+    private InventoryCraftResult craftResult = new InventoryCraftResult();
 
-	public class LocalInventoryCrafting extends InventoryCrafting
-	{
-		public LocalInventoryCrafting()
-		{
-			super(new Container()
-			{
-				@Override
-				public boolean canInteractWith(EntityPlayer var1)
-				{
-					return false;
-				}
-			}, 3, 3);
-		}
-	}
+    public class LocalInventoryCrafting extends InventoryCrafting
+    {
+        public LocalInventoryCrafting()
+        {
+            super(new Container()
+            {
+                @Override
+                public boolean canInteractWith(EntityPlayer var1)
+                {
+                    return false;
+                }
+            }, 3, 3);
+        }
+    }
 
-	private String customName;
+    private String customName;
 
-	@Override
-	public int getSizeInventory()
-	{
-		return this.compressorInventory.length;
-	}
+    @Override
+    public int getSizeInventory()
+    {
+        return this.compressorInventory.length;
+    }
 
-	@Override
-	public ItemStack getStackInSlot(int slot)
-	{
-		return this.compressorInventory[slot];
-	}
+    @Override
+    public ItemStack getStackInSlot(int slot)
+    {
+        return this.compressorInventory[slot];
+    }
 
-	@Override
-	public ItemStack decrStackSize(int slot, int maxStack)
-	{
-		if (this.compressorInventory[slot] != null)
-		{
-			ItemStack itemStack;
-			if (this.compressorInventory[slot].stackSize <= maxStack)
-			{
-				itemStack = this.compressorInventory[slot];
-				this.compressorInventory[slot] = null;
-				this.markDirty();
-				return itemStack;
-			}
-			else
-			{
-				itemStack = this.compressorInventory[slot].splitStack(maxStack);
-				if (this.compressorInventory[slot].stackSize == 0)
-				{
-					this.compressorInventory[slot] = null;
-				}
-				this.markDirty();
-				return itemStack;
-			}
-		}
-		else
-		{
-			return null;
-		}
-	}
+    @Override
+    public ItemStack decrStackSize(int slot, int maxStack)
+    {
+        if(this.compressorInventory[slot] != null)
+        {
+            ItemStack itemStack;
+            if(this.compressorInventory[slot].stackSize <= maxStack)
+            {
+                itemStack = this.compressorInventory[slot];
+                this.compressorInventory[slot] = null;
+                this.markDirty();
+                return itemStack;
+            }
+            else
+            {
+                itemStack = this.compressorInventory[slot].splitStack(maxStack);
+                if(this.compressorInventory[slot].stackSize == 0)
+                {
+                    this.compressorInventory[slot] = null;
+                }
+                this.markDirty();
+                return itemStack;
+            }
+        }
+        else
+        {
+            return null;
+        }
+    }
 
-	@Override
-	public ItemStack getStackInSlotOnClosing(int slot)
-	{
-		if (this.compressorInventory[slot] != null)
-		{
-			ItemStack itemstack = this.compressorInventory[slot];
-			this.compressorInventory[slot] = null;
-			return itemstack;
-		}
-		else
-		{
-			return null;
-		}
-	}
+    @Override
+    public ItemStack getStackInSlotOnClosing(int slot)
+    {
+        if(this.compressorInventory[slot] != null)
+        {
+            ItemStack itemstack = this.compressorInventory[slot];
+            this.compressorInventory[slot] = null;
+            return itemstack;
+        }
+        else
+        {
+            return null;
+        }
+    }
 
-	@Override
-	public void setInventorySlotContents(int slot, ItemStack itemStack)
-	{
-		this.compressorInventory[slot] = itemStack;
+    @Override
+    public void setInventorySlotContents(int slot, ItemStack itemStack)
+    {
+        this.compressorInventory[slot] = itemStack;
 
-		if (itemStack != null && itemStack.stackSize > this.getInventoryStackLimit())
-		{
-			itemStack.stackSize = this.getInventoryStackLimit();
-		}
+        if(itemStack != null && itemStack.stackSize > this.getInventoryStackLimit())
+        {
+            itemStack.stackSize = this.getInventoryStackLimit();
+        }
 
-		this.markDirty();
-	}
+        this.markDirty();
+    }
 
-	@Override
-	public void readFromNBT(NBTTagCompound nbtTagCompound)
-	{
-		super.readFromNBT(nbtTagCompound);
+    @Override
+    public void readFromNBT(NBTTagCompound nbtTagCompound)
+    {
+        super.readFromNBT(nbtTagCompound);
 
-		NBTTagList nbtTag = nbtTagCompound.getTagList("Items", Constants.NBT.TAG_COMPOUND);
-		this.compressorInventory = new ItemStack[this.getSizeInventory()];
+        NBTTagList nbtTag = nbtTagCompound.getTagList("Items", Constants.NBT.TAG_COMPOUND);
+        this.compressorInventory = new ItemStack[this.getSizeInventory()];
 
-		if (nbtTagCompound.hasKey("CustomName"))
-		{
-			this.customName = nbtTagCompound.getString("CustomName");
-		}
+        if(nbtTagCompound.hasKey("CustomName"))
+        {
+            this.customName = nbtTagCompound.getString("CustomName");
+        }
 
-		for (int i = 0; i < nbtTag.tagCount(); i++)
-		{
-			NBTTagCompound tagCompound = nbtTag.getCompoundTagAt(i);
-			int slot = tagCompound.getByte("Slot") & 255;
+        for(int i = 0; i < nbtTag.tagCount(); i++)
+        {
+            NBTTagCompound tagCompound = nbtTag.getCompoundTagAt(i);
+            int slot = tagCompound.getByte("Slot") & 255;
 
-			if (slot >= 0 && slot < this.compressorInventory.length)
-			{
-				this.compressorInventory[slot] = ItemStack.loadItemStackFromNBT(tagCompound);
-			}
-		}
-	}
+            if(slot >= 0 && slot < this.compressorInventory.length)
+            {
+                this.compressorInventory[slot] = ItemStack.loadItemStackFromNBT(tagCompound);
+            }
+        }
+    }
 
-	@Override
-	public void writeToNBT(NBTTagCompound nbtTagCompound)
-	{
-		super.writeToNBT(nbtTagCompound);
+    @Override
+    public void writeToNBT(NBTTagCompound nbtTagCompound)
+    {
+        super.writeToNBT(nbtTagCompound);
 
-		NBTTagList nbtTag = new NBTTagList();
+        NBTTagList nbtTag = new NBTTagList();
 
-		for (int j = 0; j < this.compressorInventory.length; j++)
-		{
-			// ItemStack itemStack = this.compressorInventory[j];
-			System.out.println("Taille de l'inventaire : " + Boolean.valueOf(compressorInventory[j] == null));
-			// TODO Cette condition est toujours null
-			if (this.compressorInventory[j] != null)
-			{
-				NBTTagCompound tagCompound = new NBTTagCompound();
-				tagCompound.setByte("Slot", (byte)j);
-				this.compressorInventory[j].writeToNBT(tagCompound);
-				nbtTag.appendTag(tagCompound);
-			}
-		}
-		nbtTagCompound.setTag("Items", nbtTag);
+        for(int j = 0; j < this.compressorInventory.length; j++)
+        {
+            // ItemStack itemStack = this.compressorInventory[j];
+            System.out.println("Taille de l'inventaire : " + Boolean.valueOf(compressorInventory[j] == null));
+            // TODO Cette condition est toujours null
+            if(this.compressorInventory[j] != null)
+            {
+                NBTTagCompound tagCompound = new NBTTagCompound();
+                tagCompound.setByte("Slot", (byte)j);
+                this.compressorInventory[j].writeToNBT(tagCompound);
+                nbtTag.appendTag(tagCompound);
+            }
+        }
+        nbtTagCompound.setTag("Items", nbtTag);
 
-		if (this.hasCustomInventoryName())
-		{
-			nbtTagCompound.setString("CustomName", this.customName);
-		}
-	}
+        if(this.hasCustomName())
+        {
+            nbtTagCompound.setString("CustomName", this.customName);
+        }
+    }
 
-	public Packet getDescriptionPacket()
-	{
-		NBTTagCompound nbttagcompound = new NBTTagCompound();
-		this.writeToNBT(nbttagcompound);
-		return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 3, nbttagcompound);
-	}
+    /*
+     * @Override public Packet getDescriptionPacket() { NBTTagCompound nbttagcompound = new NBTTagCompound(); this.writeToNBT(nbttagcompound); return new S35PacketUpdateTileEntity(this.pos, 3, nbttagcompound); }
+     * @Override public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity updateTileEntity) { this.readFromNBT(updateTileEntity.func_148857_g()); }
+     */
 
-	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity updateTileEntity)
-	{
-		this.readFromNBT(updateTileEntity.func_148857_g());
-	}
+    @Override
+    public int getInventoryStackLimit()
+    {
+        return 64;
+    }
 
-	@Override
-	public String getInventoryName()
-	{
-		return this.hasCustomInventoryName() ? this.customName : "container.compressor";
-	}
+    @Override
+    public boolean isUseableByPlayer(EntityPlayer player)
+    {
+        return this.worldObj.getTileEntity(this.pos) != this ? false : player.getDistanceSq(this.pos) <= 64.0D;
+    }
 
-	@Override
-	public boolean hasCustomInventoryName()
-	{
-		return this.customName != null && this.customName.length() > 0;
-	}
+    @Override
+    public boolean isItemValidForSlot(int slot, ItemStack itemStack)
+    {
+        return false;
+    }
 
-	@Override
-	public int getInventoryStackLimit()
-	{
-		return 64;
-	}
+    @Override
+    public String getName()
+    {
+        return this.hasCustomName() ? this.customName : "container.compressor";
+    }
 
-	@Override
-	public boolean isUseableByPlayer(EntityPlayer player)
-	{
-		return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : player.getDistanceSq((double)this.xCoord + 0.5D, (double)this.yCoord + 0.5D, (double)this.zCoord + 0.5D) <= 64.0D;
-	}
+    @Override
+    public boolean hasCustomName()
+    {
+        return this.customName != null && this.customName.length() > 0;
+    }
 
-	@Override
-	public void openInventory()
-	{}
+    @Override
+    public IChatComponent getDisplayName()
+    {
+        return null;
+    }
 
-	@Override
-	public void closeInventory()
-	{}
+    @Override
+    public int[] getSlotsForFace(EnumFacing side)
+    {
+        return null;
+    }
 
-	@Override
-	public boolean isItemValidForSlot(int slot, ItemStack itemStack)
-	{
-		return false;
-	}
+    @Override
+    public boolean canInsertItem(int slotIn, ItemStack itemStackIn, EnumFacing direction)
+    {
+        return true;
+    }
 
-	@Override
-	public int[] getAccessibleSlotsFromSide(int side)
-	{
-		return null;
-	}
+    @Override
+    public boolean canExtractItem(int slotId, ItemStack stack, EnumFacing direction)
+    {
+        return true;
+    }
 
-	@Override
-	public boolean canInsertItem(int slot, ItemStack item, int side)
-	{
-		return true;
-	}
+    @Override
+    public void openInventory(EntityPlayer playerIn)
+    {}
 
-	@Override
-	public boolean canExtractItem(int slot, ItemStack item, int side)
-	{
-		return true;
-	}
+    @Override
+    public void closeInventory(EntityPlayer playerIn)
+    {}
+
+    @Override
+    public int getField(int id)
+    {
+        return 0;
+    }
+
+    @Override
+    public void setField(int id, int value)
+    {
+
+    }
+
+    @Override
+    public int getFieldCount()
+    {
+        return 0;
+    }
+
+    @Override
+    public void clear()
+    {}
 }

@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.lapis;
 
-import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 
+import wolf.addons.common.item.WolfHoe;
 import wolf.addons.common.item.WolfItemList;
 
-public class LapisHoe extends ItemHoe
+public class LapisHoe extends WolfHoe
 {
-	public LapisHoe(ToolMaterial material)
-	{
-		super(material);
-	}
+    public LapisHoe()
+    {
+        super("lapis_hoe", WolfItemList.lapisTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.lapisIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.lapisIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

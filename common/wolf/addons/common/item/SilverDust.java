@@ -7,9 +7,10 @@
  ******************************************************************************/
 package wolf.addons.common.item;
 
-import net.minecraft.item.Item;
-
-public class SilverDust extends Item
+public class SilverDust extends WolfItem
 {
-
+    public SilverDust()
+    {
+        super("silver_dust");
+    }
 }

@@ -7,51 +7,49 @@
  ******************************************************************************/
 package wolf.addons.common.item;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import wolf.addons.common.creativestabs.WolfCT;
 
 public class Hammer extends Item
 {
-	private String texture;
+    public Hammer(int damage, String name)
+    {
+        this.maxStackSize = 1;
+        this.setUnlocalizedName(name);
+        this.setMaxDamage(damage);
+        this.setCreativeTab(WolfCT.creativeTabsTools);
+        // TODO à implémenter dans le futur
+        // GameRegistry.registerItem(this, name);
+    }
 
-	public Hammer(int damage, String textureName)
-	{
-		this.maxStackSize = 1;
-		this.texture = textureName;
-		this.setMaxDamage(damage);
-		this.setCreativeTab(WolfCT.creativeTabsTools);
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public boolean isFull3D()
+    {
+        return true;
+    }
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public boolean isFull3D()
-	{
-		return true;
-	}
+    @Override
+    public int getMaxItemUseDuration(ItemStack itemStack)
+    {
+        return 72000;
+    }
 
-	@Override
-	public int getMaxItemUseDuration(ItemStack itemStack)
-	{
-		return 72000;
-	}
+    @Override
+    public EnumAction getItemUseAction(ItemStack itemStack)
+    {
+        return EnumAction.BLOCK;
+    }
 
-	@Override
-	public EnumAction getItemUseAction(ItemStack itemStack)
-	{
-		return EnumAction.block;
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IIconRegister register)
-	{
-		itemIcon = register.registerIcon("wolf_addons:" + texture);
-	}
+    // @Override
+    // @SideOnly(Side.CLIENT)
+    // public void registerIcons(IIconRegister register)
+    // {
+    // itemIcon = register.registerIcon("wolf_addons:" + texture);
+    // }
 }

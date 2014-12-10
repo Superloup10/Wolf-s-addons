@@ -11,44 +11,35 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
 import net.minecraft.util.DamageSource;
 
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.WolfSword;
 
-public class SilverSword extends ItemSword
+public class SilverSword extends WolfSword
 {
-	public SilverSword(ToolMaterial material)
-	{
-		super(material);
-	}
+    public SilverSword()
+    {
+        super("silver_sword", WolfItemList.silverTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.silverIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.silverIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 
-	@Override
-	public boolean hitEntity(ItemStack stack, EntityLivingBase attackedLiving, EntityLivingBase attackerLiving)
-	{
-		if (attackedLiving instanceof EntityZombie || attackedLiving instanceof EntitySkeleton)
-		{
-			attackedLiving.attackEntityFrom(DamageSource.generic, 10.0F);// Ne
-																			// prends
-																			// pas
-																			// en
-																			// compte
-																			// le
-																			// +4
-																			// rajouté
-																			// à
-																			// l'épée.
-		}
-		return super.hitEntity(stack, attackedLiving, attackerLiving);
-	}
+    @Override
+    public boolean hitEntity(ItemStack stack, EntityLivingBase attackedLiving, EntityLivingBase attackerLiving)
+    {
+        if(attackedLiving instanceof EntityZombie || attackedLiving instanceof EntitySkeleton)
+        {
+            attackedLiving.attackEntityFrom(DamageSource.generic, 10.0F);// Ne prends pas en compte le +4 rajouté à l'épée.
+        }
+        return super.hitEntity(stack, attackedLiving, attackerLiving);
+    }
 }

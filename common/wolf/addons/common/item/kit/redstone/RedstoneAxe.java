@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.redstone;
 
-import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 
+import wolf.addons.common.item.WolfAxe;
 import wolf.addons.common.item.WolfItemList;
 
-public class RedstoneAxe extends ItemAxe
+public class RedstoneAxe extends WolfAxe
 {
-	public RedstoneAxe(ToolMaterial material)
-	{
-		super(material);
-	}
+    public RedstoneAxe()
+    {
+        super("redstone_axe", WolfItemList.redstoneTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.redstoneIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.redstoneIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

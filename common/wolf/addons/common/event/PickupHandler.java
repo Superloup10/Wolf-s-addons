@@ -9,9 +9,8 @@ package wolf.addons.common.event;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
 
 import wolf.addons.common.achievements.WolfAchievements;
 import wolf.addons.common.item.WolfItemList;

@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.lapis;
 
-import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.WolfShovel;
 
-public class LapisShovel extends ItemSpade
+public class LapisShovel extends WolfShovel
 {
-	public LapisShovel(ToolMaterial material)
-	{
-		super(material);
-	}
+    public LapisShovel()
+    {
+        super("lapis_shovel", WolfItemList.lapisTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.lapisIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.lapisIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

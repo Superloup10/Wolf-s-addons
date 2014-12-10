@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.redstone;
 
-import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.WolfShovel;
 
-public class RedstoneShovel extends ItemSpade
+public class RedstoneShovel extends WolfShovel
 {
-	public RedstoneShovel(ToolMaterial material)
-	{
-		super(material);
-	}
+    public RedstoneShovel()
+    {
+        super("redstone_shovel", WolfItemList.redstoneTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.redstoneIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.redstoneIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

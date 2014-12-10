@@ -7,9 +7,10 @@
  ******************************************************************************/
 package wolf.addons.common.item;
 
-import net.minecraft.item.Item;
-
-public class RedstoneIngot extends Item
+public class RedstoneIngot extends WolfItem
 {
-
+    public RedstoneIngot()
+    {
+        super("redstone_ingot");
+    }
 }

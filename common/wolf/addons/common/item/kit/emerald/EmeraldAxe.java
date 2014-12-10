@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.emerald;
 
-import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 
+import wolf.addons.common.item.WolfAxe;
 import wolf.addons.common.item.WolfItemList;
 
-public class EmeraldAxe extends ItemAxe
+public class EmeraldAxe extends WolfAxe
 {
-	public EmeraldAxe(ToolMaterial material)
-	{
-		super(material);
-	}
+    public EmeraldAxe()
+    {
+        super("emerald_axe", WolfItemList.emeraldTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.emeraldIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.emeraldIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

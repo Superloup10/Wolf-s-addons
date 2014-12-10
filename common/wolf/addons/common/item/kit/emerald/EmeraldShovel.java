@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.emerald;
 
-import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.WolfShovel;
 
-public class EmeraldShovel extends ItemSpade
+public class EmeraldShovel extends WolfShovel
 {
-	public EmeraldShovel(ToolMaterial material)
-	{
-		super(material);
-	}
+    public EmeraldShovel()
+    {
+        super("emerald_shovel", WolfItemList.emeraldTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.emeraldIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.emeraldIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

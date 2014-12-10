@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.redstone;
 
-import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.WolfPickaxe;
 
-public class RedstonePickaxe extends ItemPickaxe
+public class RedstonePickaxe extends WolfPickaxe
 {
-	public RedstonePickaxe(ToolMaterial material)
-	{
-		super(material);
-	}
+    public RedstonePickaxe()
+    {
+        super("redstone_pickaxe", WolfItemList.redstoneTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.redstoneIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.redstoneIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

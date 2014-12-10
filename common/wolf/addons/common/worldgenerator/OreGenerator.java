@@ -9,52 +9,47 @@ package wolf.addons.common.worldgenerator;
 
 import java.util.Random;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenMinable;
-
-import cpw.mods.fml.common.IWorldGenerator;
-
-import wolf.addons.common.block.WolfBlockList;
+import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class OreGenerator implements IWorldGenerator
 {
-	@Override
-	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
-	{
-		switch (world.provider.dimensionId)
-		{
-		case -1:
-			generateNether(world, random, chunkX * 16, chunkZ * 16);
-		case 0:
-			generateSurface(world, random, chunkX * 16, chunkZ * 16);
-		case 1:
-			generateEnd(world, random, chunkX * 16, chunkZ * 16);
-		}
-	}
+    @Override
+    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
+    {
+        switch(world.provider.getDimensionId())
+        {
+        case -1:
+            generateNether(world, random, chunkX * 16, chunkZ * 16);
+        case 0:
+            generateSurface(world, random, chunkX * 16, chunkZ * 16);
+        case 1:
+            generateEnd(world, random, chunkX * 16, chunkZ * 16);
+        }
+    }
 
-	private void generateEnd(World world, Random random, int x, int z)
-	{
-		for (int i = 0; i < 15; i++)
-		{
-			(new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.end_stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
-		}
-	}
+    private void generateEnd(World world, Random random, int x, int z)
+    {
+        for(int i = 0; i < 15; i++)
+        {
+            // (new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.end_stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
+        }
+    }
 
-	private void generateSurface(World world, Random random, int x, int z)
-	{
-		for (int i = 0; i < 15; i++)
-		{
-			(new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
-		}
-	}
+    private void generateSurface(World world, Random random, int x, int z)
+    {
+        for(int i = 0; i < 15; i++)
+        {
+            // (new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
+        }
+    }
 
-	private void generateNether(World world, Random random, int x, int z)
-	{
-		for (int i = 0; i < 15; i++)
-		{
-			(new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.netherrack)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
-		}
-	}
+    private void generateNether(World world, Random random, int x, int z)
+    {
+        for(int i = 0; i < 15; i++)
+        {
+            // (new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.netherrack)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
+        }
+    }
 }

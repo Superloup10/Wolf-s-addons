@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.emerald;
 
-import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 
+import wolf.addons.common.item.WolfHoe;
 import wolf.addons.common.item.WolfItemList;
 
-public class EmeraldHoe extends ItemHoe
+public class EmeraldHoe extends WolfHoe
 {
-	public EmeraldHoe(ToolMaterial material)
-	{
-		super(material);
-	}
+    public EmeraldHoe()
+    {
+        super("emerald_hoe", WolfItemList.emeraldTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.emeraldIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.emeraldIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

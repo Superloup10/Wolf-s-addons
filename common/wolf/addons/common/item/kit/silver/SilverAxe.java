@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.silver;
 
-import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 
+import wolf.addons.common.item.WolfAxe;
 import wolf.addons.common.item.WolfItemList;
 
-public class SilverAxe extends ItemAxe
+public class SilverAxe extends WolfAxe
 {
-	public SilverAxe(ToolMaterial material)
-	{
-		super(material);
-	}
+    public SilverAxe()
+    {
+        super("silver_axe", WolfItemList.silverTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.silverIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.silverIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }

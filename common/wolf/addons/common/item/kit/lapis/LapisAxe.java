@@ -7,25 +7,25 @@
  ******************************************************************************/
 package wolf.addons.common.item.kit.lapis;
 
-import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 
+import wolf.addons.common.item.WolfAxe;
 import wolf.addons.common.item.WolfItemList;
 
-public class LapisAxe extends ItemAxe
+public class LapisAxe extends WolfAxe
 {
-	public LapisAxe(ToolMaterial material)
-	{
-		super(material);
-	}
+    public LapisAxe()
+    {
+        super("lapis_axe", WolfItemList.lapisTools);
+    }
 
-	@Override
-	public boolean getIsRepairable(ItemStack input, ItemStack repair)
-	{
-		if (repair.getItem().equals(WolfItemList.lapisIngot))
-		{
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean getIsRepairable(ItemStack input, ItemStack repair)
+    {
+        if(repair.getItem().equals(WolfItemList.lapisIngot))
+        {
+            return true;
+        }
+        return false;
+    }
 }
