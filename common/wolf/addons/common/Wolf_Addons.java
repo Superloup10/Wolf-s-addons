@@ -41,16 +41,17 @@ public class Wolf_Addons
     public void preInit(FMLPreInitializationEvent event)
     {
         // WolfCT.loadCreativeTabs();
-        WolfBlockList.loadBlock();
-        WolfBlockList.loadIntegration();
-        WolfItemList.loadItem();
-        WolfItemList.loadIntegration();
+
         // WolfAchievements.loadAchievements();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+        WolfBlockList.loadBlock();
+        WolfBlockList.loadIntegration();
+        WolfItemList.loadItem();
+        WolfItemList.loadIntegration();
         proxy.registerRender();
         MinecraftForge.EVENT_BUS.register(new LivingEvent());
         FMLCommonHandler.instance().bus().register(new CraftingHandler());

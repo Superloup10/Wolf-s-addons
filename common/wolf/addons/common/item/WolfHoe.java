@@ -1,6 +1,5 @@
 package wolf.addons.common.item;
 
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemHoe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 

@@ -31,19 +31,20 @@ else {
 }
 
 minecraft {
-    version = "1.7.2-10.12.2.1147"
-    runDir = "build/assets"
+    version = "1.8-11.14.0.1262-1.8"
+    runDir = "eclipse"
 	
 	replace '@version@', project.version
+    mappings = "snapshot_nodoc_20141130"
 }
 
 sourceSets {
 	main {
 		java {
-				srcDirs 'common'
+			srcDirs 'common'
 		}
 		resources {
-				srcDirs 'ressources'
+			srcDirs 'ressources'
 		}
 	}
 }

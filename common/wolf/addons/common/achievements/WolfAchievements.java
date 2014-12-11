@@ -37,7 +37,7 @@ public class WolfAchievements
         // redstoneIngot = new Achievement("achievement.redstoneIngot", "redstoneIngot", -2, 6, WolfItemList.redstoneIngot, redstoneDust).registerStat();
         // lapisIngot = new Achievement("achievement.lapisIngot", "lapisIngot", 2, 6, WolfItemList.lapisIngot, lapisDust).registerStat();
         // emeraldIngot = new Achievement("achievement.emeraldIngot", "emeraldIngot", 5, 6, WolfItemList.emeraldIngot, emeraldDust).registerStat();
-        wolfPage = new AchievementPage("Wolf's Addons", craftCompressor, silverDust, redstoneDust, lapisDust, emeraldDust, silverIngot, redstoneIngot, lapisIngot, emeraldIngot);
-        AchievementPage.registerAchievementPage(wolfPage);
+        // wolfPage = new AchievementPage("Wolf's Addons", craftCompressor, silverDust, redstoneDust, lapisDust, emeraldDust, silverIngot, redstoneIngot, lapisIngot, emeraldIngot);
+        // AchievementPage.registerAchievementPage(wolfPage);
     }
 }
