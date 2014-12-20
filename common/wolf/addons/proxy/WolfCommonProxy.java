@@ -7,18 +7,10 @@
  ******************************************************************************/
 package wolf.addons.proxy;
 
-import net.minecraft.block.Block;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
 public class WolfCommonProxy
 {
     public void registerRender()
     {
 
-    }
-
-    public void registerBlock(Block block, String name)
-    {
-        GameRegistry.registerBlock(block, name);
     }
 }

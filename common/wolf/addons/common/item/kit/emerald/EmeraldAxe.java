@@ -9,8 +9,8 @@ package wolf.addons.common.item.kit.emerald;
 
 import net.minecraft.item.ItemStack;
 
-import wolf.addons.common.item.WolfAxe;
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.util.WolfAxe;
 
 public class EmeraldAxe extends WolfAxe
 {

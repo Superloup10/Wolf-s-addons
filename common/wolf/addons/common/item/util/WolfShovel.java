@@ -1,13 +1,13 @@
-package wolf.addons.common.item;
+package wolf.addons.common.item.util;
 
-import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSpade;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import wolf.addons.common.creativestabs.WolfCT;
 
-public class WolfPickaxe extends ItemPickaxe
+public class WolfShovel extends ItemSpade
 {
-    public WolfPickaxe(String name, ToolMaterial material)
+    public WolfShovel(String name, ToolMaterial material)
     {
         super(material);
         this.setUnlocalizedName(name);

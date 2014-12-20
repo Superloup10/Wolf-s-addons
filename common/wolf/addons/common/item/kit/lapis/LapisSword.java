@@ -10,7 +10,7 @@ package wolf.addons.common.item.kit.lapis;
 import net.minecraft.item.ItemStack;
 
 import wolf.addons.common.item.WolfItemList;
-import wolf.addons.common.item.WolfSword;
+import wolf.addons.common.item.util.WolfSword;
 
 public class LapisSword extends WolfSword
 {

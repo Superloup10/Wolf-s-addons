@@ -1,13 +1,13 @@
-package wolf.addons.common.item;
+package wolf.addons.common.item.util;
 
-import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemSword;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import wolf.addons.common.creativestabs.WolfCT;
 
-public class WolfHoe extends ItemHoe
+public class WolfSword extends ItemSword
 {
-    public WolfHoe(String name, ToolMaterial material)
+    public WolfSword(String name, ToolMaterial material)
     {
         super(material);
         this.setUnlocalizedName(name);

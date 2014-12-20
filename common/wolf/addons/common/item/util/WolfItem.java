@@ -1,4 +1,4 @@
-package wolf.addons.common.item;
+package wolf.addons.common.item.util;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;

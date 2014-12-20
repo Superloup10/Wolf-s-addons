@@ -11,8 +11,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-import wolf.addons.common.item.WolfArmor;
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.util.WolfArmor;
 
 public class RedstoneArmor extends WolfArmor
 {
@@ -20,7 +20,7 @@ public class RedstoneArmor extends WolfArmor
 
     public RedstoneArmor(int type, String name)
     {
-        super(/* WolfItemList.redstoneArmor, */0, type, name);
+        super(WolfItemList.redstoneArmor, 0, type, name);
     }
 
     @Override

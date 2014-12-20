@@ -9,8 +9,8 @@ package wolf.addons.common.item.kit.silver;
 
 import net.minecraft.item.ItemStack;
 
-import wolf.addons.common.item.WolfHoe;
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.util.WolfHoe;
 
 public class SilverHoe extends WolfHoe
 {

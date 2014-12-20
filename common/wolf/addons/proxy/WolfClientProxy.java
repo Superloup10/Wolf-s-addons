@@ -20,13 +20,6 @@ import wolf.addons.common.item.WolfItemList;
 public class WolfClientProxy extends WolfCommonProxy
 {
     @Override
-    public void registerBlock(Block block, String name)
-    {
-        super.registerBlock(block, name);
-        registerBlockTexture(block, name);
-    }
-
-    @Override
     public void registerRender()
     {
         MinecraftForgeClient.registerItemRenderer(WolfItemList.woodHammer, new RenderHammer());
@@ -40,20 +33,20 @@ public class WolfClientProxy extends WolfCommonProxy
         MinecraftForgeClient.registerItemRenderer(WolfItemList.emeraldHammer, new RenderHammer());
     }
 
-    public static void registerItem(Item item, int metadata, String name)
+    public static void registerItemTexture(Item item, int metadata, String name)
     {
         ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
         mesher.register(item, metadata, new ModelResourceLocation("wolf_addons:" + name, "inventory"));
     }
 
-    public static void registerItem(Item item, String name)
+    public static void registerItemTexture(Item item, String name)
     {
-        registerItem(item, 0, name);
+        registerItemTexture(item, 0, name);
     }
 
     public static void registerBlockTexture(Block block, int metadata, String name)
     {
-        registerItem(Item.getItemFromBlock(block), metadata, name);
+        registerItemTexture(Item.getItemFromBlock(block), metadata, name);
     }
 
     public static void registerBlockTexture(Block block, String name)

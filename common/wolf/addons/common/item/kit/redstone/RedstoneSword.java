@@ -17,7 +17,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import wolf.addons.common.item.WolfItemList;
-import wolf.addons.common.item.WolfSword;
+import wolf.addons.common.item.util.WolfSword;
 
 public class RedstoneSword extends WolfSword
 {

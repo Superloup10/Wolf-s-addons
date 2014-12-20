@@ -10,7 +10,7 @@ package wolf.addons.common.item.kit.silver;
 import net.minecraft.item.ItemStack;
 
 import wolf.addons.common.item.WolfItemList;
-import wolf.addons.common.item.WolfShovel;
+import wolf.addons.common.item.util.WolfShovel;
 
 public class SilverShovel extends WolfShovel
 {

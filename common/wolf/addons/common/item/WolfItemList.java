@@ -9,6 +9,7 @@ package wolf.addons.common.item;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -39,6 +40,7 @@ import wolf.addons.common.item.kit.silver.SilverHoe;
 import wolf.addons.common.item.kit.silver.SilverPickaxe;
 import wolf.addons.common.item.kit.silver.SilverShovel;
 import wolf.addons.common.item.kit.silver.SilverSword;
+import wolf.addons.common.item.util.WolfItem;
 
 public class WolfItemList
 {
@@ -63,10 +65,10 @@ public class WolfItemList
     public static Item emeraldSword, emeraldPickaxe, emeraldAxe, emeraldShovel, emeraldHoe;
 
     // TODO attendre le fix
-    // public static ArmorMaterial silverArmor = EnumHelper.addArmorMaterial("SilverArmor", 35, new int[] {4, 9, 7, 4}, 15);
-    // public static ArmorMaterial redstoneArmor = EnumHelper.addArmorMaterial("RedstoneArmor", 33, new int[] {3, 8, 6, 3}, 25);
-    // public static ArmorMaterial lapisArmor = EnumHelper.addArmorMaterial("LapisArmor", 20, new int[] {2, 5, 3, 1}, 10);
-    // public static ArmorMaterial emeraldArmor = EnumHelper.addArmorMaterial("EmeraldArmor", 40, new int[] {4, 9, 7, 4}, 5);
+    public static ArmorMaterial silverArmor = EnumHelper.addArmorMaterial("SilverArmor", "silver_armor", 35, new int[] {4, 9, 7, 4}, 15);
+    public static ArmorMaterial redstoneArmor = EnumHelper.addArmorMaterial("RedstoneArmor", "redstone_armor", 33, new int[] {3, 8, 6, 3}, 25);
+    public static ArmorMaterial lapisArmor = EnumHelper.addArmorMaterial("LapisArmor", "lapis_armor", 20, new int[] {2, 5, 3, 1}, 10);
+    public static ArmorMaterial emeraldArmor = EnumHelper.addArmorMaterial("EmeraldArmor", "emerald_armor", 40, new int[] {4, 9, 7, 4}, 5);
 
     public static ToolMaterial silverTools = EnumHelper.addToolMaterial("SilverTools", 2, 1800, 16.0F, 4.0F, 15);
     public static ToolMaterial redstoneTools = EnumHelper.addToolMaterial("RedstoneTools", 3, 1600, 8.0F, 3.0F, 22);

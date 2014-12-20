@@ -10,14 +10,14 @@ package wolf.addons.common.item.kit.lapis;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 
-import wolf.addons.common.item.WolfArmor;
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.item.util.WolfArmor;
 
 public class LapisArmor extends WolfArmor
 {
     public LapisArmor(int type, String name)
     {
-        super(/* WolfItemList.lapisArmor, */0, type, name);
+        super(WolfItemList.lapisArmor, 0, type, name);
     }
 
     @Override

@@ -7,6 +7,8 @@
  ******************************************************************************/
 package wolf.addons.common.item;
 
+import wolf.addons.common.item.util.WolfItem;
+
 public class SilverIngot extends WolfItem
 {
     public SilverIngot()

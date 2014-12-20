@@ -9,9 +9,15 @@ package wolf.addons.common.worldgenerator;
 
 import java.util.Random;
 
+import net.minecraft.block.state.pattern.BlockHelper;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
+
+import wolf.addons.common.block.WolfBlockList;
 
 public class OreGenerator implements IWorldGenerator
 {
@@ -33,7 +39,7 @@ public class OreGenerator implements IWorldGenerator
     {
         for(int i = 0; i < 15; i++)
         {
-            // (new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.end_stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
+            (new WorldGenMinable(WolfBlockList.silverOre.getDefaultState(), 3, BlockHelper.forBlock(Blocks.end_stone))).generate(world, random, new BlockPos(x + random.nextInt(16), 62, z + random.nextInt(16)));
         }
     }
 
@@ -41,7 +47,7 @@ public class OreGenerator implements IWorldGenerator
     {
         for(int i = 0; i < 15; i++)
         {
-            // (new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.stone)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
+            (new WorldGenMinable(WolfBlockList.silverOre.getDefaultState(), 3, BlockHelper.forBlock(Blocks.stone))).generate(world, random, new BlockPos(x + random.nextInt(16), 62, z + random.nextInt(16)));
         }
     }
 
@@ -49,7 +55,7 @@ public class OreGenerator implements IWorldGenerator
     {
         for(int i = 0; i < 15; i++)
         {
-            // (new WorldGenMinable(WolfBlockList.silverOre, 0, 3, Blocks.netherrack)).generate(world, random, x + random.nextInt(16), 62, z + random.nextInt(16));
+            (new WorldGenMinable(WolfBlockList.silverOre.getDefaultState(), 3, BlockHelper.forBlock(Blocks.netherrack))).generate(world, random, new BlockPos(x + random.nextInt(16), 62, z + random.nextInt(16)));
         }
     }
 }
