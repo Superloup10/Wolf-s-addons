@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "wolf_addons:items/redstone_boots_off"
+        "layer0": "wolf_addons:items/redstone_boots_off",
         "layer1": "wolf_addons:items/redstone_boots_on"
     },
     "display": {

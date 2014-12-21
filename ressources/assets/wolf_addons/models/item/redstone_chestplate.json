@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "wolf_addons:items/redstone_chestplate_off"
+        "layer0": "wolf_addons:items/redstone_chestplate_off",
         "layer1": "wolf_addons:items/redstone_chestplate_on"
     },
     "display": {

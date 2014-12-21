@@ -13,15 +13,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import wolf.addons.common.item.WolfItemList;
 import wolf.addons.common.item.util.WolfSword;
 
 public class RedstoneSword extends WolfSword
 {
-    @SideOnly(Side.CLIENT)
+    // @SideOnly(Side.CLIENT)
     // private IIcon[] textures = new IIcon[2];
     public RedstoneSword()
     {

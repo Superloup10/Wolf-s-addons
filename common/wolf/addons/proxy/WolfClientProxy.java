@@ -9,10 +9,14 @@ package wolf.addons.proxy;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 import wolf.addons.client.render.RenderHammer;
 import wolf.addons.common.block.WolfBlockList;
@@ -38,6 +42,26 @@ public class WolfClientProxy extends WolfCommonProxy
     public void registerTexture()
     {
         // Blocks
+        ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
+        mesher.register(Item.getItemFromBlock(WolfBlockList.silverOre), new ItemMeshDefinition()
+        {
+            @Override
+            public ModelResourceLocation getModelLocation(ItemStack stack)
+            {
+                if(FMLClientHandler.instance().getWorldClient().provider.getDimensionId() == -1)
+                {
+                    ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), WolfBlockList.silverOre.getName() + "_nether");
+                    return new ModelResourceLocation("wolf_addons:" + WolfBlockList.silverOre.getName() + "_nether", "inventory");
+                }
+                else if(FMLClientHandler.instance().getWorldClient().provider.getDimensionId() == 1)
+                {
+                    ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), WolfBlockList.silverOre.getName() + "_end");
+                    return new ModelResourceLocation("wolf_addons:" + WolfBlockList.silverOre.getName() + "_end", "inventory");
+                }
+                ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), WolfBlockList.silverOre.getName());
+                return new ModelResourceLocation("wolf_addons:" + WolfBlockList.silverOre.getName(), "inventory");
+            }
+        });
         registerBlockTexture(WolfBlockList.silverOre, WolfBlockList.silverOre.getName());
         registerBlockTexture(WolfBlockList.silverBlock, WolfBlockList.silverBlock.getName());
 
@@ -63,7 +87,6 @@ public class WolfClientProxy extends WolfCommonProxy
         registerItemTexture(WolfItemList.redstoneChestplate, WolfItemList.redstoneChestplate.getName());
         registerItemTexture(WolfItemList.redstoneLeggings, WolfItemList.redstoneLeggings.getName());
         registerItemTexture(WolfItemList.redstoneBoots, WolfItemList.redstoneBoots.getName());
-
     }
 
     public static void registerItemTexture(Item item, int metadata, String name)
