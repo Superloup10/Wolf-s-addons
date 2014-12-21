@@ -31,11 +31,11 @@ else {
 }
 
 minecraft {
-    version = "1.8-11.14.0.1262-1.8"
+    version = "1.8-11.14.0.1273-1.8"
     runDir = "eclipse"
 	
 	replace '@version@', project.version
-    mappings = "snapshot_nodoc_20141130"
+    mappings = "snapshot_nodoc_20141221"
 }
 
 sourceSets {
