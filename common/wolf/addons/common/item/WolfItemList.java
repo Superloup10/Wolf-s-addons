@@ -40,7 +40,13 @@ import wolf.addons.common.item.kit.silver.SilverHoe;
 import wolf.addons.common.item.kit.silver.SilverPickaxe;
 import wolf.addons.common.item.kit.silver.SilverShovel;
 import wolf.addons.common.item.kit.silver.SilverSword;
+import wolf.addons.common.item.util.WolfArmor;
+import wolf.addons.common.item.util.WolfAxe;
+import wolf.addons.common.item.util.WolfHoe;
 import wolf.addons.common.item.util.WolfItem;
+import wolf.addons.common.item.util.WolfPickaxe;
+import wolf.addons.common.item.util.WolfShovel;
+import wolf.addons.common.item.util.WolfSword;
 
 public class WolfItemList
 {
@@ -54,17 +60,17 @@ public class WolfItemList
 
     public static Item stoneBow, ironBow, goldBow, diamondBow, silverBow, redstoneBow, lapisBow, emeraldBow;
 
-    public static Item silverHelmet, silverChestplate, silverLeggings, silverBoots;
-    public static Item redstoneHelmet, redstoneChestplate, redstoneLeggings, redstoneBoots;
-    public static Item lapisHelmet, lapisChestplate, lapisLeggings, lapisBoots;
-    public static Item emeraldHelmet, emeraldChestplate, emeraldLeggings, emeraldBoots;
+    public static WolfArmor silverHelmet, silverChestplate, silverLeggings, silverBoots;
+    public static WolfArmor redstoneHelmet, redstoneChestplate, redstoneLeggings, redstoneBoots;
+    public static WolfArmor lapisHelmet, lapisChestplate, lapisLeggings, lapisBoots;
+    public static WolfArmor emeraldHelmet, emeraldChestplate, emeraldLeggings, emeraldBoots;
 
-    public static Item silverSword, silverPickaxe, silverAxe, silverShovel, silverHoe;
-    public static Item redstoneSword, redstonePickaxe, redstoneAxe, redstoneShovel, redstoneHoe;
-    public static Item lapisSword, lapisPickaxe, lapisAxe, lapisShovel, lapisHoe;
-    public static Item emeraldSword, emeraldPickaxe, emeraldAxe, emeraldShovel, emeraldHoe;
+    public static WolfSword silverSword, redstoneSword, lapisSword, emeraldSword;
+    public static WolfPickaxe silverPickaxe, redstonePickaxe, lapisPickaxe, emeraldPickaxe;
+    public static WolfAxe silverAxe, redstoneAxe, lapisAxe, emeraldAxe;
+    public static WolfShovel silverShovel, redstoneShovel, lapisShovel, emeraldShovel;
+    public static WolfHoe silverHoe, redstoneHoe, lapisHoe, emeraldHoe;
 
-    // TODO attendre le fix
     public static ArmorMaterial silverArmor = EnumHelper.addArmorMaterial("SilverArmor", "silver_armor", 35, new int[] {4, 9, 7, 4}, 15);
     public static ArmorMaterial redstoneArmor = EnumHelper.addArmorMaterial("RedstoneArmor", "redstone_armor", 33, new int[] {3, 8, 6, 3}, 25);
     public static ArmorMaterial lapisArmor = EnumHelper.addArmorMaterial("LapisArmor", "lapis_armor", 20, new int[] {2, 5, 3, 1}, 10);

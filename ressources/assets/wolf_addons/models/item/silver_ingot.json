@@ -1,5 +1,5 @@
 {
-    "parent": "wolf_addons:builtin/generated",
+    "parent": "builtin/generated",
     "textures": {
         "layer0": "wolf_addons:items/silver_ingot"
     },

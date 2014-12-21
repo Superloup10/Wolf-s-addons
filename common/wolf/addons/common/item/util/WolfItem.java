@@ -7,10 +7,18 @@ import wolf.addons.common.creativestabs.WolfCT;
 
 public class WolfItem extends Item
 {
+    private static String name;
+
     public WolfItem(String name)
     {
+        this.name = name;
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsItems);
         GameRegistry.registerItem(this, name);
+    }
+
+    public static String getName()
+    {
+        return name;
     }
 }

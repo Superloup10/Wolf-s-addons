@@ -10,7 +10,8 @@ package wolf.addons.proxy;
 public class WolfCommonProxy
 {
     public void registerRender()
-    {
+    {}
 
-    }
+    public void registerTexture()
+    {}
 }

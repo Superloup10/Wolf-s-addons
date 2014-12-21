@@ -20,6 +20,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import wolf.addons.common.block.WolfBlockList;
+import wolf.addons.common.creativestabs.WolfCT;
 import wolf.addons.common.event.CraftingHandler;
 import wolf.addons.common.event.LivingEvent;
 import wolf.addons.common.event.PickupHandler;
@@ -42,7 +43,7 @@ public class Wolf_Addons
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        // WolfCT.loadCreativeTabs();
+        WolfCT.loadCreativeTabs();
         WolfBlockList.loadBlock();
         WolfBlockList.loadIntegration();
         WolfItemList.loadItem();
@@ -54,6 +55,7 @@ public class Wolf_Addons
     public void init(FMLInitializationEvent event)
     {
         proxy.registerRender();
+        proxy.registerTexture();
         MinecraftForge.EVENT_BUS.register(new LivingEvent());
         FMLCommonHandler.instance().bus().register(new CraftingHandler());
         FMLCommonHandler.instance().bus().register(new PickupHandler());

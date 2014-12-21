@@ -8,14 +8,22 @@ import wolf.addons.common.creativestabs.WolfCT;
 
 public class WolfBlock extends Block
 {
+    private static String name;
+
     public WolfBlock(Material material, String name, float hardness, float resistance, SoundType soundType)
     {
         super(material);
+        this.name = name;
         this.setUnlocalizedName(name);
         this.setHardness(hardness);
         this.setResistance(resistance);
         this.setCreativeTab(WolfCT.creativeTabsBlocks);
         this.setStepSound(soundType);
         GameRegistry.registerBlock(this, name);
+    }
+
+    public static String getName()
+    {
+        return name;
     }
 }

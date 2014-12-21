@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 import wolf.addons.client.render.RenderHammer;
+import wolf.addons.common.block.WolfBlockList;
 import wolf.addons.common.item.WolfItemList;
 
 public class WolfClientProxy extends WolfCommonProxy
@@ -31,6 +32,38 @@ public class WolfClientProxy extends WolfCommonProxy
         MinecraftForgeClient.registerItemRenderer(WolfItemList.redstoneHammer, new RenderHammer());
         MinecraftForgeClient.registerItemRenderer(WolfItemList.lapisHammer, new RenderHammer());
         MinecraftForgeClient.registerItemRenderer(WolfItemList.emeraldHammer, new RenderHammer());
+    }
+
+    @Override
+    public void registerTexture()
+    {
+        // Blocks
+        registerBlockTexture(WolfBlockList.silverOre, WolfBlockList.silverOre.getName());
+        registerBlockTexture(WolfBlockList.silverBlock, WolfBlockList.silverBlock.getName());
+
+        // Items
+        registerItemTexture(WolfItemList.emeraldIngot, WolfItemList.emeraldIngot.getName());
+        registerItemTexture(WolfItemList.redstoneIngot, WolfItemList.redstoneIngot.getName());
+        registerItemTexture(WolfItemList.lapisIngot, WolfItemList.lapisIngot.getName());
+        registerItemTexture(WolfItemList.silverIngot, WolfItemList.silverIngot.getName());
+        registerItemTexture(WolfItemList.silverDust, WolfItemList.silverDust.getName());
+
+        // Tools
+        registerItemTexture(WolfItemList.emeraldPickaxe, WolfItemList.emeraldPickaxe.getName());
+        registerItemTexture(WolfItemList.emeraldAxe, WolfItemList.emeraldAxe.getName());
+        registerItemTexture(WolfItemList.emeraldShovel, WolfItemList.emeraldShovel.getName());
+        registerItemTexture(WolfItemList.emeraldHoe, WolfItemList.emeraldHoe.getName());
+
+        // Weapons
+        registerItemTexture(WolfItemList.redstoneSword, WolfItemList.redstoneSword.getName());
+        registerItemTexture(WolfItemList.emeraldSword, WolfItemList.emeraldSword.getName());
+
+        // Armors
+        registerItemTexture(WolfItemList.redstoneHelmet, WolfItemList.redstoneSword.getName());
+        registerItemTexture(WolfItemList.redstoneChestplate, WolfItemList.redstoneChestplate.getName());
+        registerItemTexture(WolfItemList.redstoneLeggings, WolfItemList.redstoneLeggings.getName());
+        registerItemTexture(WolfItemList.redstoneBoots, WolfItemList.redstoneBoots.getName());
+
     }
 
     public static void registerItemTexture(Item item, int metadata, String name)

@@ -11,13 +11,13 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class WolfCT
 {
-	public static CreativeTabs creativeTabsArmors, creativeTabsBlocks, creativeTabsTools, creativeTabsItems;
+    public static CreativeTabs creativeTabsArmors, creativeTabsBlocks, creativeTabsTools, creativeTabsItems;
 
-	public static void loadCreativeTabs()
-	{
-		creativeTabsArmors = new CreativeTabsArmors("Armors");
-		creativeTabsBlocks = new CreativeTabsBlock("Blocks");
-		creativeTabsTools = new CreativeTabsTools("Tools");
-		creativeTabsItems = new CreativeTabsItems("Items");
-	}
+    public static void loadCreativeTabs()
+    {
+        creativeTabsArmors = new CreativeTabsArmors("armors");
+        creativeTabsBlocks = new CreativeTabsBlock("blocks");
+        creativeTabsTools = new CreativeTabsTools("tools");
+        creativeTabsItems = new CreativeTabsItems("items");
+    }
 }
