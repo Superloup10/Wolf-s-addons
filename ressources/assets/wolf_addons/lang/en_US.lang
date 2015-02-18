@@ -2,15 +2,18 @@
 tile.silver_ore.name=Silver Ore
 tile.compressor.name=Compressor
 tile.forge.name=Forge
+tile.furnace.name=Four
 tile.silver_block.name=Silver Block
+tile.cable.name=Energy Cable
 #Container
 container.compressor=Compressor
 container.forge=Forge
+container.furnace=Furnace
 #CreativeTabs
-itemGroup.armors=Wolf Armors
-itemGroup.blocks=Wolf Blocks
-itemGroup.tools=Wolf Tools
-itemGroup.items=Wolf Items
+itemGroup.wolf_armors=Wolf Armors
+itemGroup.wolf_blocks=Wolf Blocks
+itemGroup.wolf_tools=Wolf Tools
+itemGroup.wolf_items=Wolf Items
 #Items
 item.silver_dust.name=Silver Dust
 item.silver_ingot.name=Silver Ingot

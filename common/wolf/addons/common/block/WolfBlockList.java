@@ -11,6 +11,7 @@ import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+import wolf.addons.common.creativestabs.WolfCT;
 
 public class WolfBlockList
 {
@@ -18,6 +19,15 @@ public class WolfBlockList
 
     public static Block compressor;
     public static Block forge;
+    public static Block furnace;
+
+    public static Block lunar;
+    public static Block solar;
+    public static Block geothermal;
+
+    public static Block battery;
+
+    public static Block cable;
 
     public static WolfBlock silverOre;
     public static WolfBlock silverBlock;
@@ -32,14 +42,20 @@ public class WolfBlockList
         // Blocks avec tileEntity, container, gui, etc...
         compressor = new Compressor().setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundTypeStone).setUnlocalizedName("compressor");
         forge = new Forge().setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundTypeStone).setUnlocalizedName("forge");
+        furnace = new Furnace().setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundTypeMetal).setUnlocalizedName("furnace");
 
+        // pipe
+        cable = new Cable().setUnlocalizedName("cable").setCreativeTab(WolfCT.creativeTabsBlocks);
         // GameRegistry.registerBlock(silverOre, "silver_ore");
         // GameRegistry.registerBlock(silverBlock, "silver_block");
         OreDictionary.registerOre("silver_ore", silverOre);
         OreDictionary.registerOre("silver_block", silverBlock);
 
-        // GameRegistry.registerBlock(compressor, "compressor");
+        GameRegistry.registerBlock(compressor, "compressor");
         // GameRegistry.registerBlock(forge, "forge");
+        GameRegistry.registerBlock(furnace, "furnace");
+
+        GameRegistry.registerBlock(cable, "cable");
     }
 
     public static void loadIntegration()

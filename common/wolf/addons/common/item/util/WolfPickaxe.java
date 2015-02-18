@@ -2,7 +2,6 @@ package wolf.addons.common.item.util;
 
 import net.minecraft.item.ItemPickaxe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import wolf.addons.common.creativestabs.WolfCT;
 
 public class WolfPickaxe extends ItemPickaxe
@@ -16,10 +15,5 @@ public class WolfPickaxe extends ItemPickaxe
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsTools);
         GameRegistry.registerItem(this, name);
-    }
-
-    public static String getName()
-    {
-        return name;
     }
 }

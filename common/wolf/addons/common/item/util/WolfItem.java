@@ -2,7 +2,6 @@ package wolf.addons.common.item.util;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import wolf.addons.common.creativestabs.WolfCT;
 
 public class WolfItem extends Item
@@ -15,10 +14,5 @@ public class WolfItem extends Item
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsItems);
         GameRegistry.registerItem(this, name);
-    }
-
-    public static String getName()
-    {
-        return name;
     }
 }

@@ -14,7 +14,6 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
-
 import wolf.addons.common.block.WolfBlockList;
 import wolf.addons.common.item.kit.emerald.EmeraldArmor;
 import wolf.addons.common.item.kit.emerald.EmeraldAxe;

@@ -7,11 +7,11 @@
  ******************************************************************************/
 package wolf.addons.proxy;
 
-public class WolfCommonProxy
+public abstract class WolfCommonProxy
 {
-    public void registerRender()
-    {}
+    public abstract void registerRender();
 
-    public void registerTexture()
-    {}
+    public abstract void registerTexture();
+
+    public abstract void registerTESR();
 }

@@ -11,10 +11,12 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class WolfTE
 {
-	public static void loadTileEntity()
-	{
-		GameRegistry.registerTileEntity(TileEntityCompressor.class, "TileEntityCompressor");
-		// GameRegistry.registerTileEntity(TileEntityForge.class,
-		// "TileEntityForge");
-	}
+    public static void loadTileEntity()
+    {
+        GameRegistry.registerTileEntity(TileEntityCompressor.class, "TileEntityCompressor");
+        GameRegistry.registerTileEntity(TileEntityFurnace.class, "TileEntityFurnace");
+        GameRegistry.registerTileEntity(TileEntityCable.class, "TileEntityPipe");
+        // GameRegistry.registerTileEntity(TileEntityForge.class,
+        // "TileEntityForge");
+    }
 }

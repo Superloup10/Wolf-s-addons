@@ -12,9 +12,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
-
 import wolf.addons.common.block.container.ContainerCompressor;
+import wolf.addons.common.block.container.ContainerFurnace;
 import wolf.addons.common.tileentity.TileEntityCompressor;
+import wolf.addons.common.tileentity.TileEntityFurnace;
 
 public class GuiHandler implements IGuiHandler
 {
@@ -27,6 +28,8 @@ public class GuiHandler implements IGuiHandler
         case 0:
             return new ContainerCompressor(player.inventory, (TileEntityCompressor)te);
             // case 1: return new ContainerForge();
+        case 2:
+            return new ContainerFurnace(player.inventory, (TileEntityFurnace)te);
         }
         return null;
     }
@@ -40,6 +43,8 @@ public class GuiHandler implements IGuiHandler
         case 0:
             return new GuiCompressor(player.inventory, (TileEntityCompressor)te);
             // case 1: return new GuiForge();
+        case 2:
+            return new GuiFurnace(player.inventory, (TileEntityFurnace)te);
         }
         return null;
     }

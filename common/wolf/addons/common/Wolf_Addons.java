@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
+import wolf.addons.common.achievements.WolfAchievements;
 import wolf.addons.common.block.WolfBlockList;
 import wolf.addons.common.creativestabs.WolfCT;
 import wolf.addons.common.event.CraftingHandler;
@@ -48,7 +48,7 @@ public class Wolf_Addons
         WolfBlockList.loadIntegration();
         WolfItemList.loadItem();
         WolfItemList.loadIntegration();
-        // WolfAchievements.loadAchievements();
+        WolfAchievements.loadAchievements();
     }
 
     @EventHandler

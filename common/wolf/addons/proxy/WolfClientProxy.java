@@ -17,10 +17,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.fml.client.FMLClientHandler;
-
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import wolf.addons.client.render.RenderHammer;
+import wolf.addons.client.render.TESRCable;
 import wolf.addons.common.block.WolfBlockList;
 import wolf.addons.common.item.WolfItemList;
+import wolf.addons.common.tileentity.TileEntityCable;
 
 public class WolfClientProxy extends WolfCommonProxy
 {
@@ -50,43 +52,77 @@ public class WolfClientProxy extends WolfCommonProxy
             {
                 if(FMLClientHandler.instance().getWorldClient().provider.getDimensionId() == -1)
                 {
-                    ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), WolfBlockList.silverOre.getName() + "_nether");
-                    return new ModelResourceLocation("wolf_addons:" + WolfBlockList.silverOre.getName() + "_nether", "inventory");
+                    ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), "silver_ore" + "_nether");
+                    return new ModelResourceLocation("wolf_addons:" + "silver_ore" + "_nether", "inventory");
                 }
                 else if(FMLClientHandler.instance().getWorldClient().provider.getDimensionId() == 1)
                 {
-                    ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), WolfBlockList.silverOre.getName() + "_end");
-                    return new ModelResourceLocation("wolf_addons:" + WolfBlockList.silverOre.getName() + "_end", "inventory");
+                    ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), "silver_ore" + "_end");
+                    return new ModelResourceLocation("wolf_addons:" + "silver_ore" + "_end", "inventory");
                 }
-                ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), WolfBlockList.silverOre.getName());
-                return new ModelResourceLocation("wolf_addons:" + WolfBlockList.silverOre.getName(), "inventory");
+                ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), "silver_ore");
+                return new ModelResourceLocation("wolf_addons:" + "silver_ore", "inventory");
             }
         });
-        registerBlockTexture(WolfBlockList.silverOre, WolfBlockList.silverOre.getName());
-        registerBlockTexture(WolfBlockList.silverBlock, WolfBlockList.silverBlock.getName());
+
+        registerBlockTexture(WolfBlockList.silverBlock, "silver_block");
+        registerBlockTexture(WolfBlockList.furnace, "furnace");
+        registerBlockTexture(WolfBlockList.cable, "cable");
 
         // Items
-        registerItemTexture(WolfItemList.emeraldIngot, WolfItemList.emeraldIngot.getName());
-        registerItemTexture(WolfItemList.redstoneIngot, WolfItemList.redstoneIngot.getName());
-        registerItemTexture(WolfItemList.lapisIngot, WolfItemList.lapisIngot.getName());
-        registerItemTexture(WolfItemList.silverIngot, WolfItemList.silverIngot.getName());
-        registerItemTexture(WolfItemList.silverDust, WolfItemList.silverDust.getName());
+        registerItemTexture(WolfItemList.emeraldIngot, "emerald_ingot");
+        registerItemTexture(WolfItemList.redstoneIngot, "redstone_ingot");
+        registerItemTexture(WolfItemList.lapisIngot, "lapis_ingot");
+        registerItemTexture(WolfItemList.silverIngot, "silver_ingot");
+        registerItemTexture(WolfItemList.silverDust, "silver_dust");
 
         // Tools
-        registerItemTexture(WolfItemList.emeraldPickaxe, WolfItemList.emeraldPickaxe.getName());
-        registerItemTexture(WolfItemList.emeraldAxe, WolfItemList.emeraldAxe.getName());
-        registerItemTexture(WolfItemList.emeraldShovel, WolfItemList.emeraldShovel.getName());
-        registerItemTexture(WolfItemList.emeraldHoe, WolfItemList.emeraldHoe.getName());
+        registerItemTexture(WolfItemList.emeraldPickaxe, "emerald_pickaxe");
+        registerItemTexture(WolfItemList.emeraldAxe, "emerald_axe");
+        registerItemTexture(WolfItemList.emeraldShovel, "emerald_shovel");
+        registerItemTexture(WolfItemList.emeraldHoe, "emerald_hoe");
+
+        registerItemTexture(WolfItemList.redstonePickaxe, "redstone_pickaxe");
+        registerItemTexture(WolfItemList.redstoneAxe, "redstone_axe");
+        registerItemTexture(WolfItemList.redstoneShovel, "redstone_shovel");
+        registerItemTexture(WolfItemList.redstoneHoe, "redstone_hoe");
+
+        registerItemTexture(WolfItemList.lapisPickaxe, "lapis_pickaxe");
+        registerItemTexture(WolfItemList.lapisAxe, "lapis_axe");
+        registerItemTexture(WolfItemList.lapisShovel, "lapis_shovel");
+        registerItemTexture(WolfItemList.lapisHoe, "lapis_hoe");
+
+        registerItemTexture(WolfItemList.silverPickaxe, "silver_pickaxe");
+        registerItemTexture(WolfItemList.silverAxe, "silver_axe");
+        registerItemTexture(WolfItemList.silverShovel, "silver_shovel");
+        registerItemTexture(WolfItemList.silverHoe, "silver_hoe");
 
         // Weapons
-        registerItemTexture(WolfItemList.redstoneSword, WolfItemList.redstoneSword.getName());
-        registerItemTexture(WolfItemList.emeraldSword, WolfItemList.emeraldSword.getName());
+        registerItemTexture(WolfItemList.redstoneSword, "redstone_sword");
+        registerItemTexture(WolfItemList.emeraldSword, "emerald_sword");
+        registerItemTexture(WolfItemList.lapisSword, "lapis_sword");
+        registerItemTexture(WolfItemList.silverSword, "silver_sword");
 
         // Armors
-        registerItemTexture(WolfItemList.redstoneHelmet, WolfItemList.redstoneSword.getName());
-        registerItemTexture(WolfItemList.redstoneChestplate, WolfItemList.redstoneChestplate.getName());
-        registerItemTexture(WolfItemList.redstoneLeggings, WolfItemList.redstoneLeggings.getName());
-        registerItemTexture(WolfItemList.redstoneBoots, WolfItemList.redstoneBoots.getName());
+        registerItemTexture(WolfItemList.redstoneHelmet, "redstone_helmet");
+        registerItemTexture(WolfItemList.redstoneChestplate, "redstone_chestplate");
+        registerItemTexture(WolfItemList.redstoneLeggings, "redstone_leggings");
+        registerItemTexture(WolfItemList.redstoneBoots, "redstone_boots");
+
+        registerItemTexture(WolfItemList.emeraldHelmet, "emerald_helmet");
+        registerItemTexture(WolfItemList.emeraldChestplate, "emerald_chestplate");
+        registerItemTexture(WolfItemList.emeraldLeggings, "emerald_leggings");
+        registerItemTexture(WolfItemList.emeraldBoots, "emerald_boots");
+
+        registerItemTexture(WolfItemList.silverHelmet, "silver_helmet");
+        registerItemTexture(WolfItemList.silverChestplate, "silver_chestplate");
+        registerItemTexture(WolfItemList.silverLeggings, "silver_leggings");
+        registerItemTexture(WolfItemList.silverBoots, "silver_boots");
+
+        registerItemTexture(WolfItemList.lapisHelmet, "lapis_helmet");
+        registerItemTexture(WolfItemList.lapisChestplate, "lapis_chestplate");
+        registerItemTexture(WolfItemList.lapisLeggings, "lapis_leggings");
+        registerItemTexture(WolfItemList.lapisBoots, "lapis_boots");
     }
 
     public static void registerItemTexture(Item item, int metadata, String name)
@@ -108,5 +144,11 @@ public class WolfClientProxy extends WolfCommonProxy
     public static void registerBlockTexture(Block block, String name)
     {
         registerBlockTexture(block, 0, name);
+    }
+
+    @Override
+    public void registerTESR()
+    {
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCable.class, new TESRCable());
     }
 }

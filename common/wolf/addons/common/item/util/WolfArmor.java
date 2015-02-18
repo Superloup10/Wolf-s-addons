@@ -2,7 +2,6 @@ package wolf.addons.common.item.util;
 
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import wolf.addons.common.creativestabs.WolfCT;
 
 public class WolfArmor extends ItemArmor
@@ -16,10 +15,5 @@ public class WolfArmor extends ItemArmor
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsArmors);
         GameRegistry.registerItem(this, name);
-    }
-
-    public static String getName()
-    {
-        return name;
     }
 }

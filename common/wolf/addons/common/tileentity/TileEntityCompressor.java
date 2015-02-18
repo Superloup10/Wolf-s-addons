@@ -192,7 +192,7 @@ public class TileEntityCompressor extends TileEntity implements IInventory, ISid
     }
 
     @Override
-    public String getName()
+    public String getCommandSenderName()
     {
         return this.hasCustomName() ? this.customName : "container.compressor";
     }

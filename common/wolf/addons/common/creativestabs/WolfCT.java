@@ -15,9 +15,9 @@ public class WolfCT
 
     public static void loadCreativeTabs()
     {
-        creativeTabsArmors = new CreativeTabsArmors("armors");
-        creativeTabsBlocks = new CreativeTabsBlock("blocks");
-        creativeTabsTools = new CreativeTabsTools("tools");
-        creativeTabsItems = new CreativeTabsItems("items");
+        creativeTabsArmors = new CreativeTabsArmors("wolf_armors");
+        creativeTabsBlocks = new CreativeTabsBlock("wolf_blocks");
+        creativeTabsTools = new CreativeTabsTools("wolf_tools");
+        creativeTabsItems = new CreativeTabsItems("wolf_items");
     }
 }

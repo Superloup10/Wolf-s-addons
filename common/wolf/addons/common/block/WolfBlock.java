@@ -3,7 +3,6 @@ package wolf.addons.common.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import wolf.addons.common.creativestabs.WolfCT;
 
 public class WolfBlock extends Block
@@ -20,10 +19,5 @@ public class WolfBlock extends Block
         this.setCreativeTab(WolfCT.creativeTabsBlocks);
         this.setStepSound(soundType);
         GameRegistry.registerBlock(this, name);
-    }
-
-    public static String getName()
-    {
-        return name;
     }
 }
