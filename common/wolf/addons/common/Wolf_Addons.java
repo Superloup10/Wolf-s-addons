@@ -3,7 +3,7 @@
  * 
  * Wolf's Addons is distributed under the terms of the Minecraft Mod Public
  * License 1.0, or MMPL. Please check the contents of the license located in
- * https://dl.dropboxusercontent.com/u/135157801/License/MMPL-1.0.txt
+ * https://www.dropbox.com/s/6l16rc7b1aks211/MMPL-1.0.txt
  ******************************************************************************/
 package wolf.addons.common;
 
@@ -31,7 +31,7 @@ import wolf.addons.common.tileentity.WolfTE;
 import wolf.addons.common.worldgenerator.OreGenerator;
 import wolf.addons.proxy.WolfCommonProxy;
 
-@Mod(modid = "Wolf_Addons", name = "Wolf's Addons", version = "@version@")
+@Mod(modid = "Wolf_Addons", name = "Wolf's Addons", version = "@version@", dependencies = "required-after:isbrhcore;")
 public class Wolf_Addons
 {
     @SidedProxy(clientSide = "wolf.addons.proxy.WolfClientProxy", serverSide = "wolf.addons.proxy.WolfCommonProxy")
@@ -55,6 +55,7 @@ public class Wolf_Addons
     public void init(FMLInitializationEvent event)
     {
         proxy.registerRender();
+        proxy.registerTESR();
         proxy.registerTexture();
         MinecraftForge.EVENT_BUS.register(new LivingEvent());
         FMLCommonHandler.instance().bus().register(new CraftingHandler());

@@ -10,7 +10,7 @@ package wolf.addons.client.model;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 
-public class ModelCable extends ModelBase
+public class ModelCable2 extends ModelBase
 {
     ModelRenderer Shape1;
     ModelRenderer Shape2;
@@ -25,20 +25,20 @@ public class ModelCable extends ModelBase
     ModelRenderer Shape11;
     ModelRenderer Shape12;
 
-    public ModelCable()
+    public ModelCable2()
     {
         textureWidth = 32;
         textureHeight = 32;
 
         Shape1 = new ModelRenderer(this, 0, 0);
         Shape1.mirror = true;
-        Shape1.addBox(-2.5F, -2.5F, -3.5F, 5, 1, 1);
+        Shape1.addBox(-2.5F, -2.5F, -7.5F, 5, 1, 1);
         Shape1.setRotationPoint(0F, 21.5F, 0F);
         Shape1.setTextureSize(32, 32);
         setRotation(Shape1, 0F, 0F, 0F);
         Shape2 = new ModelRenderer(this, 0, 0);
         Shape2.mirror = true;
-        Shape2.addBox(-2.5F, 1.5F, -3.5F, 5, 1, 1);
+        Shape2.addBox(-2.5F, 1.5F, -7.5F, 5, 1, 1);
         Shape2.setRotationPoint(0F, 21.5F, 0F);
         Shape2.setTextureSize(32, 32);
         setRotation(Shape2, 0F, 0F, 0F);
@@ -56,31 +56,31 @@ public class ModelCable extends ModelBase
         setRotation(Shape4, 0F, 0F, 0F);
         Shape5 = new ModelRenderer(this, 0, 0);
         Shape5.mirror = true;
-        Shape5.addBox(-1.5F, -2.5F, -2.5F, 4, 1, 1);
+        Shape5.addBox(-1.5F, -2.5F, -2.5F, 8, 1, 1);
         Shape5.setRotationPoint(0F, 21.5F, 0F);
         Shape5.setTextureSize(32, 32);
         setRotation(Shape5, 0F, 1.570796F, 0F);
         Shape6 = new ModelRenderer(this, 0, 0);
         Shape6.mirror = true;
-        Shape6.addBox(-1.5F, -2.5F, 1.5F, 4, 1, 1);
+        Shape6.addBox(-1.5F, -2.5F, 1.5F, 8, 1, 1);
         Shape6.setRotationPoint(0F, 21.5F, 0F);
         Shape6.setTextureSize(32, 32);
         setRotation(Shape6, 0F, 1.570796F, 0F);
         Shape7 = new ModelRenderer(this, 0, 0);
         Shape7.mirror = true;
-        Shape7.addBox(-1.5F, 1.5F, -2.5F, 4, 1, 1);
+        Shape7.addBox(-1.5F, 1.5F, -2.5F, 8, 1, 1);
         Shape7.setRotationPoint(0F, 21.5F, 0F);
         Shape7.setTextureSize(32, 32);
         setRotation(Shape7, 0F, 1.570796F, 0F);
         Shape8 = new ModelRenderer(this, 0, 0);
         Shape8.mirror = true;
-        Shape8.addBox(-1.5F, 1.5F, 1.5F, 4, 1, 1);
+        Shape8.addBox(-1.5F, 1.5F, 1.5F, 8, 1, 1);
         Shape8.setRotationPoint(0F, 21.5F, 0F);
         Shape8.setTextureSize(32, 32);
         setRotation(Shape8, 0F, 1.570796F, 0F);
         Shape9 = new ModelRenderer(this, 0, 0);
         Shape9.mirror = true;
-        Shape9.addBox(-1.5F, -2.5F, -3.5F, 3, 1, 1);
+        Shape9.addBox(-1.5F, -2.5F, -7.5F, 3, 1, 1);
         Shape9.setRotationPoint(0F, 21.5F, 0F);
         Shape9.setTextureSize(32, 32);
         setRotation(Shape9, 0F, 0F, 1.570796F);
@@ -92,7 +92,7 @@ public class ModelCable extends ModelBase
         setRotation(Shape10, 0F, 0F, 1.570796F);
         Shape11 = new ModelRenderer(this, 0, 0);
         Shape11.mirror = true;
-        Shape11.addBox(-1.5F, 1.5F, -3.5F, 3, 1, 1);
+        Shape11.addBox(-1.5F, 1.5F, -7.5F, 3, 1, 1);
         Shape11.setRotationPoint(0F, 21.5F, 0F);
         Shape11.setTextureSize(32, 32);
         setRotation(Shape11, 0F, 0F, 1.570796F);

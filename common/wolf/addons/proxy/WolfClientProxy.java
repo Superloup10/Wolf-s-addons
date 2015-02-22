@@ -3,7 +3,7 @@
  * 
  * Wolf's Addons is distributed under the terms of the Minecraft Mod Public
  * License 1.0, or MMPL. Please check the contents of the license located in
- * https://dl.dropboxusercontent.com/u/135157801/License/MMPL-1.0.txt
+ * https://www.dropbox.com/s/6l16rc7b1aks211/MMPL-1.0.txt
  ******************************************************************************/
 package wolf.addons.proxy;
 
@@ -26,6 +26,8 @@ import wolf.addons.common.tileentity.TileEntityCable;
 
 public class WolfClientProxy extends WolfCommonProxy
 {
+    // public static int tesrRenderId;
+
     @Override
     public void registerRender()
     {
@@ -38,6 +40,13 @@ public class WolfClientProxy extends WolfCommonProxy
         MinecraftForgeClient.registerItemRenderer(WolfItemList.redstoneHammer, new RenderHammer());
         MinecraftForgeClient.registerItemRenderer(WolfItemList.lapisHammer, new RenderHammer());
         MinecraftForgeClient.registerItemRenderer(WolfItemList.emeraldHammer, new RenderHammer());
+    }
+
+    @Override
+    public void registerTESR()
+    {
+        // RenderCore.registerTESRCallForBlock(WolfBlockList.cable, new TileEntityCable());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCable.class, new TESRCable());
     }
 
     @Override
@@ -144,11 +153,5 @@ public class WolfClientProxy extends WolfCommonProxy
     public static void registerBlockTexture(Block block, String name)
     {
         registerBlockTexture(block, 0, name);
-    }
-
-    @Override
-    public void registerTESR()
-    {
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCable.class, new TESRCable());
     }
 }
