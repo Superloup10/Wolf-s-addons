@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, Superloup10
+ * Copyright (c) 2015, Superloup10
  * 
  * Wolf's Addons is distributed under the terms of the Minecraft Mod Public
  * License 1.0, or MMPL. Please check the contents of the license located in
@@ -31,7 +31,7 @@ import wolf.addons.common.tileentity.WolfTE;
 import wolf.addons.common.worldgenerator.OreGenerator;
 import wolf.addons.proxy.WolfCommonProxy;
 
-@Mod(modid = "Wolf_Addons", name = "Wolf's Addons", version = "@version@", dependencies = "required-after:isbrhcore;")
+@Mod(modid = "Wolf_Addons", name = "Wolf's Addons", version = "@version@")
 public class Wolf_Addons
 {
     @SidedProxy(clientSide = "wolf.addons.proxy.WolfClientProxy", serverSide = "wolf.addons.proxy.WolfCommonProxy")

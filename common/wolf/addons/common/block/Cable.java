@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, Superloup10
+ * Copyright (c) 2015, Superloup10
  * 
  * Wolf's Addons is distributed under the terms of the Minecraft Mod Public
  * License 1.0, or MMPL. Please check the contents of the license located in
@@ -26,7 +26,9 @@ public class Cable extends BlockContainer
     @Override
     public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
     {
-        this.setBlockBounds(0.35F, 0.0F, 0.30F, 0.65F, 0.30F, 0.65F);
+        // this.setBlockBounds(0.35F, 0.0F, 0.30F, 0.65F, 0.30F, 0.65F);
+        float pixel = 1F / 16F;
+        this.setBlockBounds(11 * pixel / 2, 11 * pixel / 2, 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2);
     }
 
     @Override

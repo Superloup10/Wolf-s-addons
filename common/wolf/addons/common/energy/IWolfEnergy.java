@@ -5,14 +5,9 @@
  * License 1.0, or MMPL. Please check the contents of the license located in
  * https://www.dropbox.com/s/6l16rc7b1aks211/MMPL-1.0.txt
  ******************************************************************************/
-package wolf.addons.common.item;
+package wolf.addons.common.energy;
 
-import wolf.addons.common.item.util.WolfItem;
-
-public class SilverIngot extends WolfItem
+public interface IWolfEnergy
 {
-    public SilverIngot()
-    {
-        super("silver_ingot");
-    }
+
 }
