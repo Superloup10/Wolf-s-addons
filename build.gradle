@@ -41,7 +41,7 @@ minecraft {
 sourceSets {
 	main {
 		java {
-			srcDirs 'common'
+			srcDirs 'java'
 		}
 		resources {
 			srcDirs 'resources'
