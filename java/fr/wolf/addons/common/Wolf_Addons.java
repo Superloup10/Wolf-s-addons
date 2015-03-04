@@ -37,7 +37,7 @@ public class Wolf_Addons
 {
     public static final String MODID = "wolf_addons";
 
-    @SidedProxy(clientSide = "wolf.addons.proxy.WolfClientProxy", serverSide = "wolf.addons.proxy.WolfCommonProxy")
+    @SidedProxy(clientSide = "fr.wolf.addons.proxy.WolfClientProxy", serverSide = "fr.wolf.addons.proxy.WolfCommonProxy")
     public static WolfCommonProxy proxy;
 
     @Instance("Wolf_Addons")
