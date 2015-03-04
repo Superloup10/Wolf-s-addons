@@ -45,6 +45,7 @@ public class TESRCable extends TileEntitySpecialRenderer
             {
                 if(cable.direction[i] != null)
                 {
+                    System.out.println("direction : " + cable.direction[i]);
                     this.renderDirectional(cable.direction[i]);
                 }
             }
@@ -198,17 +199,5 @@ public class TESRCable extends TileEntitySpecialRenderer
             }
         }
         tessellator.draw();
-    }
-
-    private void drawVertex(WorldRenderer worldrenderer, double x, double y, double u, double v)
-    {
-        x = 11 * pixel / 2;
-        y = 1 - 11 * pixel / 2;
-        u = 5 * pixel_texture;
-        v = 0 * pixel_texture;
-        worldrenderer.addVertexWithUV(y, x, y, u, u);
-        worldrenderer.addVertexWithUV(y, y, y, u, v);
-        worldrenderer.addVertexWithUV(x, y, y, v, v);
-        worldrenderer.addVertexWithUV(x, y, y, v, u);
     }
 }
