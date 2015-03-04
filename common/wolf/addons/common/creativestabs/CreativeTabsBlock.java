@@ -9,19 +9,18 @@ package wolf.addons.common.creativestabs;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-
 import wolf.addons.common.block.WolfBlockList;
 
 public class CreativeTabsBlock extends CreativeTabs
 {
-	public CreativeTabsBlock(String lable)
-	{
-		super(lable);
-	}
+    public CreativeTabsBlock(String lable)
+    {
+        super(lable);
+    }
 
-	@Override
-	public Item getTabIconItem()
-	{
-		return Item.getItemFromBlock(WolfBlockList.silverOre);
-	}
+    @Override
+    public Item getTabIconItem()
+    {
+        return Item.getItemFromBlock(WolfBlockList.silverOre);
+    }
 }

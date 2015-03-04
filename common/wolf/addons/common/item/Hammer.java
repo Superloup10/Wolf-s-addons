@@ -12,7 +12,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
 import wolf.addons.common.creativestabs.WolfCT;
 
 public class Hammer extends Item
@@ -46,10 +45,8 @@ public class Hammer extends Item
         return EnumAction.BLOCK;
     }
 
-    // @Override
-    // @SideOnly(Side.CLIENT)
-    // public void registerIcons(IIconRegister register)
-    // {
-    // itemIcon = register.registerIcon("wolf_addons:" + texture);
-    // }
+    /*
+     * @Override
+     * @SideOnly(Side.CLIENT) public void registerIcons(IIconRegister register) { itemIcon = register.registerIcon("wolf_addons:" + texture); }
+     */
 }

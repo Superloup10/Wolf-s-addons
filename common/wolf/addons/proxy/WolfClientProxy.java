@@ -20,14 +20,13 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import wolf.addons.client.render.RenderHammer;
 import wolf.addons.client.render.TESRCable;
+import wolf.addons.common.Wolf_Addons;
 import wolf.addons.common.block.WolfBlockList;
 import wolf.addons.common.item.WolfItemList;
 import wolf.addons.common.tileentity.TileEntityCable;
 
 public class WolfClientProxy extends WolfCommonProxy
 {
-    // public static int tesrRenderId;
-
     @Override
     public void registerRender()
     {
@@ -45,7 +44,6 @@ public class WolfClientProxy extends WolfCommonProxy
     @Override
     public void registerTESR()
     {
-        // RenderCore.registerTESRCallForBlock(WolfBlockList.cable, new TileEntityCable());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCable.class, new TESRCable());
     }
 
@@ -62,15 +60,15 @@ public class WolfClientProxy extends WolfCommonProxy
                 if(FMLClientHandler.instance().getWorldClient().provider.getDimensionId() == -1)
                 {
                     ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), "silver_ore" + "_nether");
-                    return new ModelResourceLocation("wolf_addons:" + "silver_ore" + "_nether", "inventory");
+                    return new ModelResourceLocation(Wolf_Addons.MODID + ":silver_ore" + "_nether", "inventory");
                 }
                 else if(FMLClientHandler.instance().getWorldClient().provider.getDimensionId() == 1)
                 {
                     ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), "silver_ore" + "_end");
-                    return new ModelResourceLocation("wolf_addons:" + "silver_ore" + "_end", "inventory");
+                    return new ModelResourceLocation(Wolf_Addons.MODID + ":silver_ore" + "_end", "inventory");
                 }
                 ModelBakery.addVariantName(Item.getItemFromBlock(WolfBlockList.silverOre), "silver_ore");
-                return new ModelResourceLocation("wolf_addons:" + "silver_ore", "inventory");
+                return new ModelResourceLocation(Wolf_Addons.MODID + ":silver_ore", "inventory");
             }
         });
 
@@ -137,7 +135,7 @@ public class WolfClientProxy extends WolfCommonProxy
     public static void registerItemTexture(Item item, int metadata, String name)
     {
         ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
-        mesher.register(item, metadata, new ModelResourceLocation("wolf_addons:" + name, "inventory"));
+        mesher.register(item, metadata, new ModelResourceLocation(Wolf_Addons.MODID + ":" + name, "inventory"));
     }
 
     public static void registerItemTexture(Item item, String name)

@@ -16,7 +16,6 @@ public class WolfTE
         GameRegistry.registerTileEntity(TileEntityCompressor.class, "TileEntityCompressor");
         GameRegistry.registerTileEntity(TileEntityFurnace.class, "TileEntityFurnace");
         GameRegistry.registerTileEntity(TileEntityCable.class, "TileEntityPipe");
-        // GameRegistry.registerTileEntity(TileEntityForge.class,
-        // "TileEntityForge");
+        // GameRegistry.registerTileEntity(TileEntityForge.class, "TileEntityForge");
     }
 }

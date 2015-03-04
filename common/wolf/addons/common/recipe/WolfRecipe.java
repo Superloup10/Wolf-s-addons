@@ -12,7 +12,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import wolf.addons.common.block.WolfBlockList;
 import wolf.addons.common.item.WolfItemList;
 

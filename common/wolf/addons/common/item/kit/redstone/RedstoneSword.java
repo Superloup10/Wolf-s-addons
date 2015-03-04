@@ -13,7 +13,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.world.World;
-
 import wolf.addons.common.item.WolfItemList;
 import wolf.addons.common.item.util.WolfSword;
 
@@ -104,46 +103,9 @@ public class RedstoneSword extends WolfSword
         return super.hitEntity(stack, attackedLiving, attackerLiving);
     }
 
-    // @Override
-    // public IIcon getIcon(ItemStack stack, int pass)
-    // {
-    // if(!stack.hasTagCompound())
-    // {
-    // stack.setTagCompound(new NBTTagCompound());
-    // }
-    //
-    // if(stack.getTagCompound().getByte("Mode") == 0)
-    // {
-    // return textures[0];
-    // }
-    // else
-    // {
-    // return textures[1];
-    // }
-    // }
-    //
-    // @Override
-    // public IIcon getIconIndex(ItemStack itemStack)
-    // {
-    // if(!itemStack.hasTagCompound())
-    // {
-    // itemStack.setTagCompound(new NBTTagCompound());
-    // }
-    //
-    // if(itemStack.getTagCompound().getByte("Mode") == 0)
-    // {
-    // return textures[0];
-    // }
-    // else
-    // {
-    // return textures[1];
-    // }
-    // }
-    //
-    // @Override
-    // public void registerIcons(IIconRegister register)
-    // {
-    // textures[0] = register.registerIcon("wolf_addons:redstone_sword_off");
-    // textures[1] = register.registerIcon("wolf_addons:redstone_sword_on");
-    // }
+    /*
+     * @Override public IIcon getIcon(ItemStack stack, int pass) { if(!stack.hasTagCompound()) { stack.setTagCompound(new NBTTagCompound()); } if(stack.getTagCompound().getByte("Mode") == 0) { return textures[0]; } else { return textures[1]; } }
+     * @Override public IIcon getIconIndex(ItemStack itemStack) { if(!itemStack.hasTagCompound()) { itemStack.setTagCompound(new NBTTagCompound()); } if(itemStack.getTagCompound().getByte("Mode") == 0) { return textures[0]; } else { return textures[1]; } }
+     * @Override public void registerIcons(IIconRegister register) { textures[0] = register.registerIcon("wolf_addons:redstone_sword_off"); textures[1] = register.registerIcon("wolf_addons:redstone_sword_on"); }
+     */
 }

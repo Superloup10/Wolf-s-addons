@@ -34,6 +34,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import wolf.addons.common.Wolf_Addons;
 import wolf.addons.common.block.Furnace;
 
 public class TileEntityFurnace extends TileEntityLockable implements ISidedInventory, IUpdatePlayerListBox
@@ -447,7 +448,7 @@ public class TileEntityFurnace extends TileEntityLockable implements ISidedInven
     @Override
     public String getGuiID()
     {
-        return "wolf_addons:furnace";
+        return Wolf_Addons.MODID + ":furnace";
     }
 
     @Override

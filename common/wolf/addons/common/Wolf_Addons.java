@@ -31,9 +31,11 @@ import wolf.addons.common.tileentity.WolfTE;
 import wolf.addons.common.worldgenerator.OreGenerator;
 import wolf.addons.proxy.WolfCommonProxy;
 
-@Mod(modid = "Wolf_Addons", name = "Wolf's Addons", version = "@version@")
+@Mod(modid = Wolf_Addons.MODID, name = "Wolf's Addons", version = "@version@")
 public class Wolf_Addons
 {
+    public static final String MODID = "wolf_addons";
+
     @SidedProxy(clientSide = "wolf.addons.proxy.WolfClientProxy", serverSide = "wolf.addons.proxy.WolfCommonProxy")
     public static WolfCommonProxy proxy;
 

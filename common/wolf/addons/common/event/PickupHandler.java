@@ -11,33 +11,32 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
-
 import wolf.addons.common.achievements.WolfAchievements;
 import wolf.addons.common.item.WolfItemList;
 
 public class PickupHandler
 {
-	@SubscribeEvent
-	public void onPickupHandler(ItemPickupEvent event)
-	{
-		if (event.pickedUp.getEntityItem().getItem().equals(WolfItemList.silverDust))
-		{
-			event.player.triggerAchievement(WolfAchievements.silverDust);
-		}
+    @SubscribeEvent
+    public void onPickupHandler(ItemPickupEvent event)
+    {
+        if(event.pickedUp.getEntityItem().getItem().equals(WolfItemList.silverDust))
+        {
+            event.player.triggerAchievement(WolfAchievements.silverDust);
+        }
 
-		if (event.pickedUp.getEntityItem().getItem().equals(Items.redstone))
-		{
-			event.player.triggerAchievement(WolfAchievements.redstoneDust);
-		}
+        if(event.pickedUp.getEntityItem().getItem().equals(Items.redstone))
+        {
+            event.player.triggerAchievement(WolfAchievements.redstoneDust);
+        }
 
-		if (event.pickedUp.getEntityItem().getItem().equals(new ItemStack(Items.dye, 1, 4)))
-		{
-			event.player.triggerAchievement(WolfAchievements.lapisDust);
-		}
+        if(event.pickedUp.getEntityItem().getItem().equals(new ItemStack(Items.dye, 1, 4)))
+        {
+            event.player.triggerAchievement(WolfAchievements.lapisDust);
+        }
 
-		if (event.pickedUp.getEntityItem().getItem().equals(Items.emerald))
-		{
-			event.player.triggerAchievement(WolfAchievements.emeraldDust);
-		}
-	}
+        if(event.pickedUp.getEntityItem().getItem().equals(Items.emerald))
+        {
+            event.player.triggerAchievement(WolfAchievements.emeraldDust);
+        }
+    }
 }

@@ -9,7 +9,7 @@ package wolf.addons.common.item.kit.lapis;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-
+import wolf.addons.common.Wolf_Addons;
 import wolf.addons.common.item.WolfItemList;
 import wolf.addons.common.item.util.WolfArmor;
 
@@ -25,9 +25,9 @@ public class LapisArmor extends WolfArmor
     {
         if(slot == 2)
         {
-            return "wolf_addons:textures/models/armor/lapis_layer_2.png";
+            return Wolf_Addons.MODID + ":textures/models/armor/lapis_layer_2.png";
         }
-        return "wolf_addons:textures/models/armor/lapis_layer_1.png";
+        return Wolf_Addons.MODID + ":textures/models/armor/lapis_layer_1.png";
     }
 
     @Override

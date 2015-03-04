@@ -17,11 +17,12 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
+import wolf.addons.common.Wolf_Addons;
 import wolf.addons.common.tileentity.TileEntityCable;
 
 public class TESRCable extends TileEntitySpecialRenderer
 {
-    private static final ResourceLocation texture = new ResourceLocation("wolf_addons:textures/blocks/cable1.png");
+    private static final ResourceLocation texture = new ResourceLocation(Wolf_Addons.MODID + ":textures/blocks/cable1.png");
     private final boolean drawInside = true;
     private final float pixel = 1F / 16F;
     private final float pixel_texture = 1F / 32F;

@@ -20,7 +20,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import wolf.addons.common.creativestabs.WolfCT;
 
 public class Bow extends Item
@@ -39,31 +38,9 @@ public class Bow extends Item
         GameRegistry.registerItem(this, name);
     }
 
-    // @Override
-    // public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining)
-    // {
-    // if(usingItem != null && usingItem.getItem() == this)
-    // {
-    // int k = usingItem.getMaxItemUseDuration() - useRemaining;
-    //
-    // if(k >= 18)
-    // {
-    // return iconArray[2];
-    // }
-    //
-    // if(k > 13)
-    // {
-    // return iconArray[1];
-    // }
-    //
-    // if(k > 0)
-    // {
-    // return iconArray[0];
-    // }
-    // }
-    //
-    // return getIconIndex(stack);
-    // }
+    /*
+     * @Override public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining) { if(usingItem != null && usingItem.getItem() == this) { int k = usingItem.getMaxItemUseDuration() - useRemaining; if(k >= 18) { return iconArray[2]; } if(k > 13) { return iconArray[1]; } if(k > 0) { return iconArray[0]; } } return getIconIndex(stack); }
+     */
 
     @Override
     public void onPlayerStoppedUsing(ItemStack itemStack, World world, EntityPlayer player, int itemUseCount)
@@ -182,20 +159,8 @@ public class Bow extends Item
         return 1;
     }
 
-    // @Override
-    // public void registerIcons(IIconRegister iconregister)
-    // {
-    // iconArray = new IIcon[bowpullname.length];
-    // itemIcon = iconregister.registerIcon(this.getIconString());
-    // for(int i = 0; i < bowpullname.length; i++)
-    // {
-    // iconArray[i] = iconregister.registerIcon(this.getIconString() + bowpullname[i]);
-    // }
-    // }
-    //
-    // @SideOnly(Side.CLIENT)
-    // public IIcon getItemIconForUseDuration(int par1)
-    // {
-    // return this.iconArray[par1];
-    // }
+    /*
+     * @Override public void registerIcons(IIconRegister iconregister) { iconArray = new IIcon[bowpullname.length]; itemIcon = iconregister.registerIcon(this.getIconString()); for(int i = 0; i < bowpullname.length; i++) { iconArray[i] = iconregister.registerIcon(this.getIconString() + bowpullname[i]); } }
+     * @SideOnly(Side.CLIENT) public IIcon getItemIconForUseDuration(int par1) { return this.iconArray[par1]; }
+     */
 }

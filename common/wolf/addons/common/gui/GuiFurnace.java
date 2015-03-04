@@ -14,13 +14,14 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import wolf.addons.common.Wolf_Addons;
 import wolf.addons.common.block.container.ContainerFurnace;
 import wolf.addons.common.tileentity.TileEntityFurnace;
 
 @SideOnly(Side.CLIENT)
 public class GuiFurnace extends GuiContainer
 {
-    private static ResourceLocation texture = new ResourceLocation("wolf_addons:textures/gui/gui_furnace.png");
+    private static ResourceLocation texture = new ResourceLocation(Wolf_Addons.MODID + ":textures/gui/gui_furnace.png");
 
     private InventoryPlayer inventoryPlayer;
 
