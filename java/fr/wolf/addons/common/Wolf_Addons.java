@@ -40,7 +40,7 @@ public class Wolf_Addons
     @SidedProxy(clientSide = "fr.wolf.addons.proxy.WolfClientProxy", serverSide = "fr.wolf.addons.proxy.WolfCommonProxy")
     public static WolfCommonProxy proxy;
 
-    @Instance("Wolf_Addons")
+    @Instance("wolf_addons")
     public static Wolf_Addons instance;
 
     @EventHandler
