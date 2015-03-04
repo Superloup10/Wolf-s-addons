@@ -45,7 +45,6 @@ public class TESRCable extends TileEntitySpecialRenderer
             {
                 if(cable.direction[i] != null)
                 {
-                    System.out.println("direction : " + cable.direction[i]);
                     this.renderDirectional(cable.direction[i]);
                 }
             }
