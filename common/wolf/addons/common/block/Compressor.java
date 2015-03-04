@@ -19,7 +19,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
-
 import wolf.addons.common.Wolf_Addons;
 import wolf.addons.common.creativestabs.WolfCT;
 import wolf.addons.common.tileentity.TileEntityCompressor;

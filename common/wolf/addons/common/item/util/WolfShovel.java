@@ -18,7 +18,7 @@ public class WolfShovel extends ItemSpade
     public WolfShovel(String name, ToolMaterial material)
     {
         super(material);
-        this.name = name;
+        WolfShovel.name = name;
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsTools);
         GameRegistry.registerItem(this, name);

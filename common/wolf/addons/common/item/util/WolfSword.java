@@ -18,7 +18,7 @@ public class WolfSword extends ItemSword
     public WolfSword(String name, ToolMaterial material)
     {
         super(material);
-        this.name = name;
+        WolfSword.name = name;
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsTools);
         GameRegistry.registerItem(this, name);

@@ -8,7 +8,6 @@
 package wolf.addons.common.item.kit.emerald;
 
 import net.minecraft.item.ItemStack;
-
 import wolf.addons.common.item.WolfItemList;
 import wolf.addons.common.item.util.WolfSword;
 

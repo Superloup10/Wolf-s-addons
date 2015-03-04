@@ -26,7 +26,6 @@ import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
 import wolf.addons.common.item.WolfItemList;
 
 public class SilverReedBlock extends Block implements IPlantable

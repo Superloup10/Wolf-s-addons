@@ -17,7 +17,7 @@ public class WolfItem extends Item
 
     public WolfItem(String name)
     {
-        this.name = name;
+        WolfItem.name = name;
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsItems);
         GameRegistry.registerItem(this, name);

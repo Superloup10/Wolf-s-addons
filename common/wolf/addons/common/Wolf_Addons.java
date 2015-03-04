@@ -65,7 +65,7 @@ public class Wolf_Addons
 
         WolfTE.loadTileEntity();
 
-        NetworkRegistry.INSTANCE.registerGuiHandler(this.instance, new GuiHandler());
+        NetworkRegistry.INSTANCE.registerGuiHandler(Wolf_Addons.instance, new GuiHandler());
 
         GameRegistry.registerWorldGenerator(new OreGenerator(), 0);
     }

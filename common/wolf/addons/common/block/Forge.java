@@ -9,14 +9,13 @@ package wolf.addons.common.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-
 import wolf.addons.common.creativestabs.WolfCT;
 
 public class Forge extends Block
 {
-	protected Forge()
-	{
-		super(Material.rock);
-		this.setCreativeTab(WolfCT.creativeTabsBlocks);
-	}
+    protected Forge()
+    {
+        super(Material.rock);
+        this.setCreativeTab(WolfCT.creativeTabsBlocks);
+    }
 }

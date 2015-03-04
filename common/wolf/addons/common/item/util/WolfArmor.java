@@ -18,7 +18,7 @@ public class WolfArmor extends ItemArmor
     public WolfArmor(ArmorMaterial material, int renderIndex, int armorType, String name)
     {
         super(material, 0, armorType);
-        this.name = name;
+        WolfArmor.name = name;
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsArmors);
         GameRegistry.registerItem(this, name);

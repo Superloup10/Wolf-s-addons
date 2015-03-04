@@ -20,7 +20,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.world.World;
-
 import wolf.addons.common.item.WolfItemList;
 
 public final class RecipesCompressor

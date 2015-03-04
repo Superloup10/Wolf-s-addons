@@ -28,7 +28,7 @@ public class ContainerCompressor extends Container
     public ContainerCompressor(InventoryPlayer inventory, TileEntityCompressor te)
     {
         compressor = te;
-        this.addSlotToContainer(new SlotCompressor(inventory.player, compressor.craftMatrix, compressor.SLOT_RESULT, 124, 35));
+        this.addSlotToContainer(new SlotCompressor(inventory.player, compressor.craftMatrix, TileEntityCompressor.SLOT_RESULT, 124, 35));
         int l, i;
 
         for(l = 0; l < 3; ++l)

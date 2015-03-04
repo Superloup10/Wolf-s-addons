@@ -18,7 +18,7 @@ public class WolfAxe extends ItemAxe
     public WolfAxe(String name, ToolMaterial material)
     {
         super(material);
-        this.name = name;
+        WolfAxe.name = name;
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsTools);
         GameRegistry.registerItem(this, name);

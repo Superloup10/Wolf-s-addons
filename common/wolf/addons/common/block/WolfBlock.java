@@ -19,7 +19,7 @@ public class WolfBlock extends Block
     public WolfBlock(Material material, String name, float hardness, float resistance, SoundType soundType)
     {
         super(material);
-        this.name = name;
+        WolfBlock.name = name;
         this.setUnlocalizedName(name);
         this.setHardness(hardness);
         this.setResistance(resistance);

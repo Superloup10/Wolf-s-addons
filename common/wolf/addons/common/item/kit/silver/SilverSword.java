@@ -12,7 +12,6 @@ import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-
 import wolf.addons.common.item.WolfItemList;
 import wolf.addons.common.item.util.WolfSword;
 

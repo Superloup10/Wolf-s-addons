@@ -16,7 +16,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
-
 import wolf.addons.common.block.WolfBlockList;
 
 public class OreGenerator implements IWorldGenerator

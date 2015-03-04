@@ -18,7 +18,7 @@ public class WolfPickaxe extends ItemPickaxe
     public WolfPickaxe(String name, ToolMaterial material)
     {
         super(material);
-        this.name = name;
+        WolfPickaxe.name = name;
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsTools);
         GameRegistry.registerItem(this, name);

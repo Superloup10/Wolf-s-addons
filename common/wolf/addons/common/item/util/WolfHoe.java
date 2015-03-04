@@ -18,7 +18,7 @@ public class WolfHoe extends ItemHoe
     public WolfHoe(String name, ToolMaterial material)
     {
         super(material);
-        this.name = name;
+        WolfHoe.name = name;
         this.setUnlocalizedName(name);
         this.setCreativeTab(WolfCT.creativeTabsTools);
         GameRegistry.registerItem(this, name);
