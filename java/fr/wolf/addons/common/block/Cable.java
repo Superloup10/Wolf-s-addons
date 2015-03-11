@@ -11,25 +11,58 @@ import fr.wolf.addons.common.tileentity.TileEntityCable;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class Cable extends BlockContainer
 {
+    private float pixel = 1F / 16F;
+
     protected Cable()
     {
         super(Material.ground);
         this.useNeighborBrightness = true;
+
+        this.setBlockBounds(11 * pixel / 2, 11 * pixel / 2, 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2);
     }
 
     @Override
-    public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
+    public AxisAlignedBB getSelectedBoundingBox(World world, BlockPos pos)
     {
-        // this.setBlockBounds(0.35F, 0.0F, 0.30F, 0.65F, 0.30F, 0.65F);
-        float pixel = 1F / 16F;
-        this.setBlockBounds(11 * pixel / 2, 11 * pixel / 2, 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2);
+        TileEntityCable cable = (TileEntityCable)world.getTileEntity(pos);
+        if(cable != null)
+        {
+            float minY = 11 * pixel / 2 - (cable.direction[0] != null ? (11 * pixel / 2) : 0);
+            float maxY = 1 - 11 * pixel / 2 + (cable.direction[1] != null ? (11 * pixel / 2) : 0);
+            float minZ = 11 * pixel / 2 - (cable.direction[2] != null ? (11 * pixel / 2) : 0);
+            float maxZ = 1 - 11 * pixel / 2 + (cable.direction[3] != null ? (11 * pixel / 2) : 0);
+            float minX = 11 * pixel / 2 - (cable.direction[4] != null ? (11 * pixel / 2) : 0);
+            float maxX = 1 - 11 * pixel / 2 + (cable.direction[5] != null ? (11 * pixel / 2) : 0);
+
+            this.setBlockBounds(minX, minY, minZ, maxX, maxY, maxZ);
+        }
+        return AxisAlignedBB.fromBounds(pos.getX() + minX, pos.getY() + minY, pos.getZ() + minZ, pos.getX() + maxX, pos.getY() + maxY, pos.getZ() + maxZ);
+    }
+
+    @Override
+    public AxisAlignedBB getCollisionBoundingBox(World world, BlockPos pos, IBlockState state)
+    {
+        TileEntityCable cable = (TileEntityCable)world.getTileEntity(pos);
+        if(cable != null)
+        {
+            float minY = 11 * pixel / 2 - (cable.direction[0] != null ? (11 * pixel / 2) : 0);
+            float maxY = 1 - 11 * pixel / 2 + (cable.direction[1] != null ? (11 * pixel / 2) : 0);
+            float minZ = 11 * pixel / 2 - (cable.direction[2] != null ? (11 * pixel / 2) : 0);
+            float maxZ = 1 - 11 * pixel / 2 + (cable.direction[3] != null ? (11 * pixel / 2) : 0);
+            float minX = 11 * pixel / 2 - (cable.direction[4] != null ? (11 * pixel / 2) : 0);
+            float maxX = 1 - 11 * pixel / 2 + (cable.direction[5] != null ? (11 * pixel / 2) : 0);
+
+            this.setBlockBounds(minX, minY, minZ, maxX, maxY, maxZ);
+        }
+        return AxisAlignedBB.fromBounds(pos.getX() + minX, pos.getY() + minY, pos.getZ() + minZ, pos.getX() + maxX, pos.getY() + maxY, pos.getZ() + maxZ);
     }
 
     @Override

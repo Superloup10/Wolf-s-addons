@@ -39,19 +39,103 @@ public class TESRCable extends TileEntitySpecialRenderer
         GL11.glDisable(GL11.GL_LIGHTING);
         this.bindTexture(texture);
         {
-            this.renderCore((TileEntityCable)te);
-
             TileEntityCable cable = (TileEntityCable)te;
-            for(int i = 0; i < cable.direction.length; i++)
+            if(!cable.onlyOpposite(cable.direction))
             {
-                if(cable.direction[i] != null)
+                this.renderCore((TileEntityCable)te);
+
+                for(int i = 0; i < cable.direction.length; i++)
                 {
-                    this.renderDirectional(cable.direction[i]);
+                    if(cable.direction[i] != null)
+                    {
+                        this.renderDirectional(cable.direction[i]);
+                    }
+                }
+            }
+            else
+            {
+                for(int i = 0; i < cable.direction.length; i++)
+                {
+                    if(cable.direction[i] != null)
+                    {
+                        this.renderStraight(cable.direction[i]);
+                        break;
+                    }
                 }
             }
         }
         GL11.glEnable(GL11.GL_LIGHTING);
         GL11.glTranslated(-x, -y, -z);
+    }
+
+    private void renderStraight(EnumFacing direction)
+    {
+        Tessellator tessellator = Tessellator.getInstance();
+        WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+        worldrenderer.startDrawingQuads();
+        {
+            GL11.glTranslatef(0.5F, 0.5F, 0.5F);
+            if(direction.equals(EnumFacing.NORTH) || direction.equals(EnumFacing.SOUTH))
+                GL11.glRotatef(90F, 1F, 0F, 0F);
+            if(direction.equals(EnumFacing.WEST) || direction.equals(EnumFacing.EAST))
+                GL11.glRotatef(90F, 0F, 0F, 1F);
+            if(direction.equals(EnumFacing.UP) || direction.equals(EnumFacing.DOWN))
+                ;
+            GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
+
+            worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 0, 1 - 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+            worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 1 - 11 * pixel / 2, 26 * pixel_texture, 5 * pixel_texture);
+            worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 1 - 11 * pixel / 2, 26 * pixel_texture, 0 * pixel_texture);
+            worldrenderer.addVertexWithUV(11 * pixel / 2, 0, 1 - 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+
+            worldrenderer.addVertexWithUV(11 * pixel / 2, 0, 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+            worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 11 * pixel / 2, 26 * pixel_texture, 5 * pixel_texture);
+            worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 11 * pixel / 2, 26 * pixel_texture, 0 * pixel_texture);
+            worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 0, 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+
+            worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 0, 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+            worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 11 * pixel / 2, 26 * pixel_texture, 5 * pixel_texture);
+            worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 1 - 11 * pixel / 2, 26 * pixel_texture, 0 * pixel_texture);
+            worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 0, 1 - 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+
+            worldrenderer.addVertexWithUV(11 * pixel / 2, 0, 1 - 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+            worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 1 - 11 * pixel / 2, 26 * pixel_texture, 5 * pixel_texture);
+            worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 11 * pixel / 2, 26 * pixel_texture, 0 * pixel_texture);
+            worldrenderer.addVertexWithUV(11 * pixel / 2, 0, 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+
+            if(drawInside)
+            {
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 0, 1 - 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 1 - 11 * pixel / 2, 26 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 1 - 11 * pixel / 2, 26 * pixel_texture, 5 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 0, 1 - 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 0, 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 11 * pixel / 2, 26 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 11 * pixel / 2, 26 * pixel_texture, 5 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 0, 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 0, 1 - 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 1 - 11 * pixel / 2, 26 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 11 * pixel / 2, 26 * pixel_texture, 5 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 0, 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 0, 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 11 * pixel / 2, 26 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 1 - 11 * pixel / 2, 26 * pixel_texture, 5 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 0, 1 - 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+            }
+        }
+        tessellator.draw();
+
+        GL11.glTranslatef(0.5F, 0.5F, 0.5F);
+        if(direction.equals(EnumFacing.NORTH) || direction.equals(EnumFacing.SOUTH))
+            GL11.glRotatef(-90F, 1F, 0F, 0F);
+        if(direction.equals(EnumFacing.WEST) || direction.equals(EnumFacing.EAST))
+            GL11.glRotatef(-90F, 0F, 0F, 1F);
+        if(direction.equals(EnumFacing.UP) || direction.equals(EnumFacing.DOWN))
+            ;
+        GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
     }
 
     private void renderDirectional(EnumFacing direction)
@@ -102,6 +186,29 @@ public class TESRCable extends TileEntitySpecialRenderer
             worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 1 - 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
             worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
             worldrenderer.addVertexWithUV(11 * pixel / 2, 1 - 11 * pixel / 2, 11 * pixel / 2, 5 * pixel_texture, 0 * pixel_texture);
+
+            if(drawInside)
+            {
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 11 * pixel / 2, 1 - 11 * pixel / 2, 5 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 1 - 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 1 - 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 5 * pixel_texture, 5 * pixel_texture);
+
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 11 * pixel / 2, 5 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1 - 11 * pixel / 2, 11 * pixel / 2, 5 * pixel_texture, 5 * pixel_texture);
+
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 5 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 1 - 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1, 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+                worldrenderer.addVertexWithUV(1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 11 * pixel / 2, 5 * pixel_texture, 5 * pixel_texture);
+
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1 - 11 * pixel / 2, 11 * pixel / 2, 5 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 11 * pixel / 2, 10 * pixel_texture, 0 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1, 1 - 11 * pixel / 2, 10 * pixel_texture, 5 * pixel_texture);
+                worldrenderer.addVertexWithUV(11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 5 * pixel_texture, 5 * pixel_texture);
+            }
         }
         tessellator.draw();
 

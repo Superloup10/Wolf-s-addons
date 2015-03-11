@@ -26,12 +26,12 @@ public class TileEntityCable extends TileEntity implements IUpdatePlayerListBox
 
     public void updateConnections()
     {
-        if(this.worldObj.getTileEntity(this.pos.up()) instanceof TileEntityCable)
-            direction[0] = EnumFacing.UP;
+        if(this.worldObj.getTileEntity(this.pos.down()) instanceof TileEntityCable)
+            direction[0] = EnumFacing.DOWN;
         else
             direction[0] = null;
-        if(this.worldObj.getTileEntity(this.pos.down()) instanceof TileEntityCable)
-            direction[1] = EnumFacing.DOWN;
+        if(this.worldObj.getTileEntity(this.pos.up()) instanceof TileEntityCable)
+            direction[1] = EnumFacing.UP;
         else
             direction[1] = null;
         if(this.worldObj.getTileEntity(this.pos.north()) instanceof TileEntityCable)
@@ -50,5 +50,35 @@ public class TileEntityCable extends TileEntity implements IUpdatePlayerListBox
             direction[5] = EnumFacing.EAST;
         else
             direction[5] = null;
+    }
+
+    public boolean onlyOpposite(EnumFacing[] directions)
+    {
+        EnumFacing mainDirection = null;
+        boolean isOpposite = false;
+        for(int i = 0; i < directions.length; i++)
+        {
+            if(mainDirection == null && directions[i] != null)
+                mainDirection = directions[i];
+            if(directions[i] != null && mainDirection != directions[i])
+            {
+                if(!isOpposite(mainDirection, directions[i]))
+                    return false;
+                else
+                    isOpposite = true;
+            }
+        }
+        return isOpposite;
+    }
+
+    public boolean isOpposite(EnumFacing firstDirection, EnumFacing secondDirection)
+    {
+        if((firstDirection.equals(EnumFacing.NORTH) && secondDirection.equals(EnumFacing.SOUTH)) || (firstDirection.equals(EnumFacing.SOUTH) && secondDirection.equals(EnumFacing.NORTH)))
+            return true;
+        if((firstDirection.equals(EnumFacing.UP) && secondDirection.equals(EnumFacing.DOWN)) || (firstDirection.equals(EnumFacing.DOWN) && secondDirection.equals(EnumFacing.UP)))
+            return true;
+        if((firstDirection.equals(EnumFacing.WEST) && secondDirection.equals(EnumFacing.EAST)) || (firstDirection.equals(EnumFacing.EAST) && secondDirection.equals(EnumFacing.WEST)))
+            return true;
+        return false;
     }
 }
