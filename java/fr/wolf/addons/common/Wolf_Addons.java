@@ -32,7 +32,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@Mod(modid = Wolf_Addons.MODID, name = "Wolf's Addons", version = "@version@")
+@Mod(modid = Wolf_Addons.MODID, name = "Wolf's Addons", version = "@VERSION@", acceptedMinecraftVersions = "@MCVERSION@")
 public class Wolf_Addons
 {
     public static final String MODID = "wolf_addons";
@@ -40,7 +40,7 @@ public class Wolf_Addons
     @SidedProxy(clientSide = "fr.wolf.addons.proxy.WolfClientProxy", serverSide = "fr.wolf.addons.proxy.WolfCommonProxy")
     public static WolfCommonProxy proxy;
 
-    @Instance("wolf_addons")
+    @Instance(Wolf_Addons.MODID)
     public static Wolf_Addons instance;
 
     @EventHandler
